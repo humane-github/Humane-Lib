@@ -1,0 +1,5 @@
+C:\DEV\40.HumaneLib\NetLib\bin\Debug\NetLib.dll
+C:\DEV\40.HumaneLib\NetLib\bin\Debug\NetLib.pdb
+C:\DEV\40.HumaneLib\NetLib\obj\Debug\NetLib.dll
+C:\DEV\40.HumaneLib\NetLib\obj\Debug\NetLib.pdb
+C:\DEV\40.HumaneLib\NetLib\obj\Debug\NetLib.csprojResolveAssemblyReference.cache

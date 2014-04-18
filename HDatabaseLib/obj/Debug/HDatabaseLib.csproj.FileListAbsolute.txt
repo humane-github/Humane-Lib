@@ -1,0 +1,6 @@
+C:\DEV\30.LibraryPrj\HDatabaseLib\bin\Debug\HDatabaseLib.dll
+C:\DEV\30.LibraryPrj\HDatabaseLib\bin\Debug\HDatabaseLib.pdb
+C:\DEV\30.LibraryPrj\HDatabaseLib\bin\Debug\System.Data.SQLite.pdb
+C:\DEV\30.LibraryPrj\HDatabaseLib\obj\Debug\ResolveAssemblyReference.cache
+C:\DEV\30.LibraryPrj\HDatabaseLib\obj\Debug\HDatabaseLib.dll
+C:\DEV\30.LibraryPrj\HDatabaseLib\obj\Debug\HDatabaseLib.pdb

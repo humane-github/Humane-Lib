@@ -1,0 +1,9 @@
+C:\DEV\30.LibraryPrj\HFileLib\bin\Debug\HFileLib.dll
+C:\DEV\30.LibraryPrj\HFileLib\bin\Debug\HFileLib.pdb
+C:\DEV\30.LibraryPrj\HFileLib\obj\Debug\ResolveAssemblyReference.cache
+C:\DEV\30.LibraryPrj\HFileLib\obj\Debug\HFileLib.dll
+C:\DEV\30.LibraryPrj\HFileLib\obj\Debug\HFileLib.pdb
+C:\DEV\40.HumaneLib\HFileLib\bin\Debug\HFileLib.dll
+C:\DEV\40.HumaneLib\HFileLib\bin\Debug\HFileLib.pdb
+C:\DEV\40.HumaneLib\HFileLib\obj\Debug\HFileLib.dll
+C:\DEV\40.HumaneLib\HFileLib\obj\Debug\HFileLib.pdb

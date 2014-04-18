@@ -1,0 +1,15 @@
+package jp.co.humane.msg;
+
+public class Msg
+{
+	/**
+	 * 指定したIDのメッセージを取得する
+	 *
+	 * @param	msgid	メッセージID
+	 * @return	String
+	 * **/
+	public static String get( String msgid )
+	{
+		return msgid;
+	}
+}
