@@ -7,6 +7,7 @@ public class MatFactory
 {
 	public static enum MatType
 	{
+		DEFAULT,
 		COLOR_8BIT,
 		MONO_8BIT
 	};
