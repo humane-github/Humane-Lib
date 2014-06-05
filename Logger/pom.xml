@@ -5,18 +5,18 @@
   <version>1.0</version>
   <packaging>jar</packaging>
 
-  <!-- ƒvƒƒpƒeƒB’è‹` -->
+  <!-- ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£å®šç¾© -->
   <properties>
-    <!-- ¶¬jarƒtƒ@ƒCƒ‹–¼ -->
+    <!-- ç”Ÿæˆjarãƒ•ã‚¡ã‚¤ãƒ«å -->
     <jar.file.name>Logger</jar.file.name>
-    <!-- jarƒtƒ@ƒCƒ‹“o˜^êŠ -->
+    <!-- jarãƒ•ã‚¡ã‚¤ãƒ«ç™»éŒ²å ´æ‰€ -->
     <all.target.dir>../_target</all.target.dir>
   </properties>
 
   <build>
     <plugins>
     
-      <!-- java1.7‚ğg—p(JAVA_HOME‚ª1.7‚Ì•K—v‚ ‚è) -->
+      <!-- java1.7ã‚’ä½¿ç”¨(JAVA_HOMEãŒ1.7ã®å¿…è¦ã‚ã‚Š) -->
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
@@ -27,7 +27,7 @@
         </configuration>
       </plugin>
       
-      <!-- jarƒtƒ@ƒCƒ‹–¼‚ğw’è -->
+      <!-- jarãƒ•ã‚¡ã‚¤ãƒ«åã‚’æŒ‡å®š -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
@@ -37,7 +37,7 @@
         </configuration>
       </plugin>
 
-      <!-- ¶¬jarƒtƒ@ƒCƒ‹‚ğˆê‚©Š‚ÉŒÅ‚ß‚é -->
+      <!-- ç”Ÿæˆjarãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä¸€ã‹æ‰€ã«å›ºã‚ã‚‹ -->
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
         <version>1.7</version>
