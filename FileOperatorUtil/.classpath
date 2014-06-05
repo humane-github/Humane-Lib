@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" output="src/test/classes" path="src/test/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ExceptionLib"/>
-	<classpathentry kind="lib" path="C:/DEV/40.HumaneLib/jar/commons-digester-1.7.jar"/>
-	<classpathentry kind="lib" path="C:/DEV/40.HumaneLib/jar/xerces_2_5_0.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="lib" path="src/main/lib/commons-digester-2.1.jar"/>
+	<classpathentry kind="lib" path="src/main/lib/xerces-impl-2.9.0.jar"/>
+	<classpathentry kind="output" path="src/main/classes"/>
 </classpath>
