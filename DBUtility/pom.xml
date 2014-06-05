@@ -1,17 +1,40 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>jp.co.humane-lib</groupId>
-  <artifactId>ConfigLib</artifactId>
+  <artifactId>DBUtility</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
 
   <!-- プロパティ定義 -->
   <properties>
     <!-- 生成jarファイル名 -->
-    <jar.file.name>ConfigLib</jar.file.name>
+    <jar.file.name>DBUtility</jar.file.name>
     <!-- jarファイル登録場所 -->
     <all.target.dir>../_target</all.target.dir>
   </properties>
+
+  <!-- 参照するjarを定義 -->
+  <dependencies>
+
+    <!-- commons-dbutils-1.5.jar -->
+    <dependency>
+      <groupId>commons-dbutils</groupId>
+      <artifactId>commons-dbutils</artifactId>
+      <version>1.5</version>
+      <scope>compile</scope>
+      <type>jar</type>
+    </dependency>
+
+    <!-- postgresql-8.0-318.jdbc3.jar -->
+    <dependency>
+      <groupId>postgresql</groupId>
+      <artifactId>postgresql</artifactId>
+      <version>8.0-318.jdbc3</version>
+      <scope>compile</scope>
+      <type>jar</type>
+    </dependency>
+
+  </dependencies>
 
   <build>
     <plugins>
@@ -56,7 +79,7 @@
           </execution>
         </executions>
       </plugin>
-  
+
     </plugins>
   </build>
 

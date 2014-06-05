@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="lib/postgresql-8.0-310.jdbc3.jar"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" output="src/test/classes" path="src/test/java"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/DEV/Apache/commons-dbutils-1.5/commons-dbutils-1.5.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="lib" path="src/main/lib/commons-dbutils-1.5.jar"/>
+	<classpathentry kind="lib" path="src/main/lib/postgresql-8.0-318.jdbc3.jar"/>
+	<classpathentry kind="output" path="src/main/classes"/>
 </classpath>
