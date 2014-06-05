@@ -1,0 +1,97 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jp.co.humane-lib</groupId>
+  <artifactId>MorphemeEngineLib</artifactId>
+  <version>1.0</version>
+  <packaging>jar</packaging>
+
+  <!-- プロパティ定義 -->
+  <properties>
+    <!-- 生成jarファイル名 -->
+    <jar.file.name>MorphemeEngineLib</jar.file.name>
+    <!-- jarファイル登録場所 -->
+    <all.target.dir>../_target</all.target.dir>
+    <!-- 内部リポジトリ(暫定的にNASで管理) -->
+    <inside.repogitory.path>//Ls-wsxl973/hsc-file/RTミドルウェア/17.InformationClerk/30.repogitory</inside.repogitory.path>
+  </properties>
+
+  <!-- リポジトリの登録 -->
+  <distributionManagement>
+    <repository>
+      <id>inside.repogitory</id>
+      <name>Humane Repogitory</name>
+      <url>file://${inside.repogitory.path}</url>
+    </repository>
+  </distributionManagement>
+
+  <!-- 参照リポジトリの追加 -->
+  <repositories>
+    <repository>
+      <id>inside.repogitory</id>
+      <name>Humane Repogitory</name>
+      <url>file://${inside.repogitory.path}</url>
+    </repository>
+  </repositories>
+
+  <!-- 参照するjarを定義 -->
+  <dependencies>
+
+    <!-- igo-0.4.5.jar -->
+    <dependency>
+      <groupId>igo</groupId>
+      <artifactId>igo</artifactId>
+      <version>0.4.5</version>
+      <scope>compile</scope>
+      <type>jar</type>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <plugins>
+    
+      <!-- java1.7を使用(JAVA_HOMEが1.7の必要あり) -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+          <encoding>MS932</encoding>
+        </configuration>
+      </plugin>
+      
+      <!-- jarファイル名を指定 -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>2.4</version>
+        <configuration>
+          <finalName>${jar.file.name}</finalName>
+        </configuration>
+      </plugin>
+
+      <!-- 生成jarファイルを一か所に固める -->
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <configuration>
+              <tasks>
+                <mkdir dir="${all.target.dir}"/>
+                <copy file="target/${jar.file.name}.jar" tofile="${all.target.dir}/${jar.file.name}.jar"/>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>
