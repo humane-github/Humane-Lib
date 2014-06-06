@@ -38,6 +38,21 @@ if not "%ERRORLEVEL%" == "0" exit /b
 call mvn -f XMLLib\pom.xml            dependency:copy-dependencies -DoutputDirectory=src/main/lib
 if not "%ERRORLEVEL%" == "0" exit /b
 
+@rem eclipseからビルド可能にするための処理
+@rem テストクラスを一旦作れば不要
+if not exist ConfigLib\src\test\java mkdir ConfigLib\src\test\java
+if not exist DBUtility\src\test\java mkdir DBUtility\src\test\java
+if not exist ExceptionLib\src\test\java mkdir ExceptionLib\src\test\java
+if not exist FileOperatorUtil\src\test\java mkdir FileOperatorUtil\src\test\java
+if not exist HCharEncoder\src\test\java mkdir HCharEncoder\src\test\java
+if not exist Logger\src\test\java mkdir Logger\src\test\java
+if not exist MessageLib\src\test\java mkdir MessageLib\src\test\java
+if not exist MorphemeEngineLib\src\test\java mkdir MorphemeEngineLib\src\test\java
+if not exist OpenCVLib\src\test\java mkdir OpenCVLib\src\test\java
+if not exist StateMachineLib\src\test\java mkdir StateMachineLib\src\test\java
+if not exist XMLLib\src\test\java mkdir XMLLib\src\test\java
+
+
 echo ####### 正常終了しました #######
 pause
 exit /b
