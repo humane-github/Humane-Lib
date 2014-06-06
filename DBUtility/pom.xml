@@ -9,8 +9,6 @@
   <properties>
     <!-- 生成jarファイル名 -->
     <jar.file.name>DBUtility</jar.file.name>
-    <!-- jarファイル登録場所 -->
-    <all.target.dir>../_target</all.target.dir>
   </properties>
 
   <!-- 参照するjarを定義 -->
@@ -58,26 +56,6 @@
         <configuration>
           <finalName>${jar.file.name}</finalName>
         </configuration>
-      </plugin>
-
-      <!-- 生成jarファイルを一か所に固める -->
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.7</version>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <configuration>
-              <tasks>
-                <mkdir dir="${all.target.dir}"/>
-                <copy file="target/${jar.file.name}.jar" tofile="${all.target.dir}/${jar.file.name}.jar"/>
-              </tasks>
-            </configuration>
-            <goals>
-              <goal>run</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
 
     </plugins>

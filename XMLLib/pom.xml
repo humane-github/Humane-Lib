@@ -1,16 +1,30 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>jp.co.humane-lib</groupId>
-  <artifactId>ConfigLib</artifactId>
+  <artifactId>XMLLib</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
 
   <!-- プロパティ定義 -->
   <properties>
     <!-- 生成jarファイル名 -->
-    <jar.file.name>ConfigLib</jar.file.name>
+    <jar.file.name>XMLLib</jar.file.name>
   </properties>
 
+  <!-- 参照するjarを定義 -->
+  <dependencies>
+
+    <!-- ExceptionLib.jar -->
+    <dependency>
+      <groupId>jp.co.humane-lib</groupId>
+      <artifactId>ExceptionLib</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <type>jar</type>
+      <systemPath>${basedir}/../ExceptionLib/target/ExceptionLib.jar</systemPath>
+    </dependency>
+
+  </dependencies>
   <build>
     <plugins>
     

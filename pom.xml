@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jp.co.humane-lib</groupId>
+  <artifactId>humane-lib</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+
+  <!-- モジュール一覧 -->
+  <modules>
+    <module>ConfigLib</module>
+    <module>DBUtility</module>
+    <module>ExceptionLib</module>
+    <module>FileOperatorUtil</module>
+    <module>HCharEncoder</module>
+    <module>Logger</module>
+    <module>MessageLib</module>
+    <module>MorphemeEngineLib</module>
+    <module>OpenCVLib</module>
+    <module>StateMachineLib</module>
+    <module>XMLLib</module>
+  </modules>
+
+  
+  <!-- プロパティ定義 -->
+  <properties>
+    <!-- jarファイル格納フォルダ名 -->
+    <jar.copy.dir>_target</jar.copy.dir>
+    <!-- 内部リポジトリ(暫定的にNASで管理) -->
+    <inside.repogitory.path>//Ls-wsxl973/hsc-file/RTミドルウェア/17.InformationClerk/30.repogitory</inside.repogitory.path>
+  </properties>
+  
+  <!-- リポジトリの登録 -->
+  <distributionManagement>
+    <repository>
+      <id>inside.repogitory</id>
+      <name>Humane Repogitory</name>
+      <url>file://${inside.repogitory.path}</url>
+    </repository>
+  </distributionManagement>
+  
+  <build>
+    <plugins>
+    
+      <!-- 生成jarファイルを一か所に固める -->
+      <!--
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.7</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <configuration>
+              <tasks>
+                <mkdir dir="${jar.copy.dir}"/>
+                <copy file="ConfigLib/target/ConfigLib.jar"                 tofile="${jar.copy.dir}/ConfigLib.jar"/>
+                <copy file="DBUtility/target/DBUtility.jar"                 tofile="${jar.copy.dir}/DBUtility.jar"/>
+                <copy file="ExceptionLib/target/ExceptionLib.jar"           tofile="${jar.copy.dir}/ExceptionLib.jar"/>
+                <copy file="FileOperatorUtil/target/FileOperatorUtil.jar"   tofile="${jar.copy.dir}/FileOperatorUtil.jar"/>
+                <copy file="HCharEncoder/target/HCharEncoder.jar"           tofile="${jar.copy.dir}/HCharEncoder.jar"/>
+                <copy file="Logger/target/Logger.jar"                       tofile="${jar.copy.dir}/Logger.jar"/>
+                <copy file="MessageLib/target/MessageLib.jar"               tofile="${jar.copy.dir}/MessageLib.jar"/>
+                <copy file="MorphemeEngineLib/target/MorphemeEngineLib.jar" tofile="${jar.copy.dir}/MorphemeEngineLib.jar"/>
+                <copy file="OpenCVLib/target/OpenCVLib.jar"                 tofile="${jar.copy.dir}/OpenCVLib.jar"/>
+                <copy file="StateMachineLib/target/StateMachineLib.jar"     tofile="${jar.copy.dir}/StateMachineLib.jar"/>
+                <copy file="XMLLib/target/XMLLib.jar"                       tofile="${jar.copy.dir}/XMLLib.jar"/>
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      -->
+      
+    </plugins>
+  </build>
+
+</project>

@@ -1,35 +1,56 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>jp.co.humane-lib</groupId>
-  <artifactId>FileOperatorUtil</artifactId>
+  <artifactId>OpenCVLib</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
 
   <!-- プロパティ定義 -->
   <properties>
     <!-- 生成jarファイル名 -->
-    <jar.file.name>FileOperatorUtil</jar.file.name>
+    <jar.file.name>OpenCVLib</jar.file.name>
+    <!-- 内部リポジトリ(暫定的にNASで管理) -->
+    <inside.repogitory.path>//Ls-wsxl973/hsc-file/RTミドルウェア/17.InformationClerk/30.repogitory</inside.repogitory.path>
   </properties>
+
+  <!-- リポジトリの登録 -->
+  <distributionManagement>
+    <repository>
+      <id>inside.repogitory</id>
+      <name>Humane Repogitory</name>
+      <url>file://${inside.repogitory.path}</url>
+    </repository>
+  </distributionManagement>
+
+  <!-- 参照リポジトリの追加 -->
+  <repositories>
+    <repository>
+      <id>inside.repogitory</id>
+      <name>Humane Repogitory</name>
+      <url>file://${inside.repogitory.path}</url>
+    </repository>
+  </repositories>
 
   <!-- 参照するjarを定義 -->
   <dependencies>
 
-    <!-- commons-digester-2.1.jar -->
+    <!-- opencv-249.jar -->
     <dependency>
-      <groupId>commons-digester</groupId>
-      <artifactId>commons-digester</artifactId>
-      <version>2.1</version>
+      <groupId>opencv</groupId>
+      <artifactId>opencv</artifactId>
+      <version>249</version>
       <scope>compile</scope>
       <type>jar</type>
     </dependency>
 
-    <!-- xerces-impl-2.9.0.jar -->
+    <!-- ExceptionLib.jar -->
     <dependency>
-      <groupId>org.bluestemsoftware.open.maven.tparty</groupId>
-      <artifactId>xerces-impl</artifactId>
-      <version>2.9.0</version>
-      <scope>compile</scope>
+      <groupId>jp.co.humane-lib</groupId>
+      <artifactId>ExceptionLib</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
       <type>jar</type>
+      <systemPath>${basedir}/../ExceptionLib/target/ExceptionLib.jar</systemPath>
     </dependency>
 
   </dependencies>
