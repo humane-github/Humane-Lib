@@ -32,6 +32,6 @@ call mvn -f %1/pom.xml package
 
 @rem 
 echo [%1のjarファイルをデプロイします]
-call mvn -f %1/pom.xml deploy:deploy-file -DgroupId="jp.co.humane.humane-lib" -DartifactId=%1 -Dversion=%2 -Dpackaging=jar -Durl="file://${inside.repogitory.path}" -Dfile=%3 -DrepositoryId="inside.repogitory"
+call mvn deploy:deploy-file -DgroupId="jp.co.humane.humane-lib" -DartifactId=%1 -Dversion=%2 -Dpackaging=jar -Durl="file://${inside.repogitory.path}" -Dfile=%1/%3 -DrepositoryId="inside.repogitory"
 
 exit /b
