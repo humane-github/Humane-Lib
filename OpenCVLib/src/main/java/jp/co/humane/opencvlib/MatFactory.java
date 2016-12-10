@@ -3,6 +3,10 @@ package jp.co.humane.opencvlib;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 
+/**
+ * コメントを追加
+ *
+ */
 public class MatFactory
 {
 	public static enum MatType
@@ -26,7 +30,7 @@ public class MatFactory
 		else if( type == MatType.COLOR_8BIT ){bpp = 24;}
 		return MatFactory.create(width, height, bpp);
 	}
-	
+
 	/**
 	 * Matを作成する
 	 * @param width		画像の幅
@@ -50,7 +54,7 @@ public class MatFactory
 		}
 		return new Mat(height,width,t);
 	}
-	
+
 	/**
 	 * Matを作成する
 	 * @param width		画像の幅
