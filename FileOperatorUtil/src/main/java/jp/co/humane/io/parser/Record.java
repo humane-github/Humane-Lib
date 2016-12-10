@@ -10,7 +10,8 @@ public class Record
 	// コンストラクタ
 	public Record(){}
 
-	// フィールド定義に従って行を解析する
+	// フィールド定義に従って行を解析する
+
 	public void parse(String line)
 	{
 		for( FieldName n : fields.keySet() )
@@ -25,7 +26,8 @@ public class Record
 		fields.put(f.getName(),f);
 	}
 
-	// フィールドを取得する
+	// フィールドを取得する
+
 	public Field getField( FieldName n ){ return fields.get(n);}
 
 	/*********************************************************/

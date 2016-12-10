@@ -1,64 +1,45 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
   <groupId>jp.co.humane.humane-lib</groupId>
-  <artifactId>DBUtility</artifactId>
+  <artifactId>db-utility</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
 
-  <!-- プロパティ定義 -->
-  <properties>
-    <!-- 生成jarファイル名 -->
-    <jar.file.name>DBUtility</jar.file.name>
-  </properties>
+  <!-- 親pom -->
+  <parent>
+    <groupId>jp.co.humane.humane-lib</groupId>
+    <artifactId>humane-lib-parent</artifactId>
+    <version>1.0</version>
+  </parent>
+
+  <!-- リポジトリの参照を追加 -->
+  <repositories>
+    <repository>
+      <id>humane.github.repogitory</id>
+      <name>Humane GitHub Repogitory</name>
+      <url>http://humane-github.github.io/maven-repo</url>
+    </repository>
+  </repositories>
 
   <!-- 参照するjarを定義 -->
   <dependencies>
 
-    <!-- commons-dbutils-1.5.jar -->
+    <!-- commons-dbutils -->
     <dependency>
       <groupId>commons-dbutils</groupId>
       <artifactId>commons-dbutils</artifactId>
-      <version>1.5</version>
       <scope>compile</scope>
-      <type>jar</type>
     </dependency>
 
-    <!-- postgresql-8.0-318.jdbc3.jar -->
+    <!-- postgresql -->
     <dependency>
       <groupId>postgresql</groupId>
       <artifactId>postgresql</artifactId>
       <version>8.0-318.jdbc3</version>
       <scope>compile</scope>
-      <type>jar</type>
     </dependency>
 
   </dependencies>
-
-  <build>
-    <plugins>
-    
-      <!-- java1.7を使用(JAVA_HOMEが1.7の必要あり) -->
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-          <encoding>MS932</encoding>
-        </configuration>
-      </plugin>
-      
-      <!-- jarファイル名を指定 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.4</version>
-        <configuration>
-          <finalName>${jar.file.name}</finalName>
-        </configuration>
-      </plugin>
-
-    </plugins>
-  </build>
 
 </project>

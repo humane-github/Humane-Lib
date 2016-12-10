@@ -2,7 +2,7 @@ package jp.co.humane.dbutil;
 
 public class DBException extends Exception
 {
-	// コンストラクタ
+	// 繧ｳ繝ｳ繧ｹ繝医Λ繧ｯ繧ｿ
 	public DBException(){}
 
 	public DBException( Throwable e ){super(e);}

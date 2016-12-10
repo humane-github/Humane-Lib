@@ -15,7 +15,7 @@ import org.xml.sax.SAXException;
 
 public class RTCML
 {
-	//ƒRƒ}ƒ“ƒhˆê——
+	//ã‚³ãƒãƒ³ãƒ‰ä¸€è¦§
 	public static String CMD_GET_PROPERTY = "GET_PROPERTY";
 	public static String CMD_SEND_PROPERTY = "SEND_PROPERTY";
 	public static String CMD_RESPONSE = "RESPONSE";
@@ -29,16 +29,16 @@ public class RTCML
 	public static String FORMAT = "<?xml version=\"1.0\" encoding=\"utf-8\"?>"+
 									"<rtcml command=\"%s\">%s</rtcml>\n";
 
-	//RTCML‰ğÍƒp[ƒT[
+	//RTCMLè§£æãƒ‘ãƒ¼ã‚µãƒ¼
 	private RTCMLParser m_parser = null;
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * **/
 	public RTCML(){}
 	
 	/**
-	 * RTCML‚ğXML‚ÉƒVƒŠƒAƒ‰ƒCƒY‚·‚é
+	 * RTCMLã‚’XMLã«ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã™ã‚‹
 	 * **/
 	public String serialize()
 	{
@@ -46,9 +46,9 @@ public class RTCML
 		else{return serialize(m_parser.getTargetComponent(),m_parser.getCommand(),m_parser.getAttributeMap());}
 	}
 	/**
-	 * RTCML‚ğXML‚ÉƒVƒŠƒAƒ‰ƒCƒY‚·‚é
+	 * RTCMLã‚’XMLã«ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã™ã‚‹
 	 * 
-	 * @param	replaceCommand rtcmlƒ^ƒO‚Ìcommand‘®«’l‚ğ’u‚«Š·‚¦‚é
+	 * @param	replaceCommand rtcmlã‚¿ã‚°ã®commandå±æ€§å€¤ã‚’ç½®ãæ›ãˆã‚‹
 	 * **/
 	public String serialize(String target,String command,HashMap<String,String> params)
 	{
@@ -58,7 +58,7 @@ public class RTCML
 	}
 		
 	/**
-	 * <component>ƒ^ƒO‚Ì‚İƒVƒŠƒAƒ‰ƒCƒY‚·‚é
+	 * <component>ã‚¿ã‚°ã®ã¿ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã™ã‚‹
 	 * **/
 	public String serializeComponentTag()
 	{
@@ -67,7 +67,7 @@ public class RTCML
 	}
 	
 	/**
-	 * <component>ƒ^ƒO‚Ì‚İƒVƒŠƒAƒ‰ƒCƒY‚·‚é
+	 * <component>ã‚¿ã‚°ã®ã¿ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã™ã‚‹
 	 * **/
 	public String serializeComponentTag(String target,String command,HashMap<String,String> params)
 	{
@@ -83,18 +83,18 @@ public class RTCML
 	}
 	
 	/**
-	 * RTCML‚ğ‰ğÍ‚·‚é
+	 * RTCMLã‚’è§£æã™ã‚‹
 	 * 
-	 * @param	xml	XML•¶š—ñ
+	 * @param	xml	XMLæ–‡å­—åˆ—
 	 * **/
 	public void parse(String xml) throws ParserConfigurationException,SAXException,IOException
 	{
-		//ƒp[ƒT[ƒCƒ“ƒXƒ^ƒ“ƒX¶¬
+		//ãƒ‘ãƒ¼ã‚µãƒ¼ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ç”Ÿæˆ
 		m_parser = new RTCMLParser();
-		//SAXƒp[ƒT[‚Ì‰Šú‰»
+		//SAXãƒ‘ãƒ¼ã‚µãƒ¼ã®åˆæœŸåŒ–
 		SAXParserFactory spfactory = SAXParserFactory.newInstance();
 		SAXParser parser = spfactory.newSAXParser();
-		//‰ğÍŠJn
+		//è§£æé–‹å§‹
 		parser.parse(new InputSource(new StringReader(xml)), m_parser);
 	}
 	
@@ -105,14 +105,14 @@ public class RTCML
 	}
 	
 	/**
-	 * ƒRƒ}ƒ“ƒh‚ğæ“¾‚·‚é
+	 * ã‚³ãƒãƒ³ãƒ‰ã‚’å–å¾—ã™ã‚‹
 	 * **/
 	public boolean isGetProperty(){return CMD_GET_PROPERTY.equals(m_parser.getCommand());}
 	public boolean isSetProperty(){return CMD_SEND_PROPERTY.equals(m_parser.getCommand());}
 	public boolean isResponse(){return CMD_RESPONSE.equals(m_parser.getCommand());}
 	
 	/**
-	 * RTCML‚ğ“K—p‚·‚éƒRƒ“ƒ|[ƒlƒ“ƒg–¼‚ğæ“¾‚·‚é
+	 * RTCMLã‚’é©ç”¨ã™ã‚‹ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆåã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @return	String
 	 * **/
@@ -132,9 +132,9 @@ public class RTCML
 	}
 	
 	/**
-	 * RTCML‚Ì‘®«’l‚ğæ“¾‚·‚é
+	 * RTCMLã®å±æ€§å€¤ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @param	name	‘®«–¼
+	 * @param	name	å±æ€§å
 	 * @return	String
 	 * **/
 	public String getString(String name) throws AttributeNotFoundException
@@ -147,9 +147,9 @@ public class RTCML
 	}
 	
 	/**
-	 * RTCML‚Ì‘®«’l‚ğæ“¾‚·‚é
+	 * RTCMLã®å±æ€§å€¤ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @param	name	‘®«–¼
+	 * @param	name	å±æ€§å
 	 * @return	int
 	 * **/
 	public int getInt(String name) throws AttributeNotFoundException
@@ -169,9 +169,9 @@ public class RTCML
 	}
 	
 	/**
-	 * RTCML‚Ì‘®«’l‚ğæ“¾‚·‚é
+	 * RTCMLã®å±æ€§å€¤ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @param	name	‘®«–¼
+	 * @param	name	å±æ€§å
 	 * @return	int
 	 * **/
 	public double getDouble(String name) throws AttributeNotFoundException
@@ -203,7 +203,7 @@ public class RTCML
 				"\t\t<attribute name=\"FEATURES_MIN_DISTANCE\">5</attribute>\n" +
 				"\t\t<attribute name=\"FEATURES_QUALITY_LEVEL\">0.01</attribute>\n" +
 				"\t\t<attribute name=\"ShowPreviewDialog\">1</attribute>\n" +
-				"\t\t<attribute name=\"teststring\">ƒeƒXƒg</attribute>\n" +
+				"\t\t<attribute name=\"teststring\">ãƒ†ã‚¹ãƒˆ</attribute>\n" +
 				"\t</component>\n"+
 				"</rtcml>";
 				

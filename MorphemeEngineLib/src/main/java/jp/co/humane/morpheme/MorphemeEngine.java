@@ -5,20 +5,20 @@ import java.util.List;
 public abstract class MorphemeEngine
 {
 	/**
-	 * Œ`‘Ô‘f‰ğÍƒGƒ“ƒWƒ“‚Ì‰Šú‰»
+	 * å½¢æ…‹ç´ è§£æã‚¨ãƒ³ã‚¸ãƒ³ã®åˆæœŸåŒ–
 	 * 
-	 * @param	ipadic	ipadic‚ÌƒpƒX
-	 * @return	int		0:¬Œ÷
-	 * 					-1:ipadic‚ª‘¶İ‚µ‚È‚¢
-	 * 					-2:ƒGƒ“ƒWƒ“‰Šú‰»¸”s
+	 * @param	ipadic	ipadicã®ãƒ‘ã‚¹
+	 * @return	int		0:æˆåŠŸ
+	 * 					-1:ipadicãŒå­˜åœ¨ã—ãªã„
+	 * 					-2:ã‚¨ãƒ³ã‚¸ãƒ³åˆæœŸåŒ–å¤±æ•—
 	 * **/
 	public abstract void init(String ipadic) throws MorphemeEngineException;
 	
 	/**
-	 * Œ`‘Ô‘f‰ğÍ‚ğs‚¤
+	 * å½¢æ…‹ç´ è§£æã‚’è¡Œã†
 	 * 
-	 * @param	text	‰ğÍ‚ğs‚¤•¶š—ñ
-	 * @return	List<jp.co.humane.igo.Morpheme>	Œ`‘Ô‘f‰ğÍ‚ÌŒ‹‰Ê
+	 * @param	text	è§£æã‚’è¡Œã†æ–‡å­—åˆ—
+	 * @return	List<jp.co.humane.igo.Morpheme>	å½¢æ…‹ç´ è§£æã®çµæœ
 	 * **/
 	public abstract List<Morpheme> parse(String text);
 

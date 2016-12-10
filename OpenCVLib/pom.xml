@@ -1,85 +1,42 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
   <groupId>jp.co.humane.humane-lib</groupId>
-  <artifactId>OpenCVLib</artifactId>
+  <artifactId>open-cv-lib</artifactId>
   <version>1.0</version>
   <packaging>jar</packaging>
 
-  <!-- プロパティ定義 -->
-  <properties>
-    <!-- 生成jarファイル名 -->
-    <jar.file.name>OpenCVLib</jar.file.name>
-    <!-- 内部リポジトリ(暫定的にNASで管理) -->
-    <inside.repogitory.path>//Ls-wsxl973/hsc-file/RTミドルウェア/17.InformationClerk/30.repogitory</inside.repogitory.path>
-  </properties>
+  <!-- 親pom -->
+  <parent>
+    <groupId>jp.co.humane.humane-lib</groupId>
+    <artifactId>humane-lib-parent</artifactId>
+    <version>1.0</version>
+    <relativePath>../HumaneLibParent</relativePath>
+  </parent>
 
-  <!-- リポジトリの登録 -->
-  <distributionManagement>
-    <repository>
-      <id>inside.repogitory</id>
-      <name>Humane Repogitory</name>
-      <url>file://${inside.repogitory.path}</url>
-    </repository>
-  </distributionManagement>
-
-  <!-- 参照リポジトリの追加 -->
+  <!-- リポジトリの参照を追加 -->
   <repositories>
     <repository>
-      <id>inside.repogitory</id>
-      <name>Humane Repogitory</name>
-      <url>file://${inside.repogitory.path}</url>
+      <id>humane.github.repogitory</id>
+      <name>Humane GitHub Repogitory</name>
+      <url>http://humane-github.github.io/maven-repo</url>
     </repository>
   </repositories>
 
   <!-- 参照するjarを定義 -->
   <dependencies>
 
-    <!-- opencv-249.jar -->
+    <!-- opencv -->
     <dependency>
-      <groupId>opencv</groupId>
-      <artifactId>opencv</artifactId>
-      <version>249</version>
-      <scope>compile</scope>
-      <type>jar</type>
+        <groupId>nu.pattern</groupId>
+        <artifactId>opencv</artifactId>
     </dependency>
 
-    <!-- ExceptionLib.jar -->
+    <!-- ExceptionLib -->
     <dependency>
       <groupId>jp.co.humane.humane-lib</groupId>
-      <artifactId>ExceptionLib</artifactId>
-      <version>1.0</version>
-      <scope>system</scope>
-      <type>jar</type>
-      <systemPath>${basedir}/../ExceptionLib/target/ExceptionLib.jar</systemPath>
+      <artifactId>exception-lib</artifactId>
     </dependency>
 
   </dependencies>
-
-  <build>
-    <plugins>
-    
-      <!-- java1.7を使用(JAVA_HOMEが1.7の必要あり) -->
-      <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>1.7</source>
-          <target>1.7</target>
-          <encoding>MS932</encoding>
-        </configuration>
-      </plugin>
-      
-      <!-- jarファイル名を指定 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <version>2.4</version>
-        <configuration>
-          <finalName>${jar.file.name}</finalName>
-        </configuration>
-      </plugin>
-
-    </plugins>
-  </build>
-
 </project>

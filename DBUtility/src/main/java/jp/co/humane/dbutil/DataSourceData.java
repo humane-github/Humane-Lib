@@ -1,38 +1,38 @@
 package jp.co.humane.dbutil;
 
 /**
- * ƒtƒ@ƒCƒ‹datasource.xmlƒtƒ@ƒCƒ‹‚Éİ’è‚³‚ê‚½î•ñ‚ğƒƒ“ƒo•Ï”‚É‚ÂƒNƒ‰ƒX
+ * ãƒ•ã‚¡ã‚¤ãƒ«datasource.xmlãƒ•ã‚¡ã‚¤ãƒ«ã«è¨­å®šã•ã‚ŒãŸæƒ…å ±ã‚’ãƒ¡ãƒ³ãƒå¤‰æ•°ã«æŒã¤ã‚¯ãƒ©ã‚¹
  */
 public class DataSourceData
 {
 
-	/** DB˜_—–¼ **/
+	/** DBè«–ç†å **/
 	private String name = null;
 	
-	/** DBƒzƒXƒg–¼ **/
+	/** DBãƒ›ã‚¹ãƒˆå **/
 	private String hostname = null;
 	
-	/** DB–¼ **/
+	/** DBå **/
 	private String dbname = null;
 	
-	/** DBƒƒOƒCƒ“ƒ†[ƒU[–¼ **/
+	/** DBãƒ­ã‚°ã‚¤ãƒ³ãƒ¦ãƒ¼ã‚¶ãƒ¼å **/
 	private String user = null;
 	
-	/** DBƒƒOƒCƒ“ƒpƒXƒ[ƒh **/
+	/** DBãƒ­ã‚°ã‚¤ãƒ³ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ **/
 	private String password = null;
 		
 	
 //-----------------------------------------------------------------------------------------	
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * **/
 	public DataSourceData()
 	{
 	}
 
 	/**
-	 * ƒzƒXƒg–¼‚ğæ“¾‚·‚é
+	 * ãƒ›ã‚¹ãƒˆåã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @return String
 	 */
@@ -40,15 +40,15 @@ public class DataSourceData
 		return hostname;
 	}
 	/**
-	 * ƒzƒXƒg–¼‚ğİ’è‚·‚é
+	 * ãƒ›ã‚¹ãƒˆåã‚’è¨­å®šã™ã‚‹
 	 * 
-	 * @param host ƒzƒXƒg–¼
+	 * @param host ãƒ›ã‚¹ãƒˆå
 	 */
 	public void setHostname(String host) {
 		this.hostname = host;
 	}
 	/**
-	 * DB–¼‚ğæ“¾‚·‚é
+	 * DBåã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @return String
 	 */
@@ -56,15 +56,15 @@ public class DataSourceData
 		return dbname;
 	}
 	/**
-	 * DB–¼‚ğİ’è‚·‚é
+	 * DBåã‚’è¨­å®šã™ã‚‹
 	 * 
-	 * @param dbname DB–¼
+	 * @param dbname DBå
 	 */
 	public void setDbname(String dbname) {
 		this.dbname = dbname;
 	}
 	/**
-	 * ˜_—DB–¼‚ğæ“¾‚·‚é
+	 * è«–ç†DBåã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @return String
 	 */
@@ -72,15 +72,15 @@ public class DataSourceData
 		return name;
 	}
 	/**
-	 * ˜_—DB–¼‚ğİ’è‚·‚é
+	 * è«–ç†DBåã‚’è¨­å®šã™ã‚‹
 	 * 
-	 * @param name ˜_—DB–¼
+	 * @param name è«–ç†DBå
 	 */
 	public void setName(String name) {
 		this.name = name;
 	}
 	/**
-	 * ƒpƒXƒ[ƒh‚ğæ“¾‚·‚é
+	 * ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @return String
 	 */
@@ -88,16 +88,16 @@ public class DataSourceData
 		return password;
 	}
 	/**
-	 * ƒpƒXƒ[ƒh‚ğİ’è‚·‚é
+	 * ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’è¨­å®šã™ã‚‹
 	 * 
-	 * @param password ƒpƒXƒ[ƒh
+	 * @param password ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
 
 	/**
-	 * ƒ†[ƒU[–¼‚ğæ“¾‚·‚é
+	 * ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’å–å¾—ã™ã‚‹
 	 * 
 	 * @return String
 	 */
@@ -105,9 +105,9 @@ public class DataSourceData
 		return user;
 	}
 	/**
-	 * ƒ†[ƒU[–¼‚ğİ’è‚·‚é
+	 * ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’è¨­å®šã™ã‚‹
 	 * 
-	 * @param user ƒ†[ƒU[–¼
+	 * @param user ãƒ¦ãƒ¼ã‚¶ãƒ¼å
 	 */
 	public void setUser(String user) {
 		this.user = user;

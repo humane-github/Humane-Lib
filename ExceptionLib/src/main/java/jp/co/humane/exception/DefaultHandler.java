@@ -1,22 +1,22 @@
 /*
- * ì¬“úF 2005/08/10
+ * ä½œæˆæ—¥ï¼š 2005/08/10
  *
- * TODO ‚±‚Ì¶¬‚³‚ê‚½ƒtƒ@ƒCƒ‹‚Ìƒeƒ“ƒvƒŒ[ƒg‚ğ•ÏX‚·‚é‚É‚ÍŸ‚ğQÆB
- * ƒEƒBƒ“ƒhƒE „ İ’è „ Java „ ƒR[ƒhEƒXƒ^ƒCƒ‹ „ ƒR[ƒhEƒeƒ“ƒvƒŒ[ƒg
+ * TODO ã“ã®ç”Ÿæˆã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚’å¤‰æ›´ã™ã‚‹ã«ã¯æ¬¡ã‚’å‚ç…§ã€‚
+ * ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ ï¼ è¨­å®š ï¼ Java ï¼ ã‚³ãƒ¼ãƒ‰ãƒ»ã‚¹ã‚¿ã‚¤ãƒ« ï¼ ã‚³ãƒ¼ãƒ‰ãƒ»ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
  */
 package jp.co.humane.exception;
 
 
 /**
- * ƒNƒ‰ƒXFDefaultHandler
- * ƒCƒ“ƒ^[ƒtƒF[ƒXExceptionHandler‚ğÀ‘•‚·‚éƒfƒtƒHƒ‹ƒgƒnƒ“ƒhƒ‰[
+ * ã‚¯ãƒ©ã‚¹ï¼šDefaultHandler
+ * ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ExceptionHandlerã‚’å®Ÿè£…ã™ã‚‹ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆãƒãƒ³ãƒ‰ãƒ©ãƒ¼
  * @author suzuki
  */
 public class DefaultHandler implements ExceptionHandler
 {
 	/**
-	 * ƒfƒtƒHƒ‹ƒg‚ÌƒGƒ‰[ˆ—
-	 * @param	e ”­¶‚µ‚½—áŠO
+	 * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã®ã‚¨ãƒ©ãƒ¼å‡¦ç†
+	 * @param	e ç™ºç”Ÿã—ãŸä¾‹å¤–
 	 * **/
 	public void handleException( GeneralException e )
 	{

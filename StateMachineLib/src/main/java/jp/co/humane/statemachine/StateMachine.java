@@ -24,7 +24,7 @@ public class StateMachine
 	}
 	
 	/**
-	 * ó‘Ô‚ğ•ÏX‚·‚é
+	 * çŠ¶æ…‹ã‚’å¤‰æ›´ã™ã‚‹
 	 * 
 	 * @param	state
 	 * **/
@@ -36,7 +36,7 @@ public class StateMachine
 	}
 	
 	/**
-	 * Œ»İ‚ÌState‚ğÀs‚·‚é
+	 * ç¾åœ¨ã®Stateã‚’å®Ÿè¡Œã™ã‚‹
 	 * **/
 	public void exec()
 	{
@@ -45,9 +45,9 @@ public class StateMachine
 	}
 		
 	/**
-	 * ƒJƒŒƒ“ƒgƒXƒe[ƒg‚Ìƒ^ƒCƒ€ƒAƒEƒg‚ğİ’è‚·‚é
+	 * ã‚«ãƒ¬ãƒ³ãƒˆã‚¹ãƒ†ãƒ¼ãƒˆã®ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆã‚’è¨­å®šã™ã‚‹
 	 * 
-	 * @param	timeoutMilliseconds	ƒ^ƒCƒ€ƒAƒEƒgŠÔiƒ~ƒŠ•bj 
+	 * @param	timeoutMilliseconds	ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆæ™‚é–“ï¼ˆãƒŸãƒªç§’ï¼‰ 
 	 * **/
     public boolean setTimeoutTimer(int timeoutMilliseconds)
     {
@@ -80,7 +80,7 @@ public class StateMachine
     }
     
 	/**
-	 * ‘¼Worker‚©‚ç‚ÌƒƒbƒZ[ƒW‚ğó‚¯æ‚é
+	 * ä»–Workerã‹ã‚‰ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å—ã‘å–ã‚‹
 	 * **/
 	public boolean handleMessage(StateMessage msg)
 	{

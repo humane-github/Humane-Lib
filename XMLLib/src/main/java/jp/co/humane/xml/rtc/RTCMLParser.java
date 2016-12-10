@@ -14,29 +14,29 @@ public class RTCMLParser extends DefaultHandler
 	private static final String COMPONENT_TAG_ATTR_NAME = "name";
 	private static final String TAG_NAME = "attribute";
 	private static final String ATTR_NAME = "name";
-	//StartElementsÀsŒã‚É^‚Æ‚È‚é
+	//StartElementså®Ÿè¡Œå¾Œã«çœŸã¨ãªã‚‹
 	private boolean m_ready = false;
-	//w’è‚³‚ê‚½ƒRƒ}ƒ“ƒhBƒRƒ}ƒ“ƒh‚ÍˆÈ‰º‚ğw’è‰Â”\
-	//GET_PROPERTY:ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌƒRƒ“ƒtƒBƒOƒŒ[ƒVƒ‡ƒ“—v‹
-	//SET_POPERTY:ƒRƒ“ƒ|[ƒlƒ“ƒg‚ÌƒRƒ“ƒtƒBƒOƒŒ[ƒVƒ‡ƒ“İ’è—v‹
+	//æŒ‡å®šã•ã‚ŒãŸã‚³ãƒãƒ³ãƒ‰ã€‚ã‚³ãƒãƒ³ãƒ‰ã¯ä»¥ä¸‹ã‚’æŒ‡å®šå¯èƒ½
+	//GET_PROPERTY:ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ã‚³ãƒ³ãƒ•ã‚£ã‚°ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³è¦æ±‚
+	//SET_POPERTY:ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã®ã‚³ãƒ³ãƒ•ã‚£ã‚°ãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³è¨­å®šè¦æ±‚
 	private String m_command = null;
 	public String getCommand(){return m_command;}
 	public void setCommand(String c){m_command = c;}
-	//ˆ—’†‚Ì‘®«–¼
+	//å‡¦ç†ä¸­ã®å±æ€§å
 	private String m_processingConfigname = null;
-	//ˆ—’†‚Ì‘®«’l
+	//å‡¦ç†ä¸­ã®å±æ€§å€¤
 	private String m_processingConfigvalue = null;
-	//ƒ^[ƒQƒbƒg–¼
+	//ã‚¿ãƒ¼ã‚²ãƒƒãƒˆå
 	private String m_targetComponentName = null;
 	public String getTargetComponent(){return m_targetComponentName;}
 	public void setTargetComponent(String c){m_targetComponentName = c;}
 	
-	//XML‚Ì‘®«’l‚ğ‚Â
+	//XMLã®å±æ€§å€¤ã‚’æŒã¤
 	private HashMap<String,String> m_attr = new HashMap<String,String>();
 	public HashMap<String,String> getAttributeMap(){return m_attr;}
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * 
 	 * **/
 	public RTCMLParser(){}

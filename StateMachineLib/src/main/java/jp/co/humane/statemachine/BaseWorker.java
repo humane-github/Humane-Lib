@@ -2,16 +2,16 @@ package jp.co.humane.statemachine;
 
 public abstract class BaseWorker
 {
-	//ƒIƒuƒWƒFƒNƒg‚ÌID
+	//ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ID
 	private static int ID = 0;
 	private static int newID(){return ++ID;}
 	private int m_id = 0;
 	
-	//ƒXƒe[ƒgƒ}ƒVƒ“ƒIƒuƒWƒFƒNƒg
+	//ã‚¹ãƒ†ãƒ¼ãƒˆãƒã‚·ãƒ³ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	private StateMachine m_stateMachine = null;
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * **/
 	public BaseWorker()
 	{
@@ -20,7 +20,7 @@ public abstract class BaseWorker
 	}
 	
 	/**
-	 * ‘¼Worker‚©‚ç‚ÌƒƒbƒZ[ƒW‚ğó‚¯æ‚é
+	 * ä»–Workerã‹ã‚‰ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å—ã‘å–ã‚‹
 	 * **/
 	public boolean handleMessage(StateMessage msg)
 	{

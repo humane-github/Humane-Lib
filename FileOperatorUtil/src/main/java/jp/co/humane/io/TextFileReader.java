@@ -29,7 +29,8 @@ public class TextFileReader {
 		String value = null;
 
 		/**
-		 * ファイルを開いていない
+		 * ファイルを開いていない
+
 		 * **/
 		if( reader == null || br == null )
 		{
@@ -43,7 +44,8 @@ public class TextFileReader {
     	 value = br.readLine();
 
     	 /**
-    	  * 最後まで読み込み完了
+    	  * 最後まで読み込み完了
+
     	  * **/
     	 if (value == null )
     	 {

@@ -1,14 +1,14 @@
 package jp.co.humane.dbutil;
 
 /**
- * PostgreSQL接続用のDBコネクター
+ * PostgreSQL謗･邯夂畑縺ｮDB繧ｳ繝阪け繧ｿ繝ｼ
  * **/
 public class PostgreConnector extends DBConnector
 {
-	// DBドライバ文字列
+	// DB繝峨Λ繧､繝先枚蟄怜��
 	private final static String DRIVER = "org.postgresql.Driver";
 
-	// DB接続URL
+	// DB謗･邯啅RL
 	private final static String URL = "jdbc:postgresql:%s?user=%s&password=%s";
 
 	@Override

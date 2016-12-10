@@ -14,10 +14,10 @@ public class MatFactory
 	};
 
 	/**
-	 * Mat‚ğì¬‚·‚é
-	 * @param width		‰æ‘œ‚Ì•
-	 * @param height	‰æ‘œ‚Ì‚‚³
-	 * @param type		‰æ‘œ‚Ìí—Şiƒ‚ƒmƒNƒorƒJƒ‰[)
+	 * Matã‚’ä½œæˆã™ã‚‹
+	 * @param width		ç”»åƒã®å¹…
+	 * @param height	ç”»åƒã®é«˜ã•
+	 * @param type		ç”»åƒã®ç¨®é¡ï¼ˆãƒ¢ãƒã‚¯ãƒ­orã‚«ãƒ©ãƒ¼)
 	 * **/
 	public static Mat create(int width,int height,MatType type)
 	{
@@ -28,10 +28,10 @@ public class MatFactory
 	}
 	
 	/**
-	 * Mat‚ğì¬‚·‚é
-	 * @param width		‰æ‘œ‚Ì•
-	 * @param height	‰æ‘œ‚Ì‚‚³
-	 * @param bpp		ƒrƒbƒg[“xi8=ƒ‚ƒmƒNƒA24=ƒJƒ‰[jƒfƒtƒHƒ‹ƒg‚ÍƒJƒ‰[
+	 * Matã‚’ä½œæˆã™ã‚‹
+	 * @param width		ç”»åƒã®å¹…
+	 * @param height	ç”»åƒã®é«˜ã•
+	 * @param bpp		ãƒ“ãƒƒãƒˆæ·±åº¦ï¼ˆ8=ãƒ¢ãƒã‚¯ãƒ­ã€24=ã‚«ãƒ©ãƒ¼ï¼‰ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ã‚«ãƒ©ãƒ¼
 	 * **/
 	public static Mat create(int width,int height,int bpp)
 	{
@@ -52,11 +52,11 @@ public class MatFactory
 	}
 	
 	/**
-	 * Mat‚ğì¬‚·‚é
-	 * @param width		‰æ‘œ‚Ì•
-	 * @param height	‰æ‘œ‚Ì‚‚³
-	 * @param bpp		ƒrƒbƒg[“xi8=ƒ‚ƒmƒNƒA24=ƒJƒ‰[jƒfƒtƒHƒ‹ƒg‚ÍƒJƒ‰[
-	 * @param pixels	‰æ‘œƒf[ƒ^
+	 * Matã‚’ä½œæˆã™ã‚‹
+	 * @param width		ç”»åƒã®å¹…
+	 * @param height	ç”»åƒã®é«˜ã•
+	 * @param bpp		ãƒ“ãƒƒãƒˆæ·±åº¦ï¼ˆ8=ãƒ¢ãƒã‚¯ãƒ­ã€24=ã‚«ãƒ©ãƒ¼ï¼‰ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã¯ã‚«ãƒ©ãƒ¼
+	 * @param pixels	ç”»åƒãƒ‡ãƒ¼ã‚¿
 	 * **/
 	public static Mat create(int width,int height,int bpp,byte[] pixels)
 	{

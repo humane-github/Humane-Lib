@@ -5,9 +5,9 @@ import jp.co.humane.exception.GeneralException;
 public class XMLException extends GeneralException
 {
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 *
-	 * @param@code		ƒGƒ‰[ƒR[ƒh
+	 * @paramã€€code		ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰
 	 * **/
 	public XMLException( String code )
 	{
@@ -15,10 +15,10 @@ public class XMLException extends GeneralException
 	}
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 *
-	 * @param@code		ƒGƒ‰[ƒR[ƒh
-	 * @param	e		—áŠOµÌŞ¼Şª¸Ä
+	 * @paramã€€code		ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰
+	 * @param	e		ä¾‹å¤–ï½µï¾Œï¾ï½¼ï¾ï½ªï½¸ï¾„
 	 * **/
 	public XMLException ( String code,Exception e)
 	{

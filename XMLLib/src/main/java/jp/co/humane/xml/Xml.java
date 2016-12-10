@@ -35,7 +35,7 @@ import com.sun.org.apache.xml.internal.serialize.XMLSerializer;
 
 public class Xml
 {
-	// XMLƒtƒ@ƒCƒ‹‚Ì•¶šƒR[ƒh
+	// XMLãƒ•ã‚¡ã‚¤ãƒ«ã®æ–‡å­—ã‚³ãƒ¼ãƒ‰
 	public final static String ENCODING = "utf-8";
 
 	private Document ownerDocument = null;
@@ -44,7 +44,7 @@ public class Xml
 	public Xml(){}
 
 	/**
-	 * XML‚ğ‰ğÍ‚µ‚ÄDOM‚ğì‚é
+	 * XMLã‚’è§£æã—ã¦DOMã‚’ä½œã‚‹
 	 * **/
 	public void parse( File file ) throws XMLException
 	{
@@ -57,16 +57,16 @@ public class Xml
 		{
 			throw new XMLException(e.getMessage(),e);
 		} catch (SAXException e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
 			e.printStackTrace();
 		} catch (ParserConfigurationException e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * XML‚ğ‰ğÍ‚µ‚ÄDOM‚ğì‚é
+	 * XMLã‚’è§£æã—ã¦DOMã‚’ä½œã‚‹
 	 * **/
 	public void parse(String xml) throws XMLException
 	{
@@ -79,18 +79,18 @@ public class Xml
 		{
 			throw new XMLException(e.getMessage(),e);
 		} catch (SAXException e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
 			e.printStackTrace();
 		} catch (ParserConfigurationException e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
 			e.printStackTrace();
 		}
 	}
 
 	/**
-	 * w’è‚µ‚½ƒ^ƒO‚ğŒŸõ‚·‚é
+	 * æŒ‡å®šã—ãŸã‚¿ã‚°ã‚’æ¤œç´¢ã™ã‚‹
 	 *
-	 * @param	tagName	ŒŸõ‚·‚éƒ^ƒO–¼
+	 * @param	tagName	æ¤œç´¢ã™ã‚‹ã‚¿ã‚°å
 	 * @return	Element
 	 * **/
 	public List<Element> searchElement(String tagName )
@@ -101,11 +101,11 @@ public class Xml
 	}
 
 	/**
-	 * ƒ^ƒO–¼‚Æ‘®«’l‚Ì‘g‚İ‡‚í‚¹‚ÅŒŸõ‚·‚é
+	 * ã‚¿ã‚°åã¨å±æ€§å€¤ã®çµ„ã¿åˆã‚ã›ã§æ¤œç´¢ã™ã‚‹
 	 *
-	 * @param	String tagName		ƒ^ƒO–¼
-	 * @param	String attrName		‘®«–¼
-	 * @param	String	attrValue	‘®«’l
+	 * @param	String tagName		ã‚¿ã‚°å
+	 * @param	String attrName		å±æ€§å
+	 * @param	String	attrValue	å±æ€§å€¤
 	 * @return	Element
 	 * **/
 	public List<Element> searchElement( String tagName, String attrName, String attrValue)
@@ -116,11 +116,11 @@ public class Xml
 	}
 
 	/**
-	 * ƒ^ƒO–¼‚Æ‘®«’l‚Ì‘g‚İ‡‚í‚¹‚ÅŒŸõ‚·‚é
+	 * ã‚¿ã‚°åã¨å±æ€§å€¤ã®çµ„ã¿åˆã‚ã›ã§æ¤œç´¢ã™ã‚‹
 	 *
-	 * @param	String tagName		ƒ^ƒO–¼
-	 * @param	String attrName		‘®«–¼
-	 * @param	String	attrValue	‘®«’l
+	 * @param	String tagName		ã‚¿ã‚°å
+	 * @param	String attrName		å±æ€§å
+	 * @param	String	attrValue	å±æ€§å€¤
 	 * @return	Element
 	 * **/
 
@@ -132,12 +132,12 @@ public class Xml
 	}
 
 	/**
-	 * ƒ^ƒO–¼‚Æ‘®«’l‚Ì‘g‚İ‡‚í‚¹‚ÅŒŸõ‚·‚é
+	 * ã‚¿ã‚°åã¨å±æ€§å€¤ã®çµ„ã¿åˆã‚ã›ã§æ¤œç´¢ã™ã‚‹
 	 *
-	 * @param	String tagName		ƒ^ƒO–¼
-	 * @param	String attrName		‘®«–¼
-	 * @param	String	attrValue	‘®«’l
-	 * @param	deep				‰º‚ÌŠK‘w‚Ü‚Å’T‚·ê‡,true
+	 * @param	String tagName		ã‚¿ã‚°å
+	 * @param	String attrName		å±æ€§å
+	 * @param	String	attrValue	å±æ€§å€¤
+	 * @param	deep				ä¸‹ã®éšå±¤ã¾ã§æ¢ã™å ´åˆ,true
 	 * @return	Element
 	 * **/
 	public void searchElement( Element parent,String tagName,String attrName,String attrValue,List<Element> result , boolean deep )
@@ -148,7 +148,7 @@ public class Xml
 	}
 
 	/**
-	 * ƒ^ƒO‚ÌƒeƒLƒXƒg’l‚ğæ“¾‚·‚é
+	 * ã‚¿ã‚°ã®ãƒ†ã‚­ã‚¹ãƒˆå€¤ã‚’å–å¾—ã™ã‚‹
 	 * **/
 	public String getText(Node node)
 	{
@@ -161,7 +161,7 @@ public class Xml
 	}
 
 	/**
-	 * ƒ^ƒO‚ÌƒeƒLƒXƒg’l‚ğXV‚·‚é
+	 * ã‚¿ã‚°ã®ãƒ†ã‚­ã‚¹ãƒˆå€¤ã‚’æ›´æ–°ã™ã‚‹
 	 * **/
 	public void setText(Node node,String value)
 	{
@@ -173,7 +173,7 @@ public class Xml
 	}
 
 	/**
-	 * ƒ^ƒO‚ÌTextƒm[ƒh‚ğæ“¾‚·‚é
+	 * ã‚¿ã‚°ã®Textãƒãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹
 	 * **/
 	public Text getTextNode(Node node)
 	{
@@ -190,7 +190,7 @@ public class Xml
 	}
 
 	/**
-	 * w’è‚µ‚½–¼Ì‚Ìƒ^ƒO‚ğÄ‹A“I‚ÉŒŸõ‚·‚é
+	 * æŒ‡å®šã—ãŸåç§°ã®ã‚¿ã‚°ã‚’å†å¸°çš„ã«æ¤œç´¢ã™ã‚‹
 	 *
 	 *
 	 * **/
@@ -204,13 +204,13 @@ public class Xml
 			if ( tagName == null || ((Element)node).getTagName().equals(tagName) )
 			{
 				//systemOutNode(node);
-				// w’è‚µ‚½‘®«‚ª‘¶İ‚·‚éê‡
+				// æŒ‡å®šã—ãŸå±æ€§ãŒå­˜åœ¨ã™ã‚‹å ´åˆ
 				if( attrValue == null && attrName != null && (((Element)node).getAttribute(attrName) != null))
 				{
 
 					result.add((Element)node);
 				}
-				// w’è‚µ‚½‘®«’l‚ª‘¶İ‚·‚éê‡
+				// æŒ‡å®šã—ãŸå±æ€§å€¤ãŒå­˜åœ¨ã™ã‚‹å ´åˆ
 				else if( (attrName == null) || (attrName != null &&
 					(((Element)node).getAttribute(attrName).equals(attrValue))))
 				{
@@ -230,17 +230,17 @@ public class Xml
 	}
 
 	/**
-	 * w’è‚µ‚½Document‚ğg—p‚µ‚Ä©g‚ÌƒRƒs[‚ğì¬‚·‚é
-	 * iimportNode‚ğ—˜—p‚·‚é‚ÆAƒLƒƒƒ“ƒoƒX‚Ö‚Ì•`‰æ‚ª³‚µ‚­s‚í‚ê‚È‚¢•s‹ï‡‚Ì‚½‚ßAcreateElementNS‚ÅElement‚ğV‹Kì¬‚µ‚Ä‚¢‚éj
+	 * æŒ‡å®šã—ãŸDocumentã‚’ä½¿ç”¨ã—ã¦è‡ªèº«ã®ã‚³ãƒ”ãƒ¼ã‚’ä½œæˆã™ã‚‹
+	 * ï¼ˆimportNodeã‚’åˆ©ç”¨ã™ã‚‹ã¨ã€ã‚­ãƒ£ãƒ³ãƒã‚¹ã¸ã®æç”»ãŒæ­£ã—ãè¡Œã‚ã‚Œãªã„ä¸å…·åˆã®ãŸã‚ã€createElementNSã§Elementã‚’æ–°è¦ä½œæˆã—ã¦ã„ã‚‹ï¼‰
 	 *
-	 * @param	doc	Element‚ÌƒRƒs[‚ğì¬‚·‚éDocument
+	 * @param	doc	Elementã®ã‚³ãƒ”ãƒ¼ã‚’ä½œæˆã™ã‚‹Document
 	 *
 	 * **/
 	protected Element copy( Xml svgXml, String nameSpace, Element rootElement )
 	{
 		Element element = rootElement==null?getRootElement():rootElement;
 
-		// Element‚ÌƒRƒs[‚ğ¶¬
+		// Elementã®ã‚³ãƒ”ãƒ¼ã‚’ç”Ÿæˆ
 		Element copyElement = null;
 		if( nameSpace == null )
 		{
@@ -251,7 +251,7 @@ public class Xml
 			copyElement = svgXml.getOwnerDocument().createElementNS(nameSpace, element.getTagName());
 		}
 
-		// ‘®«‚ğƒRƒs[ƒGƒŒƒƒ“ƒg‚É’Ç‰Á‚·‚é
+		// å±æ€§ã‚’ã‚³ãƒ”ãƒ¼ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã«è¿½åŠ ã™ã‚‹
 		NamedNodeMap attrs = element.getAttributes();
 		for( int i = 0 ; i < attrs.getLength() ; i++ )
 		{
@@ -272,7 +272,7 @@ public class Xml
 
 		}
 
-		// qƒGƒŒƒƒ“ƒg‚àƒRƒs[‚·‚é
+		// å­ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚‚ã‚³ãƒ”ãƒ¼ã™ã‚‹
 		for( int i = 0 ; i < element.getChildNodes().getLength() ; i++ )
 		{
 			Node node = element.getChildNodes().item(i);
@@ -294,9 +294,9 @@ public class Xml
 	}
 
 	/**
-	 * ƒm[ƒh‚Ìƒm[ƒh’l‚ÌCDATA—v‘f‚ğæ‚èo‚·
-	 * @param node ƒm[ƒh
-	 * @return &ltXX&gt???&lt/XXt&gt‚Ì???‚ÌTEXTƒm[ƒh
+	 * ãƒãƒ¼ãƒ‰ã®ãƒãƒ¼ãƒ‰å€¤ã®CDATAè¦ç´ ã‚’å–ã‚Šå‡ºã™
+	 * @param node ãƒãƒ¼ãƒ‰
+	 * @return &ltXX&gt???&lt/XXt&gtã®???ã®TEXTãƒãƒ¼ãƒ‰
 	 */
 	public CDATASection getChildCDATANode(Node node)
 	{
@@ -310,7 +310,7 @@ public class Xml
 	}
 
 	/**
-	 * ƒGƒŒƒƒ“ƒg‚ğ’Ç‰Á‚·‚é
+	 * ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚’è¿½åŠ ã™ã‚‹
 	 * **/
 	public void add( Element e)
 	{
@@ -318,7 +318,7 @@ public class Xml
 	}
 
 	/**
-	 * w’è‚µ‚½ƒGƒŒƒƒ“ƒg‰º‚É’Ç‰Á‚·‚é
+	 * æŒ‡å®šã—ãŸã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆä¸‹ã«è¿½åŠ ã™ã‚‹
 	 * **/
 	public void add( Element root,Element e)
 	{
@@ -326,10 +326,10 @@ public class Xml
 	}
 
 	/**
-	 * ƒGƒŒƒƒ“ƒg‚ğì¬‚·‚é
+	 * ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚’ä½œæˆã™ã‚‹
 	 *
-	 * @param	ns			–¼‘O‹óŠÔ
-	 * @param	tagName		ƒ^ƒO–¼
+	 * @param	ns			åå‰ç©ºé–“
+	 * @param	tagName		ã‚¿ã‚°å
 	 * **/
 	public Element createElement( String ns,String tagName )
 	{
@@ -370,9 +370,9 @@ public class Xml
 	}
 
     /**
-     * SVGDocument‚©‚çSVG•¶š—ñ‚ğæ‚èo‚·B
+     * SVGDocumentã‹ã‚‰SVGæ–‡å­—åˆ—ã‚’å–ã‚Šå‡ºã™ã€‚
      * @param doc SVGDocument
-     * @return æ‚èo‚µ‚½SVG•¶š—ñ
+     * @return å–ã‚Šå‡ºã—ãŸSVGæ–‡å­—åˆ—
      */
     public String serialize() {
     	String svg = null;
@@ -391,8 +391,8 @@ public class Xml
     }
     private static int tab=0;
     /**
-     * ƒm[ƒh‚Ìo—Í
-     * @param node	o—Íƒm[ƒh
+     * ãƒãƒ¼ãƒ‰ã®å‡ºåŠ›
+     * @param node	å‡ºåŠ›ãƒãƒ¼ãƒ‰
      */
     public static void systemOutNode(Node node){
     	tab=0;

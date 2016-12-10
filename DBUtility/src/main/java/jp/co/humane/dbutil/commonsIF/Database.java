@@ -5,23 +5,23 @@ import jp.co.humane.dbutil.exception.DBUtilException;
 public class Database
 {
 	/**
-	 * ƒf[ƒ^ƒx[ƒX‚ÉƒƒOƒCƒ“‚·‚é
+	 * ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã«ãƒ­ã‚°ã‚¤ãƒ³ã™ã‚‹
 	 * 
-	 * @param	hostname	DBƒzƒXƒg–¼
-	 * @param	dbname		DB–¼
-	 * @param	user		DBÚ‘±ƒ†[ƒU[–¼
-	 * @param	password	DBÚ‘±ƒ†[ƒU[‚ÌƒpƒXƒ[ƒh
+	 * @param	hostname	DBãƒ›ã‚¹ãƒˆå
+	 * @param	dbname		DBå
+	 * @param	user		DBæ¥ç¶šãƒ¦ãƒ¼ã‚¶ãƒ¼å
+	 * @param	password	DBæ¥ç¶šãƒ¦ãƒ¼ã‚¶ãƒ¼ã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 	 * **/
 	public static void login(String hostname,String dbname,String user,String password) throws DBUtilException
 	{
-		//ƒf[ƒ^ƒ\[ƒX‚ğ“Ç‚İ‚Ş
+		//ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹ã‚’èª­ã¿è¾¼ã‚€
 		DataSourceLoader.load(hostname, dbname, user, password);
-		//ƒRƒlƒNƒVƒ‡ƒ“‚ğŠJ‚­
+		//ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ã‚’é–‹ã
 		ConnectionPool.open();
 	}
 
 	/**
-	 * ƒf[ƒ^ƒx[ƒX‚©‚çƒƒOƒAƒEƒg‚·‚é
+	 * ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‹ã‚‰ãƒ­ã‚°ã‚¢ã‚¦ãƒˆã™ã‚‹
 	 *
 	 * **/
 	public static void logout()
@@ -30,7 +30,7 @@ public class Database
 	}
 
 	/**
-	 * ƒf[ƒ^ƒx[ƒXƒAƒNƒZƒX—pƒIƒuƒWƒFƒNƒg‚ğæ“¾‚·‚é
+	 * ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚¢ã‚¯ã‚»ã‚¹ç”¨ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã™ã‚‹
 	 * **/
 	public static DBAccessor getAccessor()
 	{

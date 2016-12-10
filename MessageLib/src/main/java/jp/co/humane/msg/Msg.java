@@ -1,9 +1,9 @@
 package jp.co.humane.msg;
 /*
- * �쐬���F 2005/08/29
+ * 作成日： 2005/08/29
  *
- * TODO ���̐������ꂽ�t�@�C���̃e���v���[�g��ύX����ɂ͎����Q�ƁB
- * �E�B���h�E �� �ݒ� �� Java �� �R�[�h�E�X�^�C�� �� �R�[�h�E�e���v���[�g
+ * TODO この生成されたファイルのテンプレートを変更するには次を参照。
+ * ウィンドウ ＞ 設定 ＞ Java ＞ コード・スタイル ＞ コード・テンプレート
  */
 
 import java.io.File;
@@ -12,51 +12,51 @@ import java.io.IOException;
 import java.util.PropertyResourceBundle;
 
 /**
- * ���P�[���𔻒f���āA���b�Z�[�W��Ԃ��N���X
+ * ロケールを判断して、メッセージを返すクラス
  * @author suzuki
  */
 public class Msg
 {
-	/** ���{�ꃁ�b�Z�[�W�ǂݍ��� **/
+	/** 日本語メッセージ読み込み **/
 	public final static int LANG_JAPANESE = 0;
-	/** �p�ꃁ�b�Z�[�W�ǂݍ��� **/
+	/** 英語メッセージ読み込み **/
 	public final static int LANG_ENGLISH = 1;
-	/** �����ꃁ�b�Z�[�W�ǂݍ��� **/
+	/** 中国語メッセージ読み込み **/
 	public final static int LANG_CHINESE = 2;
-	/** �ݒ�t�@�C���̌���w��œǂݍ��� **/
+	/** 設定ファイルの言語指定で読み込み **/
 	public final static int LANG_AUTO = 3;
 	/**
-	 * ���{��p���b�Z�[�W�t�@�C���̃t�@�C����
+	 * 日本語用メッセージファイルのファイル名
 	 * **/
 	public final static String JAPANESE_MSGFILE = "japanese.properties";
 	
 	/**
-	 * �p��p���b�Z�[�W�t�@�C���̃t�@�C����
+	 * 英語用メッセージファイルのファイル名
 	 * **/
 	public final static String ENGLISH_MSGFILE = "english.properties";
 	
 	/**
-	 * ������p���b�Z�[�W�t�@�C���̃t�@�C����
+	 * 中国語用メッセージファイルのファイル名
 	 * **/
 	public final static String CHINESE_MSGFILE = "chinese.properties";
 	
 	/**
-	 * ���b�Z�[�W�ǂݍ��ݗp�o���h���N���X
+	 * メッセージ読み込み用バンドルクラス
 	 * **/
 	private static PropertyResourceBundle _bundle = null;
 	
 	/**
-	 * ���\�[�X�o���h���I�u�W�F�N�g�𐶐�����
+	 * リソースバンドルオブジェクトを生成する
 	 * 
 	 * **/
 	private static PropertyResourceBundle getResourceBundle( int lang )
 	{
-		// OS�̃��P�[�����烁�b�Z�[�W�t�@�C���̃t�@�C�������擾
+		// OSのロケールからメッセージファイルのファイル名を取得
 		
 		String msgfilename = JAPANESE_MSGFILE;
 		
 		/**
-		 * ���b�Z�[�W�t�@�C����InputStream���擾
+		 * メッセージファイルのInputStreamを取得
 		 * **/
 		try
 		{
@@ -75,12 +75,12 @@ public class Msg
 	}
 	
 	/**
-	 * ���b�Z�[�W���擾����<br>
-	 * ���b�Z�[�W�L�[�R�[�h�ɑΉ����郁�b�Z�[�W��������Ȃ��ꍇ��
-	 *�@�����Ŏw�肵�����b�Z�[�W�L�[�R�[�h��Ԃ��B
+	 * メッセージを取得する<br>
+	 * メッセージキーコードに対応するメッセージが見つからない場合は
+	 *　引数で指定したメッセージキーコードを返す。
 	 * 
-	 * @param	key		���b�Z�[�W�L�[�R�[�h
-	 * @return	String	���b�Z�[�W
+	 * @param	key		メッセージキーコード
+	 * @return	String	メッセージ
 	 * **/
 	public static String get( String key )
 	{
@@ -88,14 +88,14 @@ public class Msg
 	}
 	
 	/**
-	 * ���b�Z�[�W���擾����B<br>
-	 * ���b�Z�[�W�L�[�R�[�h�ɑΉ����郁�b�Z�[�W��������Ȃ��ꍇ��
-	 * �����Ŏw�肵�����b�Z�[�W�L�[�R�[�h��Ԃ��B
-	 * ���P�[���́A�����Ŏw�肳�ꂽ���̂��g�p����
+	 * メッセージを取得する。<br>
+	 * メッセージキーコードに対応するメッセージが見つからない場合は
+	 * 引数で指定したメッセージキーコードを返す。
+	 * ロケールは、引数で指定されたものを使用する
 	 * 
-	 * @param	key		���b�Z�[�W�L�[�R�[�h
-	 * @param  lang	����w��
-	 * @return	String	���b�Z�[�W	
+	 * @param	key		メッセージキーコード
+	 * @param  lang	言語指定
+	 * @return	String	メッセージ	
 	 * **/
 	public static String get( String key, int lang )
 	{
@@ -110,17 +110,17 @@ public class Msg
 	}
 	
 	/**
-	 * ���b�Z�[�W���擾����B<br>
-	 * ���b�Z�[�W�L�[�R�[�h�ɑΉ����郁�b�Z�[�W��������Ȃ��ꍇ��
-	 * �����Ŏw�肵�����b�Z�[�W�L�[�R�[�h��Ԃ��B
-	 * ���P�[���́A�����Ŏw�肳�ꂽ���̂��g�p����
-	 * ���̃��\�b�h�́A�s�x���b�Z�[�W�t�@�C����ǂݍ���ŏ������s���B
-	 * ���̂��߁Aget���\�b�h�ɔ�ׂď������x���B
-	 * �{���\�b�h�́A���{����œ��삵�Ă���Ƃ��ɁA�p�ꃁ�b�Z�[�W���擾�������ꍇ�ȂǂŎg�p����
+	 * メッセージを取得する。<br>
+	 * メッセージキーコードに対応するメッセージが見つからない場合は
+	 * 引数で指定したメッセージキーコードを返す。
+	 * ロケールは、引数で指定されたものを使用する
+	 * このメソッドは、都度メッセージファイルを読み込んで処理を行う。
+	 * そのため、getメソッドに比べて処理が遅い。
+	 * 本メソッドは、日本語環境で動作しているときに、英語メッセージを取得したい場合などで使用する
 	 * 
-	 * @param	key		���b�Z�[�W�L�[�R�[�h
-	 * @param  lang	����w��
-	 * @return	String	���b�Z�[�W	
+	 * @param	key		メッセージキーコード
+	 * @param  lang	言語指定
+	 * @return	String	メッセージ	
 	 * **/
 	public static String getMessageFromFile( String key, int lang )
 	{
@@ -135,25 +135,25 @@ public class Msg
 	}
 	
 	/**
-	 * ���b�Z�[�W���擾����B<br>
-	 * �擾�������b�Z�[�W�Ƀp�����[�^�[�u�������L�q�q�����ߍ��܂�Ă���ꍇ��<br>
-	 * �����Ŏw�肳�ꂽ�p�����[�^�[�z��̒l�ɒu�����������b�Z�[�W��Ԃ��B<br>
-	 * �p�����[�^�[�u�������L�q�q�́A{}�ň͂܂ꂽ0�`n�̐��l�Ŏw�肷��B<br>
+	 * メッセージを取得する。<br>
+	 * 取得したメッセージにパラメーター置き換え記述子が埋め込まれている場合は<br>
+	 * 引数で指定されたパラメーター配列の値に置き換えたメッセージを返す。<br>
+	 * パラメーター置き換え記述子は、{}で囲まれた0～nの数値で指定する。<br>
 	 * <br>
-	 * ��j<br>
-	 * ���b�Z�[�W = ���̃��b�Z�[�W��{0}�j����{1}���񂩂瑗�M����܂����B<br>
-	 * �p�����[�^�[= parameteres[0] = ��<br>
-	 *               parameteres[1] = ���<br>
+	 * 例）<br>
+	 * メッセージ = このメッセージは{0}曜日に{1}さんから送信されました。<br>
+	 * パラメーター= parameteres[0] = 火<br>
+	 *               parameteres[1] = 鈴木<br>
 	 * <br>
-	 * ��L�̏ꍇ�A�Ԃ���郁�b�Z�[�W��<br>
+	 * 上記の場合、返されるメッセージは<br>
 	 * <br>
-	 * ���̃��b�Z�[�W�͉Ηj���ɗ�؂��񂩂瑗�M����܂����B<br>
+	 * このメッセージは火曜日に鈴木さんから送信されました。<br>
 	 * <br>
-	 * �ƂȂ�<br>
+	 * となる<br>
 	 * <br>
-	 * @param	key			���b�Z�[�W�L�[�R�[�h
-	 * @param	parameters	���b�Z�[�W�ɖ��ߍ��ރp�����[�^�[�z��
-	 * @return	String		���b�Z�[�W
+	 * @param	key			メッセージキーコード
+	 * @param	parameters	メッセージに埋め込むパラメーター配列
+	 * @return	String		メッセージ
 	 * **/
     public static String get(String key,Object[]parameters)
     {
@@ -168,12 +168,12 @@ public class Msg
             {
             	get(key);
             }
-            parameters[cnt]=stuffingGetMessageFinalizer(parameters[cnt]+"",true); // DECODING ���̌딻��̉��
+            parameters[cnt]=stuffingGetMessageFinalizer(parameters[cnt]+"",true); // DECODING 時の誤判定の回避
         }
         String message;
 
         message = get(key);
-        message=java.text.MessageFormat.format(message,parameters); // ��{�I�� NO-EXCEPTION and NO-ERROR ���H
+        message=java.text.MessageFormat.format(message,parameters); // 基本的に NO-EXCEPTION and NO-ERROR か？
 
         return getMessageFinalizer(message);
     }

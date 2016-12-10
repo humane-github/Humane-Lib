@@ -2,22 +2,22 @@ package jp.co.humane.statemachine;
 
 public class StateMessage
 {
-	//‘—MŒ³ƒIƒuƒWƒFƒNƒgID
+	//é€ä¿¡å…ƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆID
 	private int m_sender = 0;
-	//‘—MæƒIƒuƒWƒFƒNƒgID
+	//é€ä¿¡å…ˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆID
 	private int m_reciver = 0;
-	//ó‘Ô
+	//çŠ¶æ…‹
 	private BaseStatus m_status = null;
-	//‘—Mæ‚Ö‚Ìƒpƒ‰ƒ[ƒ^[
+	//é€ä¿¡å…ˆã¸ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼
 	private Object m_argument = null;
 	
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * 
-	 * @param	sender	‘—MŒ³ƒIƒuƒWƒFƒNƒgID
-	 * @param	reciver	‘—MæƒIƒuƒWƒFƒNƒgID
-	 * @param	v		ƒpƒ‰ƒ[ƒ^[
+	 * @param	sender	é€ä¿¡å…ƒã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆID
+	 * @param	reciver	é€ä¿¡å…ˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆID
+	 * @param	v		ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼
 	 * **/
 	public StateMessage(int sender,int reciver,BaseStatus s,Object v)
 	{

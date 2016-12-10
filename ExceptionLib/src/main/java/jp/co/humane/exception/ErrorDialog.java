@@ -1,8 +1,8 @@
 /*
- * ì¬“úF 2005/08/10
+ * ä½œæˆæ—¥ï¼š 2005/08/10
  *
- * TODO ‚±‚Ì¶¬‚³‚ê‚½ƒtƒ@ƒCƒ‹‚Ìƒeƒ“ƒvƒŒ[ƒg‚ð•ÏX‚·‚é‚É‚ÍŽŸ‚ðŽQÆB
- * ƒEƒBƒ“ƒhƒE „ Ý’è „ Java „ ƒR[ƒhEƒXƒ^ƒCƒ‹ „ ƒR[ƒhEƒeƒ“ƒvƒŒ[ƒg
+ * TODO ã“ã®ç”Ÿæˆã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚’å¤‰æ›´ã™ã‚‹ã«ã¯æ¬¡ã‚’å‚ç…§ã€‚
+ * ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ ï¼ž è¨­å®š ï¼ž Java ï¼ž ã‚³ãƒ¼ãƒ‰ãƒ»ã‚¹ã‚¿ã‚¤ãƒ« ï¼ž ã‚³ãƒ¼ãƒ‰ãƒ»ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
  */
 package jp.co.humane.exception;
 
@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 
 
 /**
- * ƒNƒ‰ƒXFƒGƒ‰[ƒ_ƒCƒAƒƒO ƒGƒ‰[”­¶Žž‚ÉƒƒbƒZ[ƒW‚ð•\Ž¦‚·‚é‚½‚ß‚Ì‹¤’ÊƒIƒuƒWƒFƒNƒg
+ * ã‚¯ãƒ©ã‚¹ï¼šã‚¨ãƒ©ãƒ¼ãƒ€ã‚¤ã‚¢ãƒ­ã‚° ã‚¨ãƒ©ãƒ¼ç™ºç”Ÿæ™‚ã«ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹ãŸã‚ã®å…±é€šã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  * @author suzuki
  * @version 1.0
  * @updated 21-6-2011 13:37:18
@@ -21,20 +21,20 @@ public class ErrorDialog
 {
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 *
-	 * @param	exception	”­¶‚µ‚½—áŠO
+	 * @param	exception	ç™ºç”Ÿã—ãŸä¾‹å¤–
 	 * **/
 	public ErrorDialog( GeneralException exception )
 	{
 		/**
-		 * ƒƒbƒZ[ƒWƒT[ƒrƒX‚©‚çƒGƒ‰[º°ÄÞ‚É‘Î‰ž‚µ‚½ƒƒbƒZ[ƒW‚ðŽæ“¾‚·‚é
+		 * ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚µãƒ¼ãƒ“ã‚¹ã‹ã‚‰ã‚¨ãƒ©ãƒ¼ï½ºï½°ï¾„ï¾žã«å¯¾å¿œã—ãŸãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’å–å¾—ã™ã‚‹
 		 * **/
 		String msg = exception.getErrCode();
 
 		/**
-		 * ƒGƒ‰[ƒR[ƒh‚ÌŽí—Þ‚©‚ç
-		 * ƒGƒ‰[ƒŒƒxƒ‹iŒxorƒGƒ‰[or’v–½“IƒGƒ‰[j‚Æƒ^ƒCƒgƒ‹•¶Žš—ñ‚ðŽæ“¾‚·‚é
+		 * ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰ã®ç¨®é¡žã‹ã‚‰
+		 * ã‚¨ãƒ©ãƒ¼ãƒ¬ãƒ™ãƒ«ï¼ˆè­¦å‘Šorã‚¨ãƒ©ãƒ¼orè‡´å‘½çš„ã‚¨ãƒ©ãƒ¼ï¼‰ã¨ã‚¿ã‚¤ãƒˆãƒ«æ–‡å­—åˆ—ã‚’å–å¾—ã™ã‚‹
 		 * **/
 		int level = JOptionPane.INFORMATION_MESSAGE;
 		String title = "Information";

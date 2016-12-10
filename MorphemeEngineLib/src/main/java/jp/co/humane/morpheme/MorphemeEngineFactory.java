@@ -5,23 +5,23 @@ import java.io.FileNotFoundException;
 
 public class MorphemeEngineFactory
 {
-	//Œ`‘Ô‘f‰ğÍƒGƒ“ƒWƒ“‚Ìí—Ş
+	//å½¢æ…‹ç´ è§£æã‚¨ãƒ³ã‚¸ãƒ³ã®ç¨®é¡
 	public enum TYPE
 	{
 		IGO
 	}
 	
 	/**
-	 * Œ`‘Ô‘f‰ğÍƒGƒ“ƒWƒ“‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚·‚é
+	 * å½¢æ…‹ç´ è§£æã‚¨ãƒ³ã‚¸ãƒ³ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã™ã‚‹
 	 * 
-	 * @param	type			Œ`‘Ô‘f‰ğÍƒGƒ“ƒWƒ“‚Ìí—Ş
-	 * @param	ipadic			ipadic‚ÌƒpƒX
+	 * @param	type			å½¢æ…‹ç´ è§£æã‚¨ãƒ³ã‚¸ãƒ³ã®ç¨®é¡
+	 * @param	ipadic			ipadicã®ãƒ‘ã‚¹
 	 * @return	MorphemeEngine
 	 * **/
 	public static MorphemeEngine create(TYPE type,String ipadic) throws MorphemeEngineException,FileNotFoundException
 	{
 		MorphemeEngine engine = null;
-		//ipadic‚Ìƒ`ƒFƒbƒN
+		//ipadicã®ãƒã‚§ãƒƒã‚¯
 		int result = 0;
 		File file = new File(ipadic);
 		if( !file.exists() ){throw new FileNotFoundException(ipadic);}

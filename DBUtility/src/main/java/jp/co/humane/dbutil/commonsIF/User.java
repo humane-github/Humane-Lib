@@ -1,17 +1,17 @@
 package jp.co.humane.dbutil.commonsIF;
 
 /**
- * ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ğ—˜—p‚µ‚Ä‚¢‚éƒ†[ƒU[î•ñ
+ * ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚’åˆ©ç”¨ã—ã¦ã„ã‚‹ãƒ¦ãƒ¼ã‚¶ãƒ¼æƒ…å ±
  * **/
 public class User
 {
-	// ƒ†[ƒU[–¼
+	// ãƒ¦ãƒ¼ã‚¶ãƒ¼å
 	private String name = null;
-	// ƒpƒXƒ[ƒh
+	// ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 	private String password = null;
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * **/
 	public User( String n , String p )
 	{

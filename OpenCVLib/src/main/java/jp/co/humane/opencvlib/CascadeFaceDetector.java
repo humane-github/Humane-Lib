@@ -15,15 +15,15 @@ public class CascadeFaceDetector
 	private HashMap<String,CascadeClassifier> cascadeMap = null;
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * **/
 	public CascadeFaceDetector(){}
 	
 	/**
-	 * Cascade‚ğì¬‚·‚é
+	 * Cascadeã‚’ä½œæˆã™ã‚‹
 	 * 
-	 * @param name	–¼Ì
-	 * @param path	Cascadeƒtƒ@ƒCƒ‹‚Ìâ‘ÎƒpƒX
+	 * @param name	åç§°
+	 * @param path	Cascadeãƒ•ã‚¡ã‚¤ãƒ«ã®çµ¶å¯¾ãƒ‘ã‚¹
 	 * **/
 	public void addCascade(String name,String path) throws CascadeClassifierException
 	{
@@ -40,10 +40,10 @@ public class CascadeFaceDetector
 	}
 
 	/**
-	 * w’è‚µ‚½‰æ‘œ’†‚©‚çŠçŒŸo‚ğs‚¤
+	 * æŒ‡å®šã—ãŸç”»åƒä¸­ã‹ã‚‰é¡”æ¤œå‡ºã‚’è¡Œã†
 	 * 
-	 * @param	targetMat	ˆ—‘ÎÛ‚Ì‰æ‘œiMatŒ`®j
-	 * @return	int			ŒŸo‚µ‚½Šç‚Ì”
+	 * @param	targetMat	å‡¦ç†å¯¾è±¡ã®ç”»åƒï¼ˆMatå½¢å¼ï¼‰
+	 * @return	int			æ¤œå‡ºã—ãŸé¡”ã®æ•°
 	 * **/
 	public int detect(Mat targetMat)
 	{

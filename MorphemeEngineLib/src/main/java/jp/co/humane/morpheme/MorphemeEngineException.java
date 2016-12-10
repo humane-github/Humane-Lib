@@ -3,7 +3,7 @@ package jp.co.humane.morpheme;
 public class MorphemeEngineException extends Exception
 {
 	/**
-	 * コンストラクタ
+	 * 繧ｳ繝ｳ繧ｹ繝医Λ繧ｯ繧ｿ
 	 * **/
 	public MorphemeEngineException(String msg)
 	{

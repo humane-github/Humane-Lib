@@ -1,42 +1,42 @@
 /*
- * ì¬“úF 2005/08/10
+ * ä½œæˆæ—¥ï¼š 2005/08/10
  *
- * TODO ‚±‚Ì¶¬‚³‚ê‚½ƒtƒ@ƒCƒ‹‚Ìƒeƒ“ƒvƒŒ[ƒg‚ð•ÏX‚·‚é‚É‚ÍŽŸ‚ðŽQÆB
- * ƒEƒBƒ“ƒhƒE „ Ý’è „ Java „ ƒR[ƒhEƒXƒ^ƒCƒ‹ „ ƒR[ƒhEƒeƒ“ƒvƒŒ[ƒg
+ * TODO ã“ã®ç”Ÿæˆã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚’å¤‰æ›´ã™ã‚‹ã«ã¯æ¬¡ã‚’å‚ç…§ã€‚
+ * ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ ï¼ž è¨­å®š ï¼ž Java ï¼ž ã‚³ãƒ¼ãƒ‰ãƒ»ã‚¹ã‚¿ã‚¤ãƒ« ï¼ž ã‚³ãƒ¼ãƒ‰ãƒ»ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
  */
 package jp.co.humane.exception;
 
 import java.util.Hashtable;
 
 /**
- * ƒNƒ‰ƒXFExceptionDispacher
- * ”­¶‚µ‚½—áŠO‚ÌŽí—Þ‚É‚ ‚í‚¹‚ÄA“o˜^Ï‚ÝƒGƒ‰[ˆ—ƒnƒ“ƒhƒ‰[‚ðŽÀs‚·‚é
+ * ã‚¯ãƒ©ã‚¹ï¼šExceptionDispacher
+ * ç™ºç”Ÿã—ãŸä¾‹å¤–ã®ç¨®é¡žã«ã‚ã‚ã›ã¦ã€ç™»éŒ²æ¸ˆã¿ã‚¨ãƒ©ãƒ¼å‡¦ç†ãƒãƒ³ãƒ‰ãƒ©ãƒ¼ã‚’å®Ÿè¡Œã™ã‚‹
  * @author suzuki
  */
 public class ExceptionDispatcher
 {
 	/**
-	 * ƒnƒ“ƒhƒ‰[‚ð“o˜^‚·‚éƒnƒbƒVƒ…ƒe[ƒuƒ‹
+	 * ãƒãƒ³ãƒ‰ãƒ©ãƒ¼ã‚’ç™»éŒ²ã™ã‚‹ãƒãƒƒã‚·ãƒ¥ãƒ†ãƒ¼ãƒ–ãƒ«
 	 * **/
 	private static Hashtable<String,ExceptionHandler> handlers = new Hashtable<String,ExceptionHandler>();
 
 	/**
-	 * ƒfƒtƒHƒ‹ƒg‚ÅŽg—p‚·‚éƒnƒ“ƒhƒ‰[
+	 * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ä½¿ç”¨ã™ã‚‹ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
 	 * **/
 	private static ExceptionHandler defHandler = new DefaultHandler();
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * **/
 	private ExceptionDispatcher()
 	{
 	}
 
 	/**
-	 * ƒnƒ“ƒhƒ‰[‚ð“o˜^‚·‚é
+	 * ãƒãƒ³ãƒ‰ãƒ©ãƒ¼ã‚’ç™»éŒ²ã™ã‚‹
 	 *
-	 * @param	errCode		ƒGƒ‰[ƒR[ƒh
-	 * @param	handler		ƒnƒ“ƒhƒ‰[ƒIƒuƒWƒFƒNƒg
+	 * @param	errCode		ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰
+	 * @param	handler		ãƒãƒ³ãƒ‰ãƒ©ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 * **/
 	public static void addHandler( String errCode , ExceptionHandler handler )
 	{
@@ -44,9 +44,9 @@ public class ExceptionDispatcher
 	}
 
 	/**
-	 * ƒnƒ“ƒhƒ‰[‚ðíœ‚·‚é
+	 * ãƒãƒ³ãƒ‰ãƒ©ãƒ¼ã‚’å‰Šé™¤ã™ã‚‹
 	 *
-	 * @param	errCode	íœ‚·‚éƒnƒ“ƒhƒ‰[‚ÌƒGƒ‰[ƒR[ƒh
+	 * @param	errCode	å‰Šé™¤ã™ã‚‹ãƒãƒ³ãƒ‰ãƒ©ãƒ¼ã®ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰
 	 * **/
 	public static void removeHandler( String errCode )
 	{
@@ -54,14 +54,14 @@ public class ExceptionDispatcher
 	}
 
 	/**
-	 * ˆø”‚Å“n‚³‚ê‚½—áŠOƒIƒuƒWƒFƒNƒg‚ÌƒGƒ‰[ƒR[ƒh‚©‚ç
-	 * ‘Î‰ž‚·‚éƒGƒ‰[ˆ—‚ðŽÀs‚·‚éB
-	 * ƒfƒtƒHƒ‹ƒg‚Å‚ÍAƒGƒ‰[ƒR[ƒh‚É‘Î‰ž‚·‚éƒƒbƒZ[ƒW‚ðƒ_ƒCƒAƒƒO‚Å•\Ž¦‚·‚éB
-	 * “Á•Ê‚ÈƒGƒ‰[ˆ—‚ðs‚¢‚½‚¢ê‡‚Í
-	 * ExceptionHandlerƒCƒ“ƒ^[ƒtƒF[ƒX‚ðŽÀ‘•‚µ‚½ƒGƒ‰[ƒnƒ“ƒhƒ‰[ƒNƒ‰ƒX‚ð’è‹`‚µ
-	 * –{ƒNƒ‰ƒX‚ÌaddHandlerƒƒ\ƒbƒh‚Åƒnƒ“ƒhƒ‰[ƒNƒ‰ƒX‚ð“o˜^‚·‚é•K—v‚ª‚ ‚éB
+	 * å¼•æ•°ã§æ¸¡ã•ã‚ŒãŸä¾‹å¤–ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰ã‹ã‚‰
+	 * å¯¾å¿œã™ã‚‹ã‚¨ãƒ©ãƒ¼å‡¦ç†ã‚’å®Ÿè¡Œã™ã‚‹ã€‚
+	 * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã§ã¯ã€ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰ã«å¯¾å¿œã™ã‚‹ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã‚’ãƒ€ã‚¤ã‚¢ãƒ­ã‚°ã§è¡¨ç¤ºã™ã‚‹ã€‚
+	 * ç‰¹åˆ¥ãªã‚¨ãƒ©ãƒ¼å‡¦ç†ã‚’è¡Œã„ãŸã„å ´åˆã¯
+	 * ExceptionHandlerã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ã‚’å®Ÿè£…ã—ãŸã‚¨ãƒ©ãƒ¼ãƒãƒ³ãƒ‰ãƒ©ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’å®šç¾©ã—
+	 * æœ¬ã‚¯ãƒ©ã‚¹ã®addHandlerãƒ¡ã‚½ãƒƒãƒ‰ã§ãƒãƒ³ãƒ‰ãƒ©ãƒ¼ã‚¯ãƒ©ã‚¹ã‚’ç™»éŒ²ã™ã‚‹å¿…è¦ãŒã‚ã‚‹ã€‚
 	 *
-	 * @param	e	”­¶‚µ‚½—áŠO
+	 * @param	e	ç™ºç”Ÿã—ãŸä¾‹å¤–
 	 * **/
 	public static void execCmd( GeneralException e )
 	{
@@ -81,9 +81,9 @@ public class ExceptionDispatcher
 	}
 
 	/**
-	 * ˆø”‚Å“n‚³‚ê‚½ƒGƒ‰[ƒR[ƒh‚©‚ç‘Î‰ž‚·‚éƒGƒ‰[ˆ—‚ðŽÀs‚·‚éB<br>
-	 * iƒGƒ‰[ˆ—‚Ì“à—e‚Í execCmd(GeneralException e) ‚ðŽQÆj
-	 * @param code		ƒGƒ‰[ƒR[ƒh
+	 * å¼•æ•°ã§æ¸¡ã•ã‚ŒãŸã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰ã‹ã‚‰å¯¾å¿œã™ã‚‹ã‚¨ãƒ©ãƒ¼å‡¦ç†ã‚’å®Ÿè¡Œã™ã‚‹ã€‚<br>
+	 * ï¼ˆã‚¨ãƒ©ãƒ¼å‡¦ç†ã®å†…å®¹ã¯ execCmd(GeneralException e) ã‚’å‚ç…§ï¼‰
+	 * @param code		ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰
 	 */
 	public static void execCmd( String code )
 	{

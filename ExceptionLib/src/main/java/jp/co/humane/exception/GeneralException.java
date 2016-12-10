@@ -1,37 +1,37 @@
 /*
- * █Л░╛⌠З│F 2005/08/10
+ * Д╫°Ф┬░Ф≈╔О╪  2005/08/10
  *
- * TODO ┌╠┌л░╤░╛┌Ё┌Й┌╫┐t┐@┐C┐▀┌л┐e┐⌠┐v┐▄│[┐g┌П∙о█X┌╥┌И┌и┌м▌÷┌П▌Q▐ф│B
- * ┐E┐B┐⌠┐h┐E │└ ░щ▓Х │└ Java │└ ┐R│[┐h│E┐X┐^┐C┐▀ │└ ┐R│[┐h│E┐e┐⌠┐v┐▄│[┐g
+ * TODO Ц│⌠Ц│╝Г■÷Ф┬░Ц│∙Ц┌▄Ц│÷Ц┐∙Ц┌║Ц┌╓Ц┐╚Ц│╝Ц┐├Ц┐ЁЦ┐≈Ц┐╛Ц┐╪Ц┐┬Ц┌▓Е╓┴Ф⌡╢Ц│≥Ц┌▀Ц│╚Ц│╞Ф╛║Ц┌▓Е▐┌Г┘╖Ц─┌
+ * Ц┌╕Ц┌ёЦ┐ЁЦ┐┴Ц┌╕ О╪· Х╗╜Е╝  О╪· Java О╪· Ц┌ЁЦ┐╪Ц┐┴Ц┐╩Ц┌╧Ц┌©Ц┌╓Ц┐╚ О╪· Ц┌ЁЦ┐╪Ц┐┴Ц┐╩Ц┐├Ц┐ЁЦ┐≈Ц┐╛Ц┐╪Ц┐┬
  */
 package jp.co.humane.exception;
 
 /**
- * ┐N┐┴┐X│FModelGenException
- * ModelGen┌е■╜░╤┌╥┌И▒S┌д┌л≈А┼O┌л┼Н▓Й┐N┐┴┐X
+ * Ц┌╞Ц┐╘Ц┌╧О╪ ModelGenException
+ * ModelGenЦ│╖Г≥╨Г■÷Ц│≥Ц┌▀Е┘╗Ц│╕Ц│╝Д╬▀Е╓√Ц│╝Е÷╨Е╨∙Ц┌╞Ц┐╘Ц┌╧
  * @author suzuki
  */
 public class GeneralException extends Exception
 {
 	/**
-	 * ┐G┐┴│[┐R│[┐h
+	 * Ц┌╗Ц┐╘Ц┐╪Ц┌ЁЦ┐╪Ц┐┴
 	 * **/
 	protected String errCode = "";
 
 	/**
-	 * ┐G┐┴│[▒н▐ш┌л┐E┐B┐⌠┐h┐E│iJDialog or JFrame)
+	 * Ц┌╗Ц┐╘Ц┐╪Е╞╬Х╠║Ц│╝Ц┌╕Ц┌ёЦ┐ЁЦ┐┴Ц┌╕О╪┬JDialog or JFrame)
 	 */
 	protected Object targetWindow = null;
 
 	/**
-	 * ■╜░╤≈А┼O╣лч╪ч╙╦д
+	 * Г≥╨Г■÷Д╬▀Е╓√О╫╣О╬▄О╬·О╫╪О╬·О╫╙О╫╦О╬└
 	 * **/
 	protected Exception exception = null;
 
 	/**
-	 * ┐R┐⌠┐X┐g┐┴┐N┐^
+	 * Ц┌ЁЦ┐ЁЦ┌╧Ц┐┬Ц┐╘Ц┌╞Ц┌©
 	 *
-	 * @param│@code		┐G┐┴│[┐R│[┐h
+	 * @paramЦ──code		Ц┌╗Ц┐╘Ц┐╪Ц┌ЁЦ┐╪Ц┐┴
 	 * **/
 	public GeneralException( String code )
 	{
@@ -40,10 +40,10 @@ public class GeneralException extends Exception
 	}
 
 	/**
-	 * ┐R┐⌠┐X┐g┐┴┐N┐^
+	 * Ц┌ЁЦ┐ЁЦ┌╧Ц┐┬Ц┐╘Ц┌╞Ц┌©
 	 *
-	 * @param│@code		┐G┐┴│[┐R│[┐h
-	 * @param	e		≈А┼O╣лч╪ч╙╦д
+	 * @paramЦ──code		Ц┌╗Ц┐╘Ц┐╪Ц┌ЁЦ┐╪Ц┐┴
+	 * @param	e		Д╬▀Е╓√О╫╣О╬▄О╬·О╫╪О╬·О╫╙О╫╦О╬└
 	 * **/
 	public GeneralException( String code,Exception e)
 	{
@@ -52,9 +52,9 @@ public class GeneralException extends Exception
 		exception = e;
 	}
 	/**
-	 * ┐G┐┴│[┐R│[┐h┌П▌Ф⌠╬┌╥┌И
+	 * Ц┌╗Ц┐╘Ц┐╪Ц┌ЁЦ┐╪Ц┐┴Ц┌▓Е▐√Е╬≈Ц│≥Ц┌▀
 	 *
-	 * @return	String	┐G┐┴│[┐R│[┐h
+	 * @return	String	Ц┌╗Ц┐╘Ц┐╪Ц┌ЁЦ┐╪Ц┐┴
 	 *
 	 * **/
 	public String getErrCode()
@@ -63,16 +63,16 @@ public class GeneralException extends Exception
 	}
 
 	/**
-	 * ┐G┐┴│[▒н▐ш┌л┐E┐B┐⌠┐h┐E┌П∙т┌╥
-	 * @return ┐G┐┴│[▒н▐ш┌л┐E┐B┐⌠┐h┐E│iJDialog or JFrame│j
+	 * Ц┌╗Ц┐╘Ц┐╪Е╞╬Х╠║Ц│╝Ц┌╕Ц┌ёЦ┐ЁЦ┐┴Ц┌╕Ц┌▓Х©■Ц│≥
+	 * @return Ц┌╗Ц┐╘Ц┐╪Е╞╬Х╠║Ц│╝Ц┌╕Ц┌ёЦ┐ЁЦ┐┴Ц┌╕О╪┬JDialog or JFrameО╪┴
 	 */
 	public Object getTargetWindow() {
 		return targetWindow;
 	}
 
 	/**
-	 * ┐G┐┴│[▒н▐ш┌л┐E┐B┐⌠┐h┐E┌П░щ▓Х┌╥┌И
-	 * @param targetWindow ┐G┐┴│[▒н▐ш┌л┐E┐B┐⌠┐h┐E│iJDialog or JFrame│j
+	 * Ц┌╗Ц┐╘Ц┐╪Е╞╬Х╠║Ц│╝Ц┌╕Ц┌ёЦ┐ЁЦ┐┴Ц┌╕Ц┌▓Х╗╜Е╝ Ц│≥Ц┌▀
+	 * @param targetWindow Ц┌╗Ц┐╘Ц┐╪Е╞╬Х╠║Ц│╝Ц┌╕Ц┌ёЦ┐ЁЦ┐┴Ц┌╕О╪┬JDialog or JFrameО╪┴
 	 */
 	public void setTargetWindow(Object targetWindow) {
 		this.targetWindow = targetWindow;

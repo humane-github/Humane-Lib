@@ -1,7 +1,7 @@
 package jp.co.humane.morpheme;
 
 /**
- * 形態素
+ * 蠖｢諷狗ｴ
  * **/
 public class Morpheme
 {
@@ -19,7 +19,7 @@ public class Morpheme
 	public String Surface(){return m_surface;}
 	
 	/**
-	 * コンストラクタ
+	 * 繧ｳ繝ｳ繧ｹ繝医Λ繧ｯ繧ｿ
 	 * **/
 	public Morpheme(String feature,int start,String surface)
 	{

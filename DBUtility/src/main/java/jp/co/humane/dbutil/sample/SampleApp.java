@@ -10,7 +10,7 @@ public class SampleApp
 {
 	public void load()
 	{
-		// datasource.xml‚É’è‹`‚µ‚½ƒf[ƒ^ƒx[ƒX‚©‚çAÚ‘±‚·‚éDB‚ğæ“¾
+		// datasource.xmlã«å®šç¾©ã—ãŸãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‹ã‚‰ã€æ¥ç¶šã™ã‚‹DBã‚’å–å¾—
 
 		try
 		{
@@ -19,7 +19,7 @@ public class SampleApp
 
 			
 		} catch (Exception e1) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
 			e1.printStackTrace();
 		}
 
@@ -50,7 +50,7 @@ public class SampleApp
 		//} catch (FatalException | WarningException | ErrorException e) {
 		//	e.printStackTrace();
 		} catch (Exception e) {
-			// TODO ©“®¶¬‚³‚ê‚½ catch ƒuƒƒbƒN
+			// TODO è‡ªå‹•ç”Ÿæˆã•ã‚ŒãŸ catch ãƒ–ãƒ­ãƒƒã‚¯
 			e.printStackTrace();
 		}
 	}

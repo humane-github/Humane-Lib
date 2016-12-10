@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class HCharEncoder
 {
 	/**
-	 * ”’l‚ğƒoƒCƒg”z—ñ‚É•ÏŠ·‚·‚é
+	 * æ•°å€¤ã‚’ãƒã‚¤ãƒˆé…åˆ—ã«å¤‰æ›ã™ã‚‹
 	 * **/
 	public static byte[] int2byte(int value)
 	{
@@ -26,10 +26,10 @@ public class HCharEncoder
 		}
 	}
 	/**
-	 * •¶šƒR[ƒh‚ğæ“¾‚·‚é
+	 * æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹
 	 * 
-	 * @param	•¶šƒR[ƒh‚ğæ“¾‚·‚é•¶š—ñ
-	 * @return	•¶šƒR[ƒh
+	 * @param	æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‚’å–å¾—ã™ã‚‹æ–‡å­—åˆ—
+	 * @return	æ–‡å­—ã‚³ãƒ¼ãƒ‰
 	 * **/
 	public static String[] toCharCode(String str,String encoding,boolean bom)
 	{
@@ -44,7 +44,7 @@ public class HCharEncoder
 			bytes = str.getBytes(encoding);
 			for( int idx = 0; idx < bytes.length; idx++ )
 			{
-				//BOM•t‚Ìê‡‚Íæ“ª‚ÌBOM‚ğ–³‹‚·‚é
+				//BOMä»˜ã®å ´åˆã¯å…ˆé ­ã®BOMã‚’ç„¡è¦–ã™ã‚‹
 				if( bom && (idx == 0 || idx == 1)){continue;}
 				code += Integer.toHexString((bytes[idx] & 0xF0) >> 4);
 				code += Integer.toHexString(bytes[idx] & 0xF);
@@ -68,9 +68,9 @@ public class HCharEncoder
 	}
 		
 	/**
-	 * •¶šƒR[ƒh‚©‚ç•¶š—ñ‚É•ÏŠ·‚·‚é
+	 * æ–‡å­—ã‚³ãƒ¼ãƒ‰ã‹ã‚‰æ–‡å­—åˆ—ã«å¤‰æ›ã™ã‚‹
 	 * 
-	 * @param	charcode	•¶šƒR[ƒh
+	 * @param	charcode	æ–‡å­—ã‚³ãƒ¼ãƒ‰
 	 * @return	String
 	 * **/
 	public static String toString(String[] charcode)
@@ -86,7 +86,7 @@ public class HCharEncoder
 	
 	public static void main(String[] args)
 	{
-		String[] ch = HCharEncoder.toCharCode("—é–Ø", "utf-16", true);
+		String[] ch = HCharEncoder.toCharCode("éˆ´æœ¨", "utf-16", true);
 		String val = "";
 		for( String c : ch )
 		{

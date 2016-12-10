@@ -15,7 +15,7 @@ public class ConfigFile
 	private ConfigSerializer m_serializer = null;
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * **/
 	public ConfigFile()
 	{
@@ -23,7 +23,7 @@ public class ConfigFile
 	}
 	
 	/**
-	 * İ’èƒtƒ@ƒCƒ‹“Ç‚İ‚İ
+	 * è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿
 	 * **/
 	public void load(String file) throws IOException
 	{
@@ -40,7 +40,7 @@ public class ConfigFile
 	}
 
 	/**
-	 * İ’èî•ñ‚ğ•¶š—ñ‰»‚·‚é
+	 * è¨­å®šæƒ…å ±ã‚’æ–‡å­—åˆ—åŒ–ã™ã‚‹
 	 * 
 	 * **/
 	public String serialize(ConfigSerializer serializer)
@@ -50,7 +50,7 @@ public class ConfigFile
 	}
 	
 	/**
-	 * İ’èî•ñ‚ÌƒL[ˆê——‚ğæ“¾‚·‚é
+	 * è¨­å®šæƒ…å ±ã®ã‚­ãƒ¼ä¸€è¦§ã‚’å–å¾—ã™ã‚‹
 	 * **/
 	public List<String> getAllKeys()
 	{
@@ -64,7 +64,7 @@ public class ConfigFile
 	}
 	
 	/**
-	 * FloatŒ^‚Åİ’èæ“¾
+	 * Floatå‹ã§è¨­å®šå–å¾—
 	 * **/
 	public float getFloat(String key)
 	{
@@ -78,7 +78,7 @@ public class ConfigFile
 	}
 	
 	/**
-	 * StringŒ^‚Åİ’èæ“¾
+	 * Stringå‹ã§è¨­å®šå–å¾—
 	 * **/
 	public String getString(String key)
 	{
@@ -86,7 +86,7 @@ public class ConfigFile
 	}
 	
 	/**
-	 * IntŒ^‚Åİ’èæ“¾
+	 * Intå‹ã§è¨­å®šå–å¾—
 	 * **/
 	public int getInt(String key)
 	{

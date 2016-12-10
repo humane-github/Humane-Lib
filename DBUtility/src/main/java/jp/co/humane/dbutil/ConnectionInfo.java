@@ -1,18 +1,18 @@
 package jp.co.humane.dbutil;
 
 /**
- * DBÚ‘±‚É•K—v‚Èî•ñ‚ğ‚ÂƒIƒuƒWƒFƒNƒg
+ * DBæ¥ç¶šã«å¿…è¦ãªæƒ…å ±ã‚’æŒã¤ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
  * **/
 public class ConnectionInfo
 {
-	// DB–¼
+	// DBå
 	private String dbname = null;
-	// ƒ†[ƒU[–¼
+	// ãƒ¦ãƒ¼ã‚¶ãƒ¼å
 	private String user = null;
-	// ƒpƒXƒ[ƒh
+	// ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 	private String password = null;
 
-	// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	public ConnectionInfo(String dbname, String user, String password) {
 		super();
 		this.dbname = dbname;

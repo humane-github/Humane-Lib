@@ -3,23 +3,23 @@ package jp.co.humane.statemachine;
 public interface BaseState
 {
 	/**
-	 * ŠJŽnŽž‚ÉŽÀs‚³‚ê‚é
+	 * é–‹å§‹æ™‚ã«å®Ÿè¡Œã•ã‚Œã‚‹
 	 * **/
 	public void entry(BaseWorker worker);
 	/**
-	 * I—¹Žž‚ÉŽÀs‚³‚ê‚é
+	 * çµ‚äº†æ™‚ã«å®Ÿè¡Œã•ã‚Œã‚‹
 	 * **/
 	public void exit(BaseWorker worker);
 	/**
-	 * í‚ÉŽÀs‚³‚ê‚é
+	 * å¸¸ã«å®Ÿè¡Œã•ã‚Œã‚‹
 	 * **/
 	public void exec(BaseWorker worker);
 	/**
-	 * ‘¼ƒIƒuƒWƒFƒNƒg‚©‚ç‚ÌƒƒbƒZ[ƒWŽóM‚ðs‚¤
+	 * ä»–ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰ã®ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸å—ä¿¡ã‚’è¡Œã†
 	 * **/
 	public boolean onMessage(BaseWorker owner,StateMessage msg);
 	/**
-	 * ƒ^ƒCƒ€ƒAƒEƒgŽž‚ÉŽÀs‚³‚ê‚é
+	 * ã‚¿ã‚¤ãƒ ã‚¢ã‚¦ãƒˆæ™‚ã«å®Ÿè¡Œã•ã‚Œã‚‹
 	 * **/
 	public void timeout(BaseWorker worker);
 }

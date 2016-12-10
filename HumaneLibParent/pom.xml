@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>jp.co.humane.humane-lib</groupId>
+  <artifactId>humane-lib-parent</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  
+  <!-- プロパティ定義 -->
+  <properties>
+    <!-- maven-repoのclone場所を指定 -->
+    <repository.clone.path>/path/to/clone/path</repository.clone.path>
+    <!-- 文字コード:MS932 -->
+    <project.build.sourceEncoding>MS932</project.build.sourceEncoding>
+    <!-- レポート文字コード:UTF-8 -->
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- javaバージョン：1.7 -->
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+  
+  <!-- リポジトリの参照を追加 -->
+  <repositories>
+    <repository>
+      <id>mvnrepository</id>
+      <name>mvnrepository</name>
+      <url>https://mvnrepository.com/</url>
+    </repository>
+    <repository>
+      <id>humane.github.repogitory</id>
+      <name>Humane GitHub Repogitory</name>
+      <url>http://humane-github.github.io/maven-repo</url>
+    </repository>
+  </repositories>
+
+  <!-- デプロイ -->
+  <distributionManagement>
+    <repository>
+      <id>private.repogitory</id>
+      <name>Private Repogitory</name>
+      <url>file://${repository.clone.path}</url>
+    </repository>
+  </distributionManagement>
+
+  <!-- humane-libで使用する全jarのバージョンをここで定義 -->
+  <dependencyManagement>
+    <dependencies>
+
+      <!-- commons-dbutils -->
+      <dependency>
+        <groupId>commons-dbutils</groupId>
+        <artifactId>commons-dbutils</artifactId>
+        <version>1.5</version>
+      </dependency>
+
+      <!-- postgresql -->
+      <dependency>
+        <groupId>postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <version>8.0-318.jdbc3</version>
+      </dependency>
+
+      <!-- commons-digester -->
+      <dependency>
+        <groupId>commons-digester</groupId>
+        <artifactId>commons-digester</artifactId>
+        <version>2.1</version>
+      </dependency>
+
+      <!-- xerces-impl -->
+      <dependency>
+        <groupId>org.bluestemsoftware.open.maven.tparty</groupId>
+        <artifactId>xerces-impl</artifactId>
+        <version>2.9.0</version>
+      </dependency>
+
+      <!-- igo -->
+      <dependency>
+        <groupId>net.reduls.igo</groupId>
+        <artifactId>igo</artifactId>
+        <version>0.4.5</version>
+      </dependency>
+
+      <!-- opencv -->
+      <dependency>
+          <groupId>nu.pattern</groupId>
+          <artifactId>opencv</artifactId>
+          <version>2.4.9-4</version>
+      </dependency>
+
+      <!-- ExceptionLib -->
+      <dependency>
+        <groupId>jp.co.humane.humane-lib</groupId>
+        <artifactId>exception-lib</artifactId>
+        <version>1.0</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <build>
+  
+    <!-- humane-libで使用する全プラグインのバージョンをここで定義 -->
+    <pluginManagement>
+      <plugins>
+        
+        <!-- jar作成 -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.4</version>
+        </plugin>
+        
+      </plugins>
+    </pluginManagement>
+    
+  </build>
+
+</project>

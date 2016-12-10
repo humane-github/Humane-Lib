@@ -7,27 +7,27 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * ƒVƒ“ƒvƒ‹‚ÈDB‘€ì—pƒNƒ‰ƒX
+ * ã‚·ãƒ³ãƒ—ãƒ«ãªDBæ“ä½œç”¨ã‚¯ãƒ©ã‚¹
  * **/
 public abstract class DBConnector
 {
 	/**
-	 * DBƒRƒlƒNƒVƒ‡ƒ“
+	 * DBã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³
 	 * **/
 	private Connection con = null;
 
 	/**
-	 * w’èDB‚ÉÚ‘±‚·‚é
+	 * æŒ‡å®šDBã«æ¥ç¶šã™ã‚‹
 	 * **/
 	public void open( ConnectionInfo info ) throws DBException
 	{
 		try
 		{
-			// JDBCƒhƒ‰ƒCƒo“Ç‚İ‚İ
+			// JDBCãƒ‰ãƒ©ã‚¤ãƒèª­ã¿è¾¼ã¿
 			String driver = getDriver();
 			Class.forName(driver);
 
-			//DBÚ‘±
+			//DBæ¥ç¶š
 			String dburl = getURL(info);
 			setConnection(DriverManager.getConnection(dburl));
 		}
@@ -42,7 +42,7 @@ public abstract class DBConnector
 	}
 
 	/**
-	 * DBƒRƒlƒNƒVƒ‡ƒ“‚ğ•Â‚¶‚é
+	 * DBã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ã‚’é–‰ã˜ã‚‹
 	 * **/
 	public void close()
 	{
@@ -53,7 +53,7 @@ public abstract class DBConnector
 	}
 
 	/**
-	 * SQL‚ğ”­s
+	 * SQLã‚’ç™ºè¡Œ
 	 * **/
 	public ResultSet executeQuery( String sql ) throws DBException
 	{
@@ -69,7 +69,7 @@ public abstract class DBConnector
 	}
 
 	/**
-	 * XVSQL‚ğ”­s
+	 * æ›´æ–°SQLã‚’ç™ºè¡Œ
 	 * **/
 	public int executeUpdate( String sql , boolean autoCommit ) throws DBException
 	{
@@ -93,10 +93,10 @@ public abstract class DBConnector
 	}
 
 	/**
-	 * ƒe[ƒuƒ‹‚ª‘¶İ‚·‚é‚©‚ğ•Ô‚·
+	 * ãƒ†ãƒ¼ãƒ–ãƒ«ãŒå­˜åœ¨ã™ã‚‹ã‹ã‚’è¿”ã™
 	 *
-	 * @param dbTable	DBTableƒIƒuƒWƒFƒNƒg
-	 * @return true:‘¶İ‚·‚éAfalse:‘¶İ‚µ‚È‚¢
+	 * @param dbTable	DBTableã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+	 * @return true:å­˜åœ¨ã™ã‚‹ã€false:å­˜åœ¨ã—ãªã„
 	 * @throws FatalException
 	 */
 	public boolean existTable(String tablename) throws DBException
@@ -113,7 +113,7 @@ public abstract class DBConnector
 				int cnt = rs.getInt(1);
 				if (cnt>0) ret = true;
 			}
-			rs.close(); //ÀsŒ‹‰Ê‚ğ”jŠü
+			rs.close(); //å®Ÿè¡Œçµæœã‚’ç ´æ£„
 		}
 		catch( SQLException ex )
 		{
@@ -127,7 +127,7 @@ public abstract class DBConnector
 	}
 
 	/**
-	 * ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“I—¹
+	 * ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³çµ‚äº†
 	 * **/
 	public void commit() throws DBException
 	{
@@ -146,7 +146,7 @@ public abstract class DBConnector
 	}
 
 	/**
-	 * ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“I—¹
+	 * ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³çµ‚äº†
 	 * **/
 	public void rollback()
 	{
@@ -158,12 +158,12 @@ public abstract class DBConnector
 	}
 
 	/**
-	 * DBÚ‘±URL‚ğæ“¾
+	 * DBæ¥ç¶šURLã‚’å–å¾—
 	 * **/
 	public abstract String getURL(ConnectionInfo info);
 
 	/**
-	 * DBƒhƒ‰ƒCƒo•¶š—ñ‚ğæ“¾
+	 * DBãƒ‰ãƒ©ã‚¤ãƒæ–‡å­—åˆ—ã‚’å–å¾—
 	 * **/
 	public abstract String getDriver();
 

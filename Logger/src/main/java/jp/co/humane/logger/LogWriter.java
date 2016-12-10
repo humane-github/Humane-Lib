@@ -7,12 +7,12 @@ public abstract class LogWriter
 	protected LogFooter m_Footer = null;
 	
 	/**
-	 * ƒƒO‚ğo—Í‚·‚é
+	 * ãƒ­ã‚°ã‚’å‡ºåŠ›ã™ã‚‹
 	 * **/
 	public abstract void write(String data);
 	
 	/**
-	 * ƒƒOo—Í•¶š‚ğ¶¬‚·‚é
+	 * ãƒ­ã‚°å‡ºåŠ›æ–‡å­—ã‚’ç”Ÿæˆã™ã‚‹
 	 * **/
 	protected String generate(String data)
 	{

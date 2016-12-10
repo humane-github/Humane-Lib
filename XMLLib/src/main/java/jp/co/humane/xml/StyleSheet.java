@@ -14,9 +14,9 @@ public class StyleSheet extends Xml
 	private String[] styleSheetString = new String[0];
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 *
-	 * @param	xml	ƒXƒ^ƒCƒ‹ƒV[ƒg‚ğæ“¾‚·‚éXML
+	 * @param	xml	ã‚¹ã‚¿ã‚¤ãƒ«ã‚·ãƒ¼ãƒˆã‚’å–å¾—ã™ã‚‹XML
 	 *
 	 * **/
 	public StyleSheet( Xml	xml,String[] styleSheet	)
@@ -27,7 +27,7 @@ public class StyleSheet extends Xml
 	}
 
 	/**
-	 * w’è‚µ‚½ƒNƒ‰ƒX‚ÌƒXƒ^ƒCƒ‹‚ğæ“¾‚·‚é
+	 * æŒ‡å®šã—ãŸã‚¯ãƒ©ã‚¹ã®ã‚¹ã‚¿ã‚¤ãƒ«ã‚’å–å¾—ã™ã‚‹
 	 * **/
 	public StyleAttribute getStyle( String name )
 	{
@@ -37,7 +37,7 @@ public class StyleSheet extends Xml
 	}
 
 	/**
-	 * w’è‚µ‚½ƒNƒ‰ƒX‚ÌƒXƒ^ƒCƒ‹‚ğXV‚·‚é
+	 * æŒ‡å®šã—ãŸã‚¯ãƒ©ã‚¹ã®ã‚¹ã‚¿ã‚¤ãƒ«ã‚’æ›´æ–°ã™ã‚‹
 	 * **/
 	public void setStyle( String className, String propertyName, String value )
 	{
@@ -46,14 +46,14 @@ public class StyleSheet extends Xml
 	}
 
 	/**
-	 * ƒXƒ^ƒCƒ‹ƒV[ƒg‚Ìİ’è‚ğƒLƒƒƒ“ƒoƒX‚É“K—p‚·‚é
+	 * ã‚¹ã‚¿ã‚¤ãƒ«ã‚·ãƒ¼ãƒˆã®è¨­å®šã‚’ã‚­ãƒ£ãƒ³ãƒã‚¹ã«é©ç”¨ã™ã‚‹
 	 * **/
 	public void apply()
 	{
 		StringBuilder builder = new StringBuilder();
 
 		/**
-		 * CDATAƒZƒNƒVƒ‡ƒ“‚Éİ’è‚µ‚½ƒXƒ^ƒCƒ‹ƒV[ƒg‚Ì’l‚ğæ“¾
+		 * CDATAã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«è¨­å®šã—ãŸã‚¹ã‚¿ã‚¤ãƒ«ã‚·ãƒ¼ãƒˆã®å€¤ã‚’å–å¾—
 		 * **/
 		CDATASection cdata = getChildCDATANode(getRootElement());
 
@@ -74,25 +74,25 @@ public class StyleSheet extends Xml
 	}
 
 	/**
-	 * XMLƒGƒŒƒƒ“ƒg‚ğ‰ğÍ
+	 * XMLã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚’è§£æ
 	 *
 	 * **/
 	public void parse()
 	{
 		/**
-		 * styleƒ^ƒO‚ğæ“¾
+		 * styleã‚¿ã‚°ã‚’å–å¾—
 		 * **/
 		List<Element> styleElements = searchElement("style");
 		if( styleElements.size() < 1 ){return;}
 		setRootElement(styleElements.get(0));
 
 		/**
-		 * CDATAƒZƒNƒVƒ‡ƒ“‚Éİ’è‚µ‚½ƒXƒ^ƒCƒ‹ƒV[ƒg‚Ì’l‚ğæ“¾
+		 * CDATAã‚»ã‚¯ã‚·ãƒ§ãƒ³ã«è¨­å®šã—ãŸã‚¹ã‚¿ã‚¤ãƒ«ã‚·ãƒ¼ãƒˆã®å€¤ã‚’å–å¾—
 		 * **/
 		CDATASection cdata = getChildCDATANode(getRootElement());
 		String cdataValue = cdata.getNodeValue();
 		/**
-		 * ƒXƒ^ƒCƒ‹ƒV[ƒg‚ÌƒNƒ‰ƒX–¼‚ÆA’l‚É•ª‰ğ‚·‚é
+		 * ã‚¹ã‚¿ã‚¤ãƒ«ã‚·ãƒ¼ãƒˆã®ã‚¯ãƒ©ã‚¹åã¨ã€å€¤ã«åˆ†è§£ã™ã‚‹
 		 * **/
 		String[] cdataList = cdataValue.split("\t");
 		if( this.styleSheetString != null && this.styleSheetString.length > 0 )
@@ -175,7 +175,7 @@ public class StyleSheet extends Xml
 		private HashMap<String,String> properties = new HashMap<String,String>();
 
 		/**
-		 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		 * **/
 		public StyleAttribute()
 		{

@@ -10,17 +10,17 @@ import org.apache.commons.dbutils.DbUtils;
 import org.apache.commons.dbutils.QueryRunner;
 
 /**
- * ƒRƒlƒNƒVƒ‡ƒ“‚ğ‘€ì‚·‚éƒNƒ‰ƒX
+ * ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ã‚’æ“ä½œã™ã‚‹ã‚¯ãƒ©ã‚¹
  */
 public class ConnectionPool
 {
-	//QueryRunnerƒIƒuƒWƒFƒNƒg
+	//QueryRunnerã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	private static QueryRunner m_queryRunner = null;
-	//ConnectionƒIƒuƒWƒFƒNƒg
+	//Connectionã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	private static Connection m_connection = null;
 
 	/**
-	 * ƒƒOƒCƒ“ƒ†[ƒU[–ˆ‚ÉDB‚Ö‚ÌƒRƒlƒNƒVƒ‡ƒ“‚ğŠm—§‚·‚é
+	 * ãƒ­ã‚°ã‚¤ãƒ³ãƒ¦ãƒ¼ã‚¶ãƒ¼æ¯ã«DBã¸ã®ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ã‚’ç¢ºç«‹ã™ã‚‹
 	 * **/
 	public static void open() throws DBUtilException
 	{
@@ -35,7 +35,7 @@ public class ConnectionPool
 	}
 
 	/**
-	 * ƒRƒlƒNƒVƒ‡ƒ“‚ğ•Â‚¶‚é
+	 * ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ã‚’é–‰ã˜ã‚‹
 	 *
 	 * **/
 	public static void close()
@@ -47,7 +47,7 @@ public class ConnectionPool
 	}
 
 	/**
-	 * ƒRƒlƒNƒVƒ‡ƒ“‚ğæ“¾‚·‚é
+	 * ã‚³ãƒã‚¯ã‚·ãƒ§ãƒ³ã‚’å–å¾—ã™ã‚‹
 	 *
 	 * @return	Connection		Connection
 	 * **/
@@ -57,7 +57,7 @@ public class ConnectionPool
 	}
 
 	/**
-	 * ‚½QueryRunner‚ğæ“¾‚·‚é
+	 * ãŸQueryRunnerã‚’å–å¾—ã™ã‚‹
 	 *
 	 * @return	QueryRunner	QueryRunner
 	 * **/

@@ -13,28 +13,28 @@ public class Logger
 		LOGFILE,
 		CONSOLE_OUT		
 	}
-	//ƒƒOo—Í‚Ìí—Ş
+	//ãƒ­ã‚°å‡ºåŠ›ã®ç¨®é¡
 	private OUTPUT m_outputType = OUTPUT.CONSOLE_OUT;
-	//ƒƒOo—Íİ’èƒtƒ@ƒCƒ‹‚ÌƒpƒX
+	//ãƒ­ã‚°å‡ºåŠ›è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹
 	private String m_confPath = null;
-	//İ’èƒtƒ@ƒCƒ‹
+	//è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«
 	private LoggerConfig m_config = null;
-	//ƒƒOo—Í
+	//ãƒ­ã‚°å‡ºåŠ›
 	private LogWriter m_logWriter = null;
-	//ƒƒO‚Ìƒwƒbƒ_[¶¬ƒIƒuƒWƒFƒNƒg
+	//ãƒ­ã‚°ã®ãƒ˜ãƒƒãƒ€ãƒ¼ç”Ÿæˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	private LogHeader m_header = null;
-	//ƒƒO‚Ìƒtƒbƒ^[¶¬ƒIƒuƒWƒFƒNƒg
+	//ãƒ­ã‚°ã®ãƒ•ãƒƒã‚¿ãƒ¼ç”Ÿæˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	private LogFooter m_footer = null;
 	
 	/**
-	 * LoggerƒCƒ“ƒXƒ^ƒ“ƒX‚ğæ“¾‚·‚é
+	 * Loggerã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å–å¾—ã™ã‚‹
 	 * **/
 	public static Logger create()
 	{
 		return new Logger(null);
 	}
 	/**
-	 * LoggerƒCƒ“ƒXƒ^ƒ“ƒX‚ğæ“¾‚·‚é
+	 * Loggerã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’å–å¾—ã™ã‚‹
 	 * **/
 	public static Logger create(String confPath)
 	{
@@ -42,14 +42,14 @@ public class Logger
 	}
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * 
-	 * @param	confPath	ƒƒOo—Íİ’èƒtƒ@ƒCƒ‹‚ÌƒpƒX
-	 * @param	type		ƒƒO‚Ìo—Í•û®
+	 * @param	confPath	ãƒ­ã‚°å‡ºåŠ›è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ‘ã‚¹
+	 * @param	type		ãƒ­ã‚°ã®å‡ºåŠ›æ–¹å¼
 	 * **/
 	private Logger(String confPath)
 	{
-		//İ’èƒtƒ@ƒCƒ‹“Ç‚İ‚İ
+		//è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«èª­ã¿è¾¼ã¿
 		m_confPath = confPath;
 		if( confPath != null && confPath.length() > 0 )
 		{
@@ -74,13 +74,13 @@ public class Logger
 			break; 
 		}
 		
-		//ƒwƒbƒ_[‚Æƒtƒbƒ^[‚ğİ’è
+		//ãƒ˜ãƒƒãƒ€ãƒ¼ã¨ãƒ•ãƒƒã‚¿ãƒ¼ã‚’è¨­å®š
 		m_logWriter.setHeaderWriter(new StacktraceHeader());
 		m_logWriter.setFooterWriter(null);
 	}
 	
 	/**
-	 * ƒƒO‚ğo—Í‚·‚é
+	 * ãƒ­ã‚°ã‚’å‡ºåŠ›ã™ã‚‹
 	 * **/
 	public void trace(String s)
 	{

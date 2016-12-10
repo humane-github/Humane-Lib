@@ -5,7 +5,7 @@ import org.opencv.core.Core;
 public class OpenCVLib
 {
 	/**
-	 * OpenCV‚ÌDLL‚ğƒ[ƒh‚·‚é
+	 * OpenCVã®DLLã‚’ãƒ­ãƒ¼ãƒ‰ã™ã‚‹
 	 * **/
 	public static void LoadDLL()
 	{

@@ -15,16 +15,16 @@ public class IgoEngine extends MorphemeEngine
 	public Tagger m_tagger = null;
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * **/
 	public IgoEngine()
 	{		
 	}
 	
 	/**
-	 * Œ`‘Ô‘f‰ğÍƒGƒ“ƒWƒ“‚Ì‰Šú‰»
+	 * å½¢æ…‹ç´ è§£æã‚¨ãƒ³ã‚¸ãƒ³ã®åˆæœŸåŒ–
 	 * 
-	 * @param	ipadic	ipadic‚ÌƒpƒX
+	 * @param	ipadic	ipadicã®ãƒ‘ã‚¹
 	 * **/
 	public void init(String ipadic) throws MorphemeEngineException
 	{	
@@ -40,10 +40,10 @@ public class IgoEngine extends MorphemeEngine
 	}
 	
 	/**
-	 * Œ`‘Ô‘f‰ğÍ‚ğs‚¤
+	 * å½¢æ…‹ç´ è§£æã‚’è¡Œã†
 	 * 
-	 * @param	text	‰ğÍ‚ğs‚¤•¶š—ñ
-	 * @return	List<jp.co.humane.igo.Morpheme>	Œ`‘Ô‘f‰ğÍ‚ÌŒ‹‰Ê
+	 * @param	text	è§£æã‚’è¡Œã†æ–‡å­—åˆ—
+	 * @return	List<jp.co.humane.igo.Morpheme>	å½¢æ…‹ç´ è§£æã®çµæœ
 	 * **/
 	public List<jp.co.humane.morpheme.Morpheme> parse(String text)
 	{
@@ -65,7 +65,7 @@ public class IgoEngine extends MorphemeEngine
 		try
 		{
 			MorphemeEngine engine = MorphemeEngineFactory.create(MorphemeEngineFactory.TYPE.IGO, "C:\\DEV\\05.Igo\\ipadic-shiftjis");		
-			List<jp.co.humane.morpheme.Morpheme> result = engine.parse("‚±‚ñ‚É‚¿‚ÍB—é–ØD˜a‚³‚ñ‚¨‚Ë‚ª‚¢‚µ‚Ü‚·B");
+			List<jp.co.humane.morpheme.Morpheme> result = engine.parse("ã“ã‚“ã«ã¡ã¯ã€‚éˆ´æœ¨å¥½å’Œã•ã‚“ãŠã­ãŒã„ã—ã¾ã™ã€‚");
 			for( jp.co.humane.morpheme.Morpheme token : result )
 			{
 				System.out.println(String.format("%s|%d|%s", token.Feature(),token.Start(),token.Surface()));

@@ -19,60 +19,60 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 /**
- * XML•¶‘‚ğ‘€ì‚·‚éƒNƒ‰ƒX
+ * XMLæ–‡æ›¸ã‚’æ“ä½œã™ã‚‹ã‚¯ãƒ©ã‚¹
  *
  * @author T.Ichikawa
  *
  */
 public class XMLManager{
 
-	/** ‘€ì‘ÎÛ‚ÌXML•¶‘ **/
+	/** æ“ä½œå¯¾è±¡ã®XMLæ–‡æ›¸ **/
 	private Document document = null;
 
-	/** ƒ‹[ƒg—v‘f **/
+	/** ãƒ«ãƒ¼ãƒˆè¦ç´  **/
 	private Element root = null;
 
-	/** ŒŸõŒ‹‰Ê‚Ì—v‘f **/
+	/** æ¤œç´¢çµæœã®è¦ç´  **/
 	private Element findResultElement = null;
 
-	/** ŒŸõŒ‹‰Ê‚Ìe—v‘f **/
+	/** æ¤œç´¢çµæœã®è¦ªè¦ç´  **/
 	private Element findResultParentElement = null;
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚Ìó‘Ô
-	 * 	true=ƒJƒŒƒ“ƒg—v‘f‚È‚µAfalse=ƒJƒŒƒ“ƒg—v‘f‚ ‚è
-	 * 	findŒnƒƒ\ƒbƒh‚ÅŒŸõŒ‹‰Ê‚ª–³‚¢ê‡‚Ítrue
-	 * 	moveFirstŒnƒƒ\ƒbƒh”­s‚Éfalse‚ªİ’è‚³‚ê‚é
-	 * 	moveNextŒnƒƒ\ƒbƒh‚ÅŸ‚Ì—v‘f‚ª–³‚©‚Á‚½‚çtrue
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®çŠ¶æ…‹
+	 * 	true=ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ãªã—ã€false=ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã‚ã‚Š
+	 * 	findç³»ãƒ¡ã‚½ãƒƒãƒ‰ã§æ¤œç´¢çµæœãŒç„¡ã„å ´åˆã¯true
+	 * 	moveFirstç³»ãƒ¡ã‚½ãƒƒãƒ‰ç™ºè¡Œæ™‚ã«falseãŒè¨­å®šã•ã‚Œã‚‹
+	 * 	moveNextç³»ãƒ¡ã‚½ãƒƒãƒ‰ã§æ¬¡ã®è¦ç´ ãŒç„¡ã‹ã£ãŸã‚‰true
 	 */
 	private boolean EOF = false;
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚Ìó‘Ô‚ğİ’è‚·‚é
-	 * 	’l‚ÍŒŸõ^ˆÚ“®Œnƒƒ\ƒbƒh‚Åİ’è‚·‚é
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®çŠ¶æ…‹ã‚’è¨­å®šã™ã‚‹
+	 * 	å€¤ã¯æ¤œç´¢ï¼ç§»å‹•ç³»ãƒ¡ã‚½ãƒƒãƒ‰ã§è¨­å®šã™ã‚‹
 	 *
-	 * @param b ƒJƒŒƒ“ƒg—v‘f‚Ìó‘Ô
+	 * @param b ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®çŠ¶æ…‹
 	 */
 	private void setEOF(boolean b){
 		EOF = b;
 	}
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚Ì—L–³‚ğ•Ô‚·
-	 * @return true=ƒJƒŒƒ“ƒg—v‘f‚È‚µAfalse=ƒJƒŒƒ“ƒg—v‘f‚ ‚è
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®æœ‰ç„¡ã‚’è¿”ã™
+	 * @return true=ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ãªã—ã€false=ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã‚ã‚Š
 	 */
 	public boolean EOF(){return EOF;}
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 */
 	public XMLManager(){
 
 	}
 
 	/**
-	 * XML‚ğƒVƒŠƒAƒ‰ƒCƒY‚·‚é
-	 * @return	ƒVƒŠƒAƒ‰ƒCƒY‚µ‚½‚w‚l‚k•¶š—ñ
+	 * XMLã‚’ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã™ã‚‹
+	 * @return	ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚ºã—ãŸï¼¸ï¼­ï¼¬æ–‡å­—åˆ—
 	 */
 	public String serialize(){
     	String ret = null;
@@ -90,7 +90,7 @@ public class XMLManager{
 	}
 
 	/**
-	 * Œ»İæ“¾‚µ‚Ä‚¢‚éXML•¶‘‚ğ”jŠü‚·‚é
+	 * ç¾åœ¨å–å¾—ã—ã¦ã„ã‚‹XMLæ–‡æ›¸ã‚’ç ´æ£„ã™ã‚‹
 	 *
 	 */
 	private void closeDocument(){
@@ -99,24 +99,24 @@ public class XMLManager{
 	}
 
 	/**
-	 * XMLƒtƒ@ƒCƒ‹‚ğ“Ç‚İ‚Ş
+	 * XMLãƒ•ã‚¡ã‚¤ãƒ«ã‚’èª­ã¿è¾¼ã‚€
 	 *
-	 * @param filePath “Ç‚İ‚ŞXMLƒtƒ@ƒCƒ‹
-	 * @return true:¬Œ÷Afalse:¸”s
+	 * @param filePath èª­ã¿è¾¼ã‚€XMLãƒ•ã‚¡ã‚¤ãƒ«
+	 * @return true:æˆåŠŸã€false:å¤±æ•—
 	 */
 	public boolean openXMLFile(String filePath)
 	{
 		try{
-			//ƒhƒLƒ…ƒƒ“ƒgƒrƒ‹ƒ_[ƒtƒ@ƒNƒgƒŠ‚ğ¶¬
+			//ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆãƒ“ãƒ«ãƒ€ãƒ¼ãƒ•ã‚¡ã‚¯ãƒˆãƒªã‚’ç”Ÿæˆ
 		    DocumentBuilderFactory dbfactory = DocumentBuilderFactory.newInstance();
 
-		    //ƒhƒLƒ…ƒƒ“ƒgƒrƒ‹ƒ_[‚ğ¶¬
+		    //ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆãƒ“ãƒ«ãƒ€ãƒ¼ã‚’ç”Ÿæˆ
 		    DocumentBuilder builder = dbfactory.newDocumentBuilder();
 
-		    //ƒp[ƒX‚ğÀs‚µ‚ÄDocumentƒIƒuƒWƒFƒNƒg‚ğæ“¾
+		    //ãƒ‘ãƒ¼ã‚¹ã‚’å®Ÿè¡Œã—ã¦Documentã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
 		    document = builder.parse(new File(filePath));
 
-		    //ƒ‹[ƒg—v‘f‚ğæ“¾
+		    //ãƒ«ãƒ¼ãƒˆè¦ç´ ã‚’å–å¾—
 		    root = document.getDocumentElement();
 
 		}catch(Exception ex){
@@ -129,10 +129,10 @@ public class XMLManager{
 	}
 
 	/**
-	 * XML•¶š—ñ‚ğİ’è‚·‚é
+	 * XMLæ–‡å­—åˆ—ã‚’è¨­å®šã™ã‚‹
 	 *
-	 * @param xmlText XML•¶š—ñ
-	 * @return true:¬Œ÷Afalse:¸”s
+	 * @param xmlText XMLæ–‡å­—åˆ—
+	 * @return true:æˆåŠŸã€false:å¤±æ•—
 	 */
 	public boolean setXMLText(String xmlText)
 	{
@@ -140,16 +140,16 @@ public class XMLManager{
 			InputSource source = new InputSource(new StringReader(xmlText));
 			source.setEncoding("UTF-8");
 
-			//ƒhƒLƒ…ƒƒ“ƒgƒrƒ‹ƒ_[ƒtƒ@ƒNƒgƒŠ‚ğ¶¬
+			//ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆãƒ“ãƒ«ãƒ€ãƒ¼ãƒ•ã‚¡ã‚¯ãƒˆãƒªã‚’ç”Ÿæˆ
 		    DocumentBuilderFactory dbfactory = DocumentBuilderFactory.newInstance();
 
-		    //ƒhƒLƒ…ƒƒ“ƒgƒrƒ‹ƒ_[‚ğ¶¬
+		    //ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆãƒ“ãƒ«ãƒ€ãƒ¼ã‚’ç”Ÿæˆ
 		    DocumentBuilder builder = dbfactory.newDocumentBuilder();
 
-		    //ƒp[ƒX‚ğÀs‚µ‚ÄDocumentƒIƒuƒWƒFƒNƒg‚ğæ“¾
+		    //ãƒ‘ãƒ¼ã‚¹ã‚’å®Ÿè¡Œã—ã¦Documentã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—
 		    document = builder.parse(source);
 
-		    //ƒ‹[ƒg—v‘f‚ğæ“¾
+		    //ãƒ«ãƒ¼ãƒˆè¦ç´ ã‚’å–å¾—
 		    root = document.getDocumentElement();
 
 		}catch(Exception ex){
@@ -163,10 +163,10 @@ public class XMLManager{
 
 
 	/**
-	 *ƒ^ƒO–¼‚ğƒL[‚É‚µ‚Äƒ‹[ƒg—v‘f”z‰º‚ğÄ‹A“I‚ÉŒŸõ‚·‚é
+	 *ã‚¿ã‚°åã‚’ã‚­ãƒ¼ã«ã—ã¦ãƒ«ãƒ¼ãƒˆè¦ç´ é…ä¸‹ã‚’å†å¸°çš„ã«æ¤œç´¢ã™ã‚‹
 	 *
-	 * @param tagName ŒŸõ‚·‚éƒ^ƒO–¼
-	 * @return true:ŠY“–—v‘fŒŸoAfalse:ŠY“–—v‘f‚È‚µ
+	 * @param tagName æ¤œç´¢ã™ã‚‹ã‚¿ã‚°å
+	 * @return true:è©²å½“è¦ç´ æ¤œå‡ºã€false:è©²å½“è¦ç´ ãªã—
 	 */
 	public boolean findTagFromRoot(String tagName)
 	{
@@ -208,11 +208,11 @@ public class XMLManager{
 	}
 
 	/**
-	 *ƒ^ƒO–¼‚ğƒL[‚É‚µ‚Äw’è—v‘fŒQ‚ğÄ‹A“I‚ÉŒŸõ‚·‚é
+	 *ã‚¿ã‚°åã‚’ã‚­ãƒ¼ã«ã—ã¦æŒ‡å®šè¦ç´ ç¾¤ã‚’å†å¸°çš„ã«æ¤œç´¢ã™ã‚‹
 	 *
-	 * @param elements ŒŸõ‚·‚é—v‘fŒQ
-	 * @param tagName ŒŸõ‚·‚éƒ^ƒO–¼
-	 * @return Œ©‚Â‚©‚Á‚½—v‘fiŒ©‚Â‚©‚ç‚È‚©‚Á‚½ê‡‚Ínullj
+	 * @param elements æ¤œç´¢ã™ã‚‹è¦ç´ ç¾¤
+	 * @param tagName æ¤œç´¢ã™ã‚‹ã‚¿ã‚°å
+	 * @return è¦‹ã¤ã‹ã£ãŸè¦ç´ ï¼ˆè¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸå ´åˆã¯nullï¼‰
 	 */
 	private Element findTag_recurs(NodeList elements, String tagName)
 	{
@@ -242,9 +242,9 @@ public class XMLManager{
 	}
 
 	/**
-	 * ŒŸõŒ‹‰Ê‚ÌƒJƒŒƒ“ƒg—v‘f‚Ìƒ^ƒO–¼‚ğ•Ô‚·
+	 * æ¤œç´¢çµæœã®ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®ã‚¿ã‚°åã‚’è¿”ã™
 	 *
-	 * @return ƒ^ƒO–¼iŒŸõŒ‹‰Ê‚ª‘¶İ‚µ‚È‚¢ê‡‚Ínullj
+	 * @return ã‚¿ã‚°åï¼ˆæ¤œç´¢çµæœãŒå­˜åœ¨ã—ãªã„å ´åˆã¯nullï¼‰
 	 */
 	public String getTagName(){
 		if (findResultElement!=null){
@@ -255,10 +255,10 @@ public class XMLManager{
 	}
 
 	/**
-	 * ŒŸõŒ‹‰Ê‚ÌƒJƒŒƒ“ƒg—v‘f‚Ìw’è‚µ‚½‘®«‚Ì’l‚ğ•Ô‚·
+	 * æ¤œç´¢çµæœã®ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®æŒ‡å®šã—ãŸå±æ€§ã®å€¤ã‚’è¿”ã™
 	 *
-	 * @param	attrName ‘®«–¼
-	 * @return ‘®«‚Ì’liŒŸõŒ‹‰Ê‚ª‘¶İ‚µ‚È‚¢ê‡‚Ínullj
+	 * @param	attrName å±æ€§å
+	 * @return å±æ€§ã®å€¤ï¼ˆæ¤œç´¢çµæœãŒå­˜åœ¨ã—ãªã„å ´åˆã¯nullï¼‰
 	 */
 	public String getAttribute(String attrName){
 		if (findResultElement!=null){
@@ -269,10 +269,10 @@ public class XMLManager{
 	}
 
 	/**
-	 * ŒŸõŒ‹‰Ê‚ÌƒJƒŒƒ“ƒg—v‘f‚Ì‘®«‚ğİ’è‚·‚é
+	 * æ¤œç´¢çµæœã®ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®å±æ€§ã‚’è¨­å®šã™ã‚‹
 	 *
-	 * @param AttributeName	‘®«–¼
-	 * @param attributeValue	‘®«’l
+	 * @param AttributeName	å±æ€§å
+	 * @param attributeValue	å±æ€§å€¤
 	 */
 	public void setAttribute(String AttributeName, String attributeValue)
 	{
@@ -282,9 +282,9 @@ public class XMLManager{
 	}
 
 	/**
-	 * ŒŸõŒ‹‰Ê‚ÌƒJƒŒƒ“ƒg—v‘f‚Ìƒ^ƒO’l‚ğ•Ô‚·
+	 * æ¤œç´¢çµæœã®ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®ã‚¿ã‚°å€¤ã‚’è¿”ã™
 	 *
-	 * @return ƒ^ƒO’liŒŸõŒ‹‰Ê‚ª‘¶İ‚µ‚È‚¢ê‡‚Ínullj
+	 * @return ã‚¿ã‚°å€¤ï¼ˆæ¤œç´¢çµæœãŒå­˜åœ¨ã—ãªã„å ´åˆã¯nullï¼‰
 	 */
 	public String getTagValue(){
 		if (findResultElement!=null){
@@ -306,25 +306,25 @@ public class XMLManager{
 	}
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚ğŸ‚ÌŒZ’í—v‘f‚ÉˆÚ“®‚·‚é
-	 * @return true:Ÿ‚ÌŒZ’í—v‘f‚ª‘¶İ‚·‚éAfalse:Ÿ‚ÌŒZ’í—v‘f‚ª‘¶İ‚µ‚È‚¢
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã‚’æ¬¡ã®å…„å¼Ÿè¦ç´ ã«ç§»å‹•ã™ã‚‹
+	 * @return true:æ¬¡ã®å…„å¼Ÿè¦ç´ ãŒå­˜åœ¨ã™ã‚‹ã€false:æ¬¡ã®å…„å¼Ÿè¦ç´ ãŒå­˜åœ¨ã—ãªã„
 	 */
 	public boolean moveNextSibling(){
 		return moveSibling(true);
 	}
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚ğ‘O‚ÌŒZ’í—v‘f‚ÉˆÚ“®‚·‚é
-	 * @return true:‘O‚ÌŒZ’í—v‘f‚ª‘¶İ‚·‚éAfalse:‘O‚ÌŒZ’í—v‘f‚ª‘¶İ‚µ‚È‚¢
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã‚’å‰ã®å…„å¼Ÿè¦ç´ ã«ç§»å‹•ã™ã‚‹
+	 * @return true:å‰ã®å…„å¼Ÿè¦ç´ ãŒå­˜åœ¨ã™ã‚‹ã€false:å‰ã®å…„å¼Ÿè¦ç´ ãŒå­˜åœ¨ã—ãªã„
 	 */
 	public boolean movePreviousSibling(){
 		return moveSibling(false);
 	}
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚ğ‘OŒã‚ÌŒZ’í—v‘f‚ÉˆÚ“®‚·‚é
-	 * @param moveNext true:Ÿ‚ÌŒZ’í—v‘f‚ÉˆÚ“®Afalse:‘O‚ÌŒZ’í—v‘f‚ÉˆÚ“®
-	 * @return true:ˆÚ“®¬Œ÷Afalse:ˆÚ“®æ—v‘f‚È‚µ
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã‚’å‰å¾Œã®å…„å¼Ÿè¦ç´ ã«ç§»å‹•ã™ã‚‹
+	 * @param moveNext true:æ¬¡ã®å…„å¼Ÿè¦ç´ ã«ç§»å‹•ã€false:å‰ã®å…„å¼Ÿè¦ç´ ã«ç§»å‹•
+	 * @return true:ç§»å‹•æˆåŠŸã€false:ç§»å‹•å…ˆè¦ç´ ãªã—
 	 */
 	private boolean moveSibling(boolean moveNext)
 	{
@@ -353,26 +353,26 @@ public class XMLManager{
 	}
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚ğæ“ª‚Ìq—v‘f‚ÉˆÚ“®‚·‚é
-	 * @return true:q—v‘f‚ª‘¶İ‚·‚éAfalse:q—v‘f‚ª‘¶İ‚µ‚È‚¢
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã‚’å…ˆé ­ã®å­è¦ç´ ã«ç§»å‹•ã™ã‚‹
+	 * @return true:å­è¦ç´ ãŒå­˜åœ¨ã™ã‚‹ã€false:å­è¦ç´ ãŒå­˜åœ¨ã—ãªã„
 	 */
 	public boolean moveFirstChild(){
 		return moveChild(true);
 	}
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚ğ––”ö‚Ìq—v‘f‚ÉˆÚ“®‚·‚é
-	 * @return true:q—v‘f‚ª‘¶İ‚·‚éAfalse:q—v‘f‚ª‘¶İ‚µ‚È‚¢
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã‚’æœ«å°¾ã®å­è¦ç´ ã«ç§»å‹•ã™ã‚‹
+	 * @return true:å­è¦ç´ ãŒå­˜åœ¨ã™ã‚‹ã€false:å­è¦ç´ ãŒå­˜åœ¨ã—ãªã„
 	 */
 	public boolean moveLastChild(){
 		return moveChild(false);
 	}
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚ğæ“ª‚Ü‚½‚Í––”ö‚Ìq—v‘f‚ÉˆÚ“®‚·‚é
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã‚’å…ˆé ­ã¾ãŸã¯æœ«å°¾ã®å­è¦ç´ ã«ç§»å‹•ã™ã‚‹
 	 *
-	 * @param moveFirstChild	true:æ“ª‚Ìq—v‘f‚ÉˆÚ“®Afalse:––”ö‚Ìq—v‘f‚ÉˆÚ“®
-	 * @return true:q—v‘f‚ª‘¶İ‚·‚éAfalse:q—v‘f‚ª‘¶İ‚µ‚È‚¢
+	 * @param moveFirstChild	true:å…ˆé ­ã®å­è¦ç´ ã«ç§»å‹•ã€false:æœ«å°¾ã®å­è¦ç´ ã«ç§»å‹•
+	 * @return true:å­è¦ç´ ãŒå­˜åœ¨ã™ã‚‹ã€false:å­è¦ç´ ãŒå­˜åœ¨ã—ãªã„
 	 */
 	private boolean moveChild(boolean moveFirstChild){
 		NodeList list = findResultElement.getChildNodes();
@@ -409,8 +409,8 @@ public class XMLManager{
 	}
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚ğe—v‘f‚ÉˆÚ“®‚·‚é
-	 * @return true:e—v‘f‚ª‘¶İ‚·‚éAfalse:e—v‘f‚ª‘¶İ‚µ‚È‚¢
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã‚’è¦ªè¦ç´ ã«ç§»å‹•ã™ã‚‹
+	 * @return true:è¦ªè¦ç´ ãŒå­˜åœ¨ã™ã‚‹ã€false:è¦ªè¦ç´ ãŒå­˜åœ¨ã—ãªã„
 	 */
 	public boolean moveParent()
 	{
@@ -430,10 +430,10 @@ public class XMLManager{
 	}
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚Ì‘O‚ÌŒZ’í—v‘f‚Æ‚µ‚ÄV‹K—v‘f‚ğ’Ç‰Á‚·‚é
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®å‰ã®å…„å¼Ÿè¦ç´ ã¨ã—ã¦æ–°è¦è¦ç´ ã‚’è¿½åŠ ã™ã‚‹
 	 *
-	 * @param tagName V‹K—v‘f‚Ìƒ^ƒO–¼
-	 * @return true:¬Œ÷Afalse:¸”s
+	 * @param tagName æ–°è¦è¦ç´ ã®ã‚¿ã‚°å
+	 * @return true:æˆåŠŸã€false:å¤±æ•—
 	 */
 	public boolean addSiblingTag(String tagName)
 	{
@@ -445,11 +445,11 @@ public class XMLManager{
 	}
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚Ìq—v‘f‚Æ‚µ‚ÄV‹K—v‘f‚ğ’Ç‰Á‚·‚é
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®å­è¦ç´ ã¨ã—ã¦æ–°è¦è¦ç´ ã‚’è¿½åŠ ã™ã‚‹
 	 *
-	 * @param tagName 		V‹K—v‘f‚Ìƒ^ƒO–¼
-	 * @param moveCurrent	true:V‹K—v‘f‚ğƒJƒŒƒ“ƒg—v‘f‚É•ÏX‚·‚éAfalse:ƒJƒŒƒ“ƒg—v‘f‚Í•ÏX‚µ‚È‚¢
-	 * @return true:¬Œ÷Afalse:¸”s
+	 * @param tagName 		æ–°è¦è¦ç´ ã®ã‚¿ã‚°å
+	 * @param moveCurrent	true:æ–°è¦è¦ç´ ã‚’ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã«å¤‰æ›´ã™ã‚‹ã€false:ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã¯å¤‰æ›´ã—ãªã„
+	 * @return true:æˆåŠŸã€false:å¤±æ•—
 	 */
 	public boolean addChildTag(String tagName, boolean moveCurrent)
 	{
@@ -463,10 +463,10 @@ public class XMLManager{
 	}
 
 	/**
-	 * w’è‚µ‚½•¶‘‚ÌƒJƒŒƒ“ƒg—v‘f‚ğ‚±‚Ì•¶‘‚ÌƒJƒŒƒ“ƒg—v‘f”z‰º‚ÉƒRƒs[‚·‚é
+	 * æŒ‡å®šã—ãŸæ–‡æ›¸ã®ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã‚’ã“ã®æ–‡æ›¸ã®ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ é…ä¸‹ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹
 	 *
-	 * @param source_xml ƒRƒs[‚·‚éƒJƒŒƒ“ƒg—v‘f‚ğ‚Â•¶‘
-	 * @return true:¬Œ÷Afalse:¸”s
+	 * @param source_xml ã‚³ãƒ”ãƒ¼ã™ã‚‹ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã‚’æŒã¤æ–‡æ›¸
+	 * @return true:æˆåŠŸã€false:å¤±æ•—
 	 */
 	public boolean copyChild(XMLManager source_xml)
 	{
@@ -476,10 +476,10 @@ public class XMLManager{
 
 		if ( EOF() ) return false;
 
-		//ƒRƒs[Œ³ƒm[ƒh‚Ì•¡»‚ğæ“¾
+		//ã‚³ãƒ”ãƒ¼å…ƒãƒãƒ¼ãƒ‰ã®è¤‡è£½ã‚’å–å¾—
 		Element srcChild = source_xml.getCurrentClone();
 
-		//—v‘f‚ğÄ‹AƒRƒs[‚·‚é
+		//è¦ç´ ã‚’å†å¸°ã‚³ãƒ”ãƒ¼ã™ã‚‹
 		ArrayList<Node> childNodes = new ArrayList<Node>();
 		childNodes.add(srcChild);
 		_copyChild(findResultElement, childNodes);
@@ -488,30 +488,30 @@ public class XMLManager{
 	}
 
 	/**
-	 * ƒJƒŒƒ“ƒg—v‘f‚Ì•¡»‚ğ•Ô‚·
+	 * ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®è¤‡è£½ã‚’è¿”ã™
 	 *
-	 * @return ƒJƒŒƒ“ƒg—v‘f‚Ì•¡»
+	 * @return ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ ã®è¤‡è£½
 	 */
 	private Element getCurrentClone(){
 		return (Element)findResultElement.cloneNode(true);
 	}
 
 	/**
-	 * —v‘f‚ğÄ‹AƒRƒs[‚·‚é
+	 * è¦ç´ ã‚’å†å¸°ã‚³ãƒ”ãƒ¼ã™ã‚‹
 	 *
-	 * @param target		ƒRƒs[æ—v‘fi‚±‚Ì—v‘f‚Ì’¼‰º‚ÉƒRƒs[‚·‚éj
-	 * @param sourceList	ƒRƒs[Œ³—v‘f‚ÌƒŠƒXƒg
+	 * @param target		ã‚³ãƒ”ãƒ¼å…ˆè¦ç´ ï¼ˆã“ã®è¦ç´ ã®ç›´ä¸‹ã«ã‚³ãƒ”ãƒ¼ã™ã‚‹ï¼‰
+	 * @param sourceList	ã‚³ãƒ”ãƒ¼å…ƒè¦ç´ ã®ãƒªã‚¹ãƒˆ
 	 */
 	private void _copyChild(Element target, ArrayList<Node> sourceList)
 	{
 		for(Node srcNode : sourceList){
 			if (srcNode.getNodeType()!=Node.ELEMENT_NODE) continue;
 
-			//V‹K—v‘fì¬
+			//æ–°è¦è¦ç´ ä½œæˆ
 			Element srcElem = (Element)srcNode;
 			String tagName = srcElem.getTagName();
 			Element newChild = document.createElement(tagName);
-			//—v‘f‚Ì‘®«‚ğİ’è
+			//è¦ç´ ã®å±æ€§ã‚’è¨­å®š
 			NamedNodeMap nnMap = srcElem.getAttributes();
 			for(int index = 0; index<nnMap.getLength(); index++)
 			{
@@ -522,10 +522,10 @@ public class XMLManager{
 					newChild.setAttribute(name, value);
 				}
 			}
-			//ì¬‚µ‚½—v‘f‚ğƒJƒŒƒ“ƒg—v‘f”z‰º‚É’Ç‰Á‚·‚é
+			//ä½œæˆã—ãŸè¦ç´ ã‚’ã‚«ãƒ¬ãƒ³ãƒˆè¦ç´ é…ä¸‹ã«è¿½åŠ ã™ã‚‹
 			target.appendChild(newChild);
 
-			//q—v‘f‚ğÄ‹AƒRƒs[‚·‚é
+			//å­è¦ç´ ã‚’å†å¸°ã‚³ãƒ”ãƒ¼ã™ã‚‹
 			if (srcNode.getChildNodes() != null && srcNode.getChildNodes().getLength() > 0){
 				if(srcNode.getNodeType() == Node.ELEMENT_NODE){
 					ArrayList<Node> childNodes = new ArrayList<Node>();
@@ -565,7 +565,7 @@ public class XMLManager{
 		return repStr;
 	}
     /**
-     * svgƒf[ƒ^‚Ìæ“ª‚Ì‰üs^ƒ^ƒu‚ğœ‹
+     * svgãƒ‡ãƒ¼ã‚¿ã®å…ˆé ­ã®æ”¹è¡Œï¼ã‚¿ãƒ–ã‚’é™¤å»
      * @param data
      * @return
      */

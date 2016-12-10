@@ -14,9 +14,9 @@ public class FileLogWriter extends LogWriter
 	private File m_log = null;
 	private FileWriter m_fileWriter = null;
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * 
-	 * @param	config	ƒƒOo—Íİ’èƒtƒ@ƒCƒ‹ƒIƒuƒWƒFƒNƒg
+	 * @param	config	ãƒ­ã‚°å‡ºåŠ›è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 * **/
 	public FileLogWriter(LoggerConfig config)
 	{
@@ -29,10 +29,10 @@ public class FileLogWriter extends LogWriter
 		{
 			if( m_log == null )
 			{
-				//ƒtƒ@ƒCƒ‹–¼ì¬
+				//ãƒ•ã‚¡ã‚¤ãƒ«åä½œæˆ
 				String filename = m_config.getString("FILENAME");
 				filename += dateString();
-				//ƒtƒ@ƒCƒ‹‚ğì‚é
+				//ãƒ•ã‚¡ã‚¤ãƒ«ã‚’ä½œã‚‹
 				m_log = new File(m_config.getString(CONF_DIRECTORY)+File.separator+filename+".log");
 				m_fileWriter = new FileWriter(m_log,true);
 			}
@@ -47,7 +47,7 @@ public class FileLogWriter extends LogWriter
 	
 	private String dateString()
 	{
-		// yyyy/mm/dd‚ÅƒtƒH[ƒ}ƒbƒg
+		// yyyy/mm/ddã§ãƒ•ã‚©ãƒ¼ãƒãƒƒãƒˆ
 		DateFormat df = new SimpleDateFormat("yyyyMMdd");
 		return df.format(new Date());
 	}	

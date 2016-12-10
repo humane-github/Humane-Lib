@@ -2,13 +2,13 @@ package jp.co.humane.dbutil.exception;
 
 public class DBUtilException extends Exception
 {
-	//ƒGƒ‰[ƒR[ƒh
+	//ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰
 	private String m_errorCode = "";
 	
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 * 
-	 * @param	c	ƒGƒ‰[ƒR[ƒh
+	 * @param	c	ã‚¨ãƒ©ãƒ¼ã‚³ãƒ¼ãƒ‰
 	 * **/
 	public DBUtilException(String c)
 	{

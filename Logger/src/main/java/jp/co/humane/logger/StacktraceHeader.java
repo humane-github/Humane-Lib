@@ -1,7 +1,7 @@
 package jp.co.humane.logger;
 
 /**
- * �Ăяo�����N���X�̏����w�b�_�[�ɕt������
+ * 呼び出し元クラスの情報をヘッダーに付加する
  * **/
 public class StacktraceHeader implements LogHeader
 {

@@ -1,21 +1,21 @@
 /*
- * ì¬“úF 2005/08/10
+ * ä½œæˆæ—¥ï¼š 2005/08/10
  *
- * TODO ‚±‚Ì¶¬‚³‚ê‚½ƒtƒ@ƒCƒ‹‚Ìƒeƒ“ƒvƒŒ[ƒg‚ð•ÏX‚·‚é‚É‚ÍŽŸ‚ðŽQÆB
- * ƒEƒBƒ“ƒhƒE „ Ý’è „ Java „ ƒR[ƒhEƒXƒ^ƒCƒ‹ „ ƒR[ƒhEƒeƒ“ƒvƒŒ[ƒg
+ * TODO ã“ã®ç”Ÿæˆã•ã‚ŒãŸãƒ•ã‚¡ã‚¤ãƒ«ã®ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚’å¤‰æ›´ã™ã‚‹ã«ã¯æ¬¡ã‚’å‚ç…§ã€‚
+ * ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ ï¼ž è¨­å®š ï¼ž Java ï¼ž ã‚³ãƒ¼ãƒ‰ãƒ»ã‚¹ã‚¿ã‚¤ãƒ« ï¼ž ã‚³ãƒ¼ãƒ‰ãƒ»ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆ
  */
 package jp.co.humane.exception;
 
 /**
- * ƒCƒ“ƒ^[ƒtƒF[ƒXFExceptionHandler
- * ModelGen—áŠO”­¶Žž‚ÌƒGƒ‰[ˆ—‚ðŽÀ‘•‚·‚éƒnƒ“ƒhƒ‰[
+ * ã‚¤ãƒ³ã‚¿ãƒ¼ãƒ•ã‚§ãƒ¼ã‚¹ï¼šExceptionHandler
+ * ModelGenä¾‹å¤–ç™ºç”Ÿæ™‚ã®ã‚¨ãƒ©ãƒ¼å‡¦ç†ã‚’å®Ÿè£…ã™ã‚‹ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
  * @author suzuki
  */
 public interface ExceptionHandler
 {
 	/**
-	 * ƒGƒ‰[ˆ—‚ðŽÀ‘•‚·‚é‚½‚ß‚Ìƒƒ\ƒbƒh
-	 * @param	e	”­¶‚µ‚½—áŠOƒIƒuƒWƒFƒNƒg
+	 * ã‚¨ãƒ©ãƒ¼å‡¦ç†ã‚’å®Ÿè£…ã™ã‚‹ãŸã‚ã®ãƒ¡ã‚½ãƒƒãƒ‰
+	 * @param	e	ç™ºç”Ÿã—ãŸä¾‹å¤–ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 * **/
 	public void handleException( GeneralException e );
 

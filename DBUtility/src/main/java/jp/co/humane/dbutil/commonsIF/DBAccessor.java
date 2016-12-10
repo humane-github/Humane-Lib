@@ -1,8 +1,8 @@
 /*
- * ì¬“ú: 2005/03/30
+ * ä½œæˆæ—¥: 2005/03/30
  *
- * ‚±‚Ì¶¬‚³‚ê‚½ƒRƒƒ“ƒg‚Ì‘}“ü‚³‚ê‚éƒeƒ“ƒvƒŒ[ƒg‚ğ•ÏX‚·‚é‚½‚ß
- * ƒEƒBƒ“ƒhƒE > İ’è > Java > ƒR[ƒh¶¬ > ƒR[ƒh‚ÆƒRƒƒ“ƒg
+ * ã“ã®ç”Ÿæˆã•ã‚ŒãŸã‚³ãƒ¡ãƒ³ãƒˆã®æŒ¿å…¥ã•ã‚Œã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚’å¤‰æ›´ã™ã‚‹ãŸã‚
+ * ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ > è¨­å®š > Java > ã‚³ãƒ¼ãƒ‰ç”Ÿæˆ > ã‚³ãƒ¼ãƒ‰ã¨ã‚³ãƒ¡ãƒ³ãƒˆ
  */
 package jp.co.humane.dbutil.commonsIF;
 
@@ -24,33 +24,33 @@ import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 /**
- * ModelGenƒf[ƒ^ƒx[ƒX‚Ö‚r‚p‚k‚ğ”­s‚µAŒ‹‰Ê‚ğ•Ô‚·B
- * SQL‚ÌÀs‚ÆÀsŒ‹‰ÊƒIƒuƒWƒFƒNƒg‚Ìì¬‚ÍADbUtilsƒRƒ“ƒ|[ƒlƒ“ƒg‚ğ—˜—p‚·‚é
+ * ModelGenãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã¸ï¼³ï¼±ï¼¬ã‚’ç™ºè¡Œã—ã€çµæœã‚’è¿”ã™ã€‚
+ * SQLã®å®Ÿè¡Œã¨å®Ÿè¡Œçµæœã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ä½œæˆã¯ã€DbUtilsã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’åˆ©ç”¨ã™ã‚‹
  */
 public final class DBAccessor
 {
 	/**
-	 * ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“ˆ—‚Åg—p‚·‚éConnectionƒIƒuƒWƒFƒNƒg
+	 * ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³å‡¦ç†ã§ä½¿ç”¨ã™ã‚‹Connectionã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 * **/
 	private Connection transactConnect = null;
 
 	/**
-	 * ƒoƒbƒ`ƒ‚[ƒh—p‚ÌƒXƒe[ƒgƒƒ“ƒg‚ğŠi”[‚·‚é
-	 * ƒL[=—˜—pÒ‚ª”CˆÓ‚ÉŒˆ‚ß‚éƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“–¼
-	 * ’l=PreparedStatementƒIƒuƒWƒFƒNƒg
+	 * ãƒãƒƒãƒãƒ¢ãƒ¼ãƒ‰ç”¨ã®ã‚¹ãƒ†ãƒ¼ãƒˆãƒ¡ãƒ³ãƒˆã‚’æ ¼ç´ã™ã‚‹
+	 * ã‚­ãƒ¼=åˆ©ç”¨è€…ãŒä»»æ„ã«æ±ºã‚ã‚‹ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³å
+	 * å€¤=PreparedStatementã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 * **/
 	private HashMap<String,PreparedStatement> transactMap = new HashMap<String,PreparedStatement>();
 
 	/**
-	 * ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	 * ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	 *
 	 * **/
 	public DBAccessor(){}
 
 	/**
-	 * ƒ[ƒ‹ƒoƒbƒN‚ğÀs‚µ‚Ü‚·B
+	 * ãƒ­ãƒ¼ãƒ«ãƒãƒƒã‚¯ã‚’å®Ÿè¡Œã—ã¾ã™ã€‚
 	 *
-	 * @exception DBException SQLException‚ğƒLƒƒƒbƒ`‚µ‚½‚Æ‚«
+	 * @exception DBException SQLExceptionã‚’ã‚­ãƒ£ãƒƒãƒã—ãŸã¨ã
 	 */
 	public void rollback(Connection con) throws DBUtilException
 	{
@@ -65,7 +65,7 @@ public final class DBAccessor
 	}
 
 	/**
-	 * ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“‚ğŠJn‚·‚é
+	 * ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã‚’é–‹å§‹ã™ã‚‹
 	 *
 	 * **/
 	public void beginTransaction() throws DBUtilException
@@ -74,11 +74,11 @@ public final class DBAccessor
 	}
 
 	/**
-	 * ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ““à‚ÅSQL‚ğÀs‚µ‚Ü‚·
+	 * ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³å†…ã§SQLã‚’å®Ÿè¡Œã—ã¾ã™
 	 *
-	 * @param sql			Às‚·‚éSQL
-	 * @param params		SQL‚Ìƒpƒ‰ƒ[ƒ^[
-	 * @param beanClass		Œ‹‰Ê‚ğŠi”[‚·‚éBeanƒNƒ‰ƒX
+	 * @param sql			å®Ÿè¡Œã™ã‚‹SQL
+	 * @param params		SQLã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼
+	 * @param beanClass		çµæœã‚’æ ¼ç´ã™ã‚‹Beanã‚¯ãƒ©ã‚¹
 	 * @return
 	 * @throws DBUtilException
 	 */
@@ -88,25 +88,25 @@ public final class DBAccessor
 	}
 
 	/**
-	 * ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ““à‚ÅSQL‚ğÀs‚µ‚Ü‚·
-	 * ƒGƒ‰[‚ª”­¶‚µ‚½ê‡‚ÍAXV‚ğƒ[ƒ‹ƒoƒbƒN‚µDBÚ‘±‚ğ•Â‚¶‚Ü‚·
+	 * ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³å†…ã§SQLã‚’å®Ÿè¡Œã—ã¾ã™
+	 * ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆã¯ã€æ›´æ–°ã‚’ãƒ­ãƒ¼ãƒ«ãƒãƒƒã‚¯ã—DBæ¥ç¶šã‚’é–‰ã˜ã¾ã™
 	 *
-	 * @param	sql		Às‚·‚éSQL
-	 * @param	params	SQL‚Ìƒpƒ‰ƒ[ƒ^[
-	 * @return	int		XVŒ”
+	 * @param	sql		å®Ÿè¡Œã™ã‚‹SQL
+	 * @param	params	SQLã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼
+	 * @return	int		æ›´æ–°ä»¶æ•°
 	 * **/
 	public Object executeQuery(String sql,Object[] params,ResultSetHandler handler) throws DBUtilException
 	{
 		try
 		{
 			/**
-			 * SQLÀsƒIƒuƒWƒFƒNƒgæ“¾
+			 * SQLå®Ÿè¡Œã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå–å¾—
 			 * **/
 			QueryRunner runner = ConnectionPool.getQueryRunner();
 			if( runner == null ) throw new DBUtilException("F9000");
 
 			/**
-			 * ƒNƒGƒŠ[Às
+			 * ã‚¯ã‚¨ãƒªãƒ¼å®Ÿè¡Œ
 			 * **/
 			return runner.query(transactConnect,sql,params,handler);
 		}
@@ -120,28 +120,28 @@ public final class DBAccessor
 
 
 	/**
-	 * ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ““à‚ÅSQL‚ğÀs‚µ‚Ü‚·
-	 * ƒGƒ‰[‚ª”­¶‚µ‚½ê‡‚ÍAXV‚ğƒ[ƒ‹ƒoƒbƒN‚µDBÚ‘±‚ğ•Â‚¶‚Ü‚·
+	 * ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³å†…ã§SQLã‚’å®Ÿè¡Œã—ã¾ã™
+	 * ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿã—ãŸå ´åˆã¯ã€æ›´æ–°ã‚’ãƒ­ãƒ¼ãƒ«ãƒãƒƒã‚¯ã—DBæ¥ç¶šã‚’é–‰ã˜ã¾ã™
 	 *
-	 * @param	sql		Às‚·‚éSQL
-	 * @param	params	SQL‚Ìƒpƒ‰ƒ[ƒ^[
-	 * @return	int		XVŒ”
+	 * @param	sql		å®Ÿè¡Œã™ã‚‹SQL
+	 * @param	params	SQLã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼
+	 * @return	int		æ›´æ–°ä»¶æ•°
 	 * **/
 	public int executeUpdate( String sql,Object[] params ) throws DBUtilException
 	{
 
-		/** ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“ˆ——p‚ÌConnection‘¶İŠm”F **/
+		/** ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³å‡¦ç†ç”¨ã®Connectionå­˜åœ¨ç¢ºèª **/
 		if( transactConnect == null ) return -1;
 
 
 		int count = -1;
 		try
 		{
-			/** SQLÀsƒIƒuƒWƒFƒNƒgæ“¾ **/
+			/** SQLå®Ÿè¡Œã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆå–å¾— **/
 			QueryRunner runner = ConnectionPool.getQueryRunner();
 			if( runner == null ) throw new DBUtilException("F9000");
 
-			/** SQLÀs **/
+			/** SQLå®Ÿè¡Œ **/
 			count = runner.update(transactConnect,sql,params);
 		}
 		catch( Exception e )
@@ -155,18 +155,18 @@ public final class DBAccessor
 	}
 
 	/**
-	 * ƒoƒbƒ`ƒ‚[ƒh‚ÅÀs‚·‚éSQL‚ğ“o˜^‚·‚é
+	 * ãƒãƒƒãƒãƒ¢ãƒ¼ãƒ‰ã§å®Ÿè¡Œã™ã‚‹SQLã‚’ç™»éŒ²ã™ã‚‹
 	 *
-	 * @param	transactName	ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“–¼i”CˆÓj
-	 * @param	sql				ƒoƒbƒ`‚ÅÀs‚·‚éSQL
-	 * @throws	DBUtilException	ƒXƒe[ƒgƒƒ“ƒgì¬‚ÉˆÙí”­¶
+	 * @param	transactName	ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³åï¼ˆä»»æ„ï¼‰
+	 * @param	sql				ãƒãƒƒãƒã§å®Ÿè¡Œã™ã‚‹SQL
+	 * @throws	DBUtilException	ã‚¹ãƒ†ãƒ¼ãƒˆãƒ¡ãƒ³ãƒˆä½œæˆæ™‚ã«ç•°å¸¸ç™ºç”Ÿ
 	 * **/
 	public void addQuery( String transactName, String sql ) throws DBUtilException
 	{
 		try
 		{
 			/**
-			 * Às‚·‚éSQL‚ğ“o˜^
+			 * å®Ÿè¡Œã™ã‚‹SQLã‚’ç™»éŒ²
 			 * **/
 			PreparedStatement batchStmt = transactConnect.prepareStatement(sql);
 			transactMap.put(transactName,batchStmt);
@@ -181,22 +181,22 @@ public final class DBAccessor
 	}
 
 	/**
-	 * ƒoƒbƒ`ƒ‚[ƒh‚ÅSQL‚ğÀs‚·‚é
+	 * ãƒãƒƒãƒãƒ¢ãƒ¼ãƒ‰ã§SQLã‚’å®Ÿè¡Œã™ã‚‹
 	 *
-	 * @param	transactName	ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“–¼i”CˆÓj
-	 * @param	params			ƒXƒe[ƒgƒƒ“ƒg‚Éİ’è‚·‚éƒpƒ‰ƒ[ƒ^[
+	 * @param	transactName	ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³åï¼ˆä»»æ„ï¼‰
+	 * @param	params			ã‚¹ãƒ†ãƒ¼ãƒˆãƒ¡ãƒ³ãƒˆã«è¨­å®šã™ã‚‹ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ãƒ¼
 	 * **/
 	public void addBatch( String transactName,Object[] params ) throws DBUtilException
 	{
 		PreparedStatement batchStmt = null;
 		try
 		{
-			// ƒXƒe[ƒgƒƒ“ƒg‚É•Ï”‚ğƒZƒbƒg
+			// ã‚¹ãƒ†ãƒ¼ãƒˆãƒ¡ãƒ³ãƒˆã«å¤‰æ•°ã‚’ã‚»ãƒƒãƒˆ
 			batchStmt = transactMap.get(transactName);
 			if( batchStmt == null ) throw new DBUtilException("F0001");
 			batchStmt = fillStatement(batchStmt,params);
 
-			// ƒXƒe[ƒgƒƒ“ƒg‚ÉÀs‚·‚éSQL‚ğ“o˜^
+			// ã‚¹ãƒ†ãƒ¼ãƒˆãƒ¡ãƒ³ãƒˆã«å®Ÿè¡Œã™ã‚‹SQLã‚’ç™»éŒ²
 			batchStmt.addBatch();
 //			addBatchCount();
 //
@@ -215,9 +215,9 @@ public final class DBAccessor
 	}
 
 	/**
-	 * ƒoƒbƒ`ƒ‚[ƒh‚ğI—¹‚·‚é
+	 * ãƒãƒƒãƒãƒ¢ãƒ¼ãƒ‰ã‚’çµ‚äº†ã™ã‚‹
 	 *
-	 * @param	transactName	ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“–¼
+	 * @param	transactName	ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³å
 	 * **/
 	public void execBatch( String transactName ) throws DBUtilException
 	{
@@ -227,7 +227,7 @@ public final class DBAccessor
 		{
 			System.out.println("execute transaction name="+transactName);
 			/**
-			 * ƒXƒe[ƒgƒƒ“ƒg‚É‚½‚Ü‚Á‚Ä‚éƒNƒGƒŠ[‚ğÀs
+			 * ã‚¹ãƒ†ãƒ¼ãƒˆãƒ¡ãƒ³ãƒˆã«ãŸã¾ã£ã¦ã‚‹ã‚¯ã‚¨ãƒªãƒ¼ã‚’å®Ÿè¡Œ
 			 * **/
 			batchStmt = transactMap.get(transactName);
 
@@ -254,13 +254,13 @@ public final class DBAccessor
 	}
 
 	/**
-	 * ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“‚ğI—¹‚µ‚Ü‚·
+	 * ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³ã‚’çµ‚äº†ã—ã¾ã™
 	 * **/
 	public void finishTransaction() throws DBUtilException
 	{
 		/**
-		 * ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“ˆ—‚ğs‚Á‚Ä‚¢‚È‚¢ê‡‚Í
-		 * ‰½‚àˆ—‚µ‚È‚¢
+		 * ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³å‡¦ç†ã‚’è¡Œã£ã¦ã„ãªã„å ´åˆã¯
+		 * ä½•ã‚‚å‡¦ç†ã—ãªã„
 		 * **/
 		if( transactConnect == null ) return;
 		try
@@ -276,8 +276,8 @@ public final class DBAccessor
 
 
 	/**
-	 * ƒgƒ‰ƒ“ƒUƒNƒVƒ‡ƒ“ˆ—‚Åg—p‚·‚éConnectionƒIƒuƒWƒFƒNƒg‚ğ•Ô‚·
-	 * @return	ConnectionƒIƒuƒWƒFƒNƒg
+	 * ãƒˆãƒ©ãƒ³ã‚¶ã‚¯ã‚·ãƒ§ãƒ³å‡¦ç†ã§ä½¿ç”¨ã™ã‚‹Connectionã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’è¿”ã™
+	 * @return	Connectionã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	 */
 	public Connection getConnection()
 	{
@@ -286,10 +286,10 @@ public final class DBAccessor
 
 
 	/***************************************/
-	/**************”ñŒöŠJƒƒ\ƒbƒh***********/
+	/**************éå…¬é–‹ãƒ¡ã‚½ãƒƒãƒ‰***********/
 	/***************************************/
 	/**
-	 * PreparedStatement‚É•Ï”‚ğƒZƒbƒg‚·‚é
+	 * PreparedStatementã«å¤‰æ•°ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 	 * **/
 	private PreparedStatement fillStatement(PreparedStatement stmt,Object[] params)	throws SQLException
 	{

@@ -8,7 +8,7 @@ import org.apache.commons.dbutils.ResultSetHandler;
 import org.apache.commons.dbutils.RowProcessor;
 
 /**
- * ResultSet‚ğ‚»‚Ì‚Ü‚Ü•Ô‚·ƒnƒ“ƒhƒ‰[
+ * ResultSetã‚’ãã®ã¾ã¾è¿”ã™ãƒãƒ³ãƒ‰ãƒ©ãƒ¼
  * **/
 public class DefaultHandler implements ResultSetHandler
 {

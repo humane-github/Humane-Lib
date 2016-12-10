@@ -1,22 +1,22 @@
 /*
- * █Л░╛⌠З│F 2005/08/10
+ * Д╫°Ф┬░Ф≈╔О╪  2005/08/10
  *
- * TODO ┌╠┌л░╤░╛┌Ё┌Й┌╫┐t┐@┐C┐▀┌л┐e┐⌠┐v┐▄│[┐g┌П∙о█X┌╥┌И┌и┌м▌÷┌П▌Q▐ф│B
- * ┐E┐B┐⌠┐h┐E │└ ░щ▓Х │└ Java │└ ┐R│[┐h│E┐X┐^┐C┐▀ │└ ┐R│[┐h│E┐e┐⌠┐v┐▄│[┐g
+ * TODO Ц│⌠Ц│╝Г■÷Ф┬░Ц│∙Ц┌▄Ц│÷Ц┐∙Ц┌║Ц┌╓Ц┐╚Ц│╝Ц┐├Ц┐ЁЦ┐≈Ц┐╛Ц┐╪Ц┐┬Ц┌▓Е╓┴Ф⌡╢Ц│≥Ц┌▀Ц│╚Ц│╞Ф╛║Ц┌▓Е▐┌Г┘╖Ц─┌
+ * Ц┌╕Ц┌ёЦ┐ЁЦ┐┴Ц┌╕ О╪· Х╗╜Е╝  О╪· Java О╪· Ц┌ЁЦ┐╪Ц┐┴Ц┐╩Ц┌╧Ц┌©Ц┌╓Ц┐╚ О╪· Ц┌ЁЦ┐╪Ц┐┴Ц┐╩Ц┐├Ц┐ЁЦ┐≈Ц┐╛Ц┐╪Ц┐┬
  */
 package jp.co.humane.exception;
 
 /**
- * ┐N┐┴┐X│FFatalException
- * ▓v√╫⌠I┐G┐┴│[▌·┌и■╜░╤┌╥┌И≈А┼O┐I┐u┐W┐F┐N┐g
+ * Ц┌╞Ц┐╘Ц┌╧О╪ FatalException
+ * Х┤╢Е▒╫Г └Ц┌╗Ц┐╘Ц┐╪Ф≥┌Ц│╚Г≥╨Г■÷Ц│≥Ц┌▀Д╬▀Е╓√Ц┌╙Ц┐√Ц┌╦Ц┌╖Ц┌╞Ц┐┬
  * @author suzuki
  */
 public class FatalException extends GeneralException
 {
 	/**
-	 * ┐R┐⌠┐X┐g┐┴┐N┐^
+	 * Ц┌ЁЦ┐ЁЦ┌╧Ц┐┬Ц┐╘Ц┌╞Ц┌©
 	 * 
-	 * @param	code	┐G┐┴│[┐R│[┐h
+	 * @param	code	Ц┌╗Ц┐╘Ц┐╪Ц┌ЁЦ┐╪Ц┐┴
 	 * **/
 	public FatalException( String code )
 	{
@@ -24,10 +24,10 @@ public class FatalException extends GeneralException
 	}
 	
 	/**
-	 * ┐R┐⌠┐X┐g┐┴┐N┐^
+	 * Ц┌ЁЦ┐ЁЦ┌╧Ц┐┬Ц┐╘Ц┌╞Ц┌©
 	 * 
-	 * @param│@code		┐G┐┴│[┐R│[┐h
-	 * @param	e		≈А┼O╣лч╪ч╙╦д
+	 * @paramЦ──code		Ц┌╗Ц┐╘Ц┐╪Ц┌ЁЦ┐╪Ц┐┴
+	 * @param	e		Д╬▀Е╓√О╫╣О╬▄О╬·О╫╪О╬·О╫╙О╫╦О╬└
 	 * **/
 	public FatalException( String code,Exception e)
 	{

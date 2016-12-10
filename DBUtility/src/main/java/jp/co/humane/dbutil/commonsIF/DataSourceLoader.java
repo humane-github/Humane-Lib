@@ -1,5 +1,5 @@
 /*
- * ì¬“úF 2005/08/11
+ * ä½œæˆæ—¥ï¼š 2005/08/11
  */
 package jp.co.humane.dbutil.commonsIF;
 
@@ -10,9 +10,9 @@ import jp.co.humane.dbutil.exception.DBUtilException;
 import org.postgresql.jdbc3.Jdbc3SimpleDataSource;
 
 /**
- * DBÚ‘±î•ñ‚ğŠÇ—‚·‚éƒNƒ‰ƒX
- * DBÚ‘±î•ñ‚ÍAİ’èî•ñŠÇ—ƒRƒ“ƒ|[ƒlƒ“ƒg‚ğg—p‚µ‚Ä
- * datasource.xmlƒtƒ@ƒCƒ‹‚©‚ç“Ç‚İ‚Ş
+ * DBæ¥ç¶šæƒ…å ±ã‚’ç®¡ç†ã™ã‚‹ã‚¯ãƒ©ã‚¹
+ * DBæ¥ç¶šæƒ…å ±ã¯ã€è¨­å®šæƒ…å ±ç®¡ç†ã‚³ãƒ³ãƒãƒ¼ãƒãƒ³ãƒˆã‚’ä½¿ç”¨ã—ã¦
+ * datasource.xmlãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èª­ã¿è¾¼ã‚€
  * @author suzuki
  */
 public class DataSourceLoader
@@ -21,12 +21,12 @@ public class DataSourceLoader
 	private static Jdbc3SimpleDataSource m_datasourcePG = null;
 	
 	/**
-	 * DB‚Æ‚ÌÚ‘±‚ğŠm—§‚·‚é
+	 * DBã¨ã®æ¥ç¶šã‚’ç¢ºç«‹ã™ã‚‹
 	 * 
-	 * @param	hostname	DBƒzƒXƒg–¼
-	 * @param	dbname		DB–¼
-	 * @param	user		DBÚ‘±ƒ†[ƒU[–¼
-	 * @param	password	DBÚ‘±ƒ†[ƒU[‚ÌƒƒOƒCƒ“ƒpƒXƒ[ƒh
+	 * @param	hostname	DBãƒ›ã‚¹ãƒˆå
+	 * @param	dbname		DBå
+	 * @param	user		DBæ¥ç¶šãƒ¦ãƒ¼ã‚¶ãƒ¼å
+	 * @param	password	DBæ¥ç¶šãƒ¦ãƒ¼ã‚¶ãƒ¼ã®ãƒ­ã‚°ã‚¤ãƒ³ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 	 * 
 	 * **/
 	public static boolean load(String hostname,String dbname,String user,String password) throws DBUtilException
@@ -41,7 +41,7 @@ public class DataSourceLoader
 	}
 	
 	/**
-	 * ƒZƒbƒVƒ‡ƒ“Šm—§’†‚Ìƒf[ƒ^ƒ\[ƒX‚ğ•Ô‚·
+	 * ã‚»ãƒƒã‚·ãƒ§ãƒ³ç¢ºç«‹ä¸­ã®ãƒ‡ãƒ¼ã‚¿ã‚½ãƒ¼ã‚¹ã‚’è¿”ã™
 	 * **/
 	public static DataSource getDataSource()
 	{
