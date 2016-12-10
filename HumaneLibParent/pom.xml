@@ -1,15 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>jp.co.humane.humane-lib</groupId>
+  <groupId>jp.co.humane.humane-lib.parent</groupId>
   <artifactId>humane-lib-parent</artifactId>
   <version>1.0</version>
   <packaging>pom</packaging>
   
   <!-- プロパティ定義 -->
   <properties>
-    <!-- maven-repoのclone場所を指定 -->
-    <repository.clone.path>/path/to/clone/path</repository.clone.path>
+    <!-- maven-repoのclone場所を指定(環境に応じて書き換えること) -->
+    <repository.clone.path>/maven-repo</repository.clone.path>
     <!-- 文字コード:UTF-8 -->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- javaバージョン：1.7 -->
@@ -90,7 +90,7 @@
       <dependency>
         <groupId>jp.co.humane.humane-lib</groupId>
         <artifactId>exception-lib</artifactId>
-        <version>1.0</version>
+        <version>1.0.0</version>
       </dependency>
 
     </dependencies>

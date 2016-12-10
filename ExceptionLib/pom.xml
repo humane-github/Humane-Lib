@@ -3,15 +3,21 @@
   
   <groupId>jp.co.humane.humane-lib</groupId>
   <artifactId>exception-lib</artifactId>
-  <version>1.0</version>
+  <version>1.0.0</version>
   <packaging>jar</packaging>
 
   <!-- 親pom -->
   <parent>
-    <groupId>jp.co.humane.humane-lib</groupId>
+    <groupId>jp.co.humane.humane-lib.parent</groupId>
     <artifactId>humane-lib-parent</artifactId>
     <version>1.0</version>
   </parent>
+
+  <!-- プロパティ定義 -->
+  <properties>
+    <!-- maven-repoのclone場所を指定(環境に応じて書き換えること) -->
+    <repository.clone.path>/maven-repo</repository.clone.path>
+  </properties>
 
   <!-- リポジトリの参照を追加 -->
   <repositories>
