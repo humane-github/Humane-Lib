@@ -10,10 +10,8 @@
   <properties>
     <!-- maven-repoのclone場所を指定 -->
     <repository.clone.path>/path/to/clone/path</repository.clone.path>
-    <!-- 文字コード:MS932 -->
-    <project.build.sourceEncoding>MS932</project.build.sourceEncoding>
-    <!-- レポート文字コード:UTF-8 -->
-    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- 文字コード:UTF-8 -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- javaバージョン：1.7 -->
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
