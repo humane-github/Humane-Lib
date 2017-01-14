@@ -1,4 +1,14 @@
 package jp.co.humane.rtc.common.starter;
+import jp.co.humane.rtc.common.component.DataFlowComponent;
+import jp.co.humane.rtc.common.starter.bean.ConfigBase;
+import jp.co.humane.rtc.common.starter.factory.RtcConfFactory;
+import jp.co.humane.rtc.common.starter.factory.RtcDeleteFuncFactory;
+import jp.co.humane.rtc.common.starter.factory.RtcNewFuncFactory;
+import jp.co.humane.rtc.common.starter.factory.impl.BeanConfFactory;
+import jp.co.humane.rtc.common.starter.factory.impl.BeanNewFuncFactory;
+import jp.co.humane.rtc.common.starter.factory.impl.EmptyDeleteFuncFactory;
+import jp.co.humane.rtc.common.starter.factory.impl.NormalNewFuncFactory;
+import jp.co.humane.rtc.common.starter.factory.impl.StaticFieldConfFactory;
 import jp.go.aist.rtm.RTC.Manager;
 import jp.go.aist.rtm.RTC.ModuleInitProc;
 import jp.go.aist.rtm.RTC.RTObject_impl;
@@ -49,16 +59,41 @@ public class RtcStarter {
     }
 
     /**
+     * Rtc起動処理のコンフィグ設定。
+     * @param bean      設定情報が定義されたクラス。
+     * @param addParams 追加設定情報。
+     * @return インスタンス。
+     */
+    public RtcStarter setConfig(Object bean, String ... addParams) {
+
+        // 指定されたBeanから設定情報を生成する。
+        RtcConfFactory cfgFactory = new BeanConfFactory(bean, addParams);
+        setConfFactory(cfgFactory);
+        return this;
+    }
+
+    /**
      * RTCを起動する。
      * @param args  起動引数。
      * @param clazz 起動対象のRTCクラス。
      */
     public void start(final Class<? extends RTObject_impl> clazz) {
 
+        // コンポーネント名を決定
+        final String name = getComponentName(clazz);
+
         // 各種ファクトリクラスを取得
         final RtcNewFuncFactory newFactory = getNewFuncFactory(clazz);
         final RtcDeleteFuncFactory delFancFactory = getDeleteFuncFactory(clazz);
         final RtcConfFactory cfgFactory = getConfFactory(clazz);
+
+        // Bean定義を使用する場合はコンポーネント名を設定する。
+        if (cfgFactory instanceof BeanConfFactory) {
+            ((BeanConfFactory)cfgFactory).setComponentName(name);
+        }
+        if (newFactory instanceof BeanNewFuncFactory) {
+            ((BeanNewFuncFactory)newFactory).setComponentName(name);
+        }
 
         // モジュール初期化処理設定する
         manager.setModuleInitProc(new ModuleInitProc() {
@@ -71,7 +106,6 @@ public class RtcStarter {
                 mgr.registerFactory(prop, newFactory.create(mgr), delFancFactory.create(mgr));
 
                 // Create a component
-                String name = getComponentName(clazz);
                 RTObject_impl comp = mgr.createComponent(name);
                 if( comp==null ) {
                     System.err.println("Component(" + name + ") create failed.");
@@ -92,14 +126,32 @@ public class RtcStarter {
      * @param 起動対象のRTCクラス。
      * @return RTC生成ファクトリクラス。
      */
+    @SuppressWarnings({ "unchecked", "rawtypes" })
     protected RtcNewFuncFactory getNewFuncFactory(Class<? extends RTObject_impl> clazz) {
 
-        // 指定されていない場合はデフォルトのファクトリクラスを返す
-        RtcNewFuncFactory ret = newFuncFactory;
-        if (null == ret) {
-            ret = new DefaultRtcNewFuncFactory(clazz);
+        // 指定されている場合は指定されたファクトリクラスを使用する
+        if (null != newFuncFactory) {
+            return newFuncFactory;
         }
-        return ret;
+
+        // 以下の条件を満たしている場合はBeanNewFuncFactoryを使用する
+        //   1. 設定情報にBeanが渡されている
+        //   2. BeanがConfigBaseを継承している
+        //   3. clazzがDataFlowComponentを継承している
+        if (confFactory instanceof BeanConfFactory) {
+            Object bean = ((BeanConfFactory) confFactory).getBean();
+            if (bean instanceof ConfigBase
+                    && DataFlowComponent.class.isAssignableFrom(clazz)) {
+
+                ConfigBase configBase = (ConfigBase) bean;
+                Class<? extends DataFlowComponent> cls = (Class<? extends DataFlowComponent>) clazz;
+                BeanNewFuncFactory newFactory = new BeanNewFuncFactory(cls, configBase);
+                return newFactory;
+            }
+        }
+
+        // 上記以外はNormalNewFuncFactoryを使用する
+        return new NormalNewFuncFactory(clazz);
     }
 
     /**
@@ -112,7 +164,7 @@ public class RtcStarter {
         // 指定されていない場合はデフォルトのファクトリクラスを返す
         RtcDeleteFuncFactory ret = deleteFuncFactory;
         if (null == ret) {
-            ret = new DefaultRtcDeleteFuncFactory();
+            ret = new EmptyDeleteFuncFactory();
         }
         return ret;
     }
@@ -127,27 +179,30 @@ public class RtcStarter {
         // 指定されていない場合はデフォルトのファクトリクラスを返す
         RtcConfFactory ret = confFactory;
         if (null == ret) {
-            ret = new DefaultRtcConfFactory(clazz);
+            ret = new StaticFieldConfFactory(clazz);
         }
+
         return ret;
     }
 
     /**
-     * コンポーネント名を返す。
+     * コンポーネント名を取得する。
      * @param  設定情報が定義されたRTCクラス。
-     * @return コンポーネント名。
      */
     protected String getComponentName(Class<?> clazz) {
 
-        // 指定されていない場合はクラス名(Implは除く)を返す
         String ret = componentName;
+
+        // 指定されていない場合はクラス名(Implは除く)をコンポーネント名に指定する
         if (null == ret) {
             String[] arr = clazz.getCanonicalName().split("\\.");
-            ret = arr[arr.length - 1];
-            ret = ret.replace("Impl", "");
+            String name = arr[arr.length - 1];
+            ret = name.replace("Impl", "");
         }
+
         return ret;
     }
+
 
     // 以下、アクセッサ
 
@@ -164,8 +219,9 @@ public class RtcStarter {
      * RTCマネージャを設定する。
      * @param manager RTCマネージャ。
      */
-    protected void setManager(Manager manager) {
+    protected RtcStarter setManager(Manager manager) {
         this.manager = manager;
+        return this;
     }
 
     /**
@@ -180,8 +236,9 @@ public class RtcStarter {
      * RTC起動処理のファクトリクラスを設定する。
      * @param newFuncFactory RTC起動処理のファクトリクラス。
      */
-    public void setNewFuncFactory(RtcNewFuncFactory newFuncFactory) {
+    public RtcStarter setNewFuncFactory(RtcNewFuncFactory newFuncFactory) {
         this.newFuncFactory = newFuncFactory;
+        return this;
     }
 
     /**
@@ -196,8 +253,9 @@ public class RtcStarter {
      * RTC終了処理のファクトリクラスを設定する。
      * @param deleteFuncFactory RTC終了処理のファクトリクラス。
      */
-    public void setDeleteFuncFactory(RtcDeleteFuncFactory deleteFuncFactory) {
+    public RtcStarter setDeleteFuncFactory(RtcDeleteFuncFactory deleteFuncFactory) {
         this.deleteFuncFactory = deleteFuncFactory;
+        return this;
     }
 
     /**
@@ -212,8 +270,9 @@ public class RtcStarter {
      * RTCプロパティ生成処理のファクトリクラスを設定する。
      * @param confFactory RTCプロパティ生成処理のファクトリクラス。
      */
-    public void setConfFactory(RtcConfFactory confFactory) {
+    public RtcStarter setConfFactory(RtcConfFactory confFactory) {
         this.confFactory = confFactory;
+        return this;
     }
 
     /**
@@ -228,8 +287,9 @@ public class RtcStarter {
      * コンポーネント名を設定する。
      * @param componentName コンポーネント名。
      */
-    public void setComponentName(String componentName) {
+    public RtcStarter setComponentName(String componentName) {
         this.componentName = componentName;
+        return this;
     }
 
     /**
@@ -244,7 +304,8 @@ public class RtcStarter {
      * ブロッキングモードを設定する。
      * @param isBlocking ブロッキングモード。
      */
-    public void setBlocking(boolean isBlocking) {
+    public RtcStarter setBlocking(boolean isBlocking) {
         this.isBlocking = isBlocking;
+        return this;
     }
 }
