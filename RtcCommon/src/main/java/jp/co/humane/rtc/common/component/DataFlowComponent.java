@@ -1,14 +1,22 @@
 package jp.co.humane.rtc.common.component;
 
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import RTC.ReturnCode_t;
 import jp.co.humane.rtc.common.logger.RtcLogger;
+import jp.co.humane.rtc.common.port.RtcInPort;
+import jp.co.humane.rtc.common.port.RtcOutPort;
 import jp.co.humane.rtc.common.starter.bean.ConfigBase;
 import jp.co.humane.rtc.common.util.ConfigUtils;
 import jp.co.humane.rtc.common.util.ElapsedTimer;
 import jp.go.aist.rtm.RTC.DataFlowComponentBase;
 import jp.go.aist.rtm.RTC.Manager;
+import jp.go.aist.rtm.RTC.port.PortBase;
 
 /**
  * 設定をBeanで扱うRTCのスーパークラス。
@@ -65,6 +73,9 @@ public abstract class DataFlowComponent<T extends ConfigBase> extends DataFlowCo
         try {
             // 設定情報のバインド処理を行う
             ConfigUtils.bindParameters(this, config);
+
+            // 存在するポートは登録を行う
+            addRtcPorts();
 
             // 初期化処理を継承クラスに委譲
             return onRtcInitialize();
@@ -205,6 +216,68 @@ public abstract class DataFlowComponent<T extends ConfigBase> extends DataFlowCo
      */
     protected ReturnCode_t onRtcReset(int ec_id) {
         return ReturnCode_t.RTC_OK;
+    }
+
+    /**
+     * フィールドに存在するポート情報を登録する。
+     */
+    protected void addRtcPorts() {
+
+        Map<Class<?>, List<PortBase>> fieldMap = getFields(this);
+
+        // InPortの登録
+        for (PortBase base : fieldMap.get(RtcInPort.class)) {
+            RtcInPort<?> port = (RtcInPort<?>)base;
+            addInPort(port.name(), port);
+        }
+
+        // OutPortの登録
+        for (PortBase base : fieldMap.get(RtcOutPort.class)) {
+            RtcOutPort<?> port = (RtcOutPort<?>)base;
+            addOutPort(port.name(), port);
+        }
+    }
+
+    /**
+     * インスタンス内のRtcInPortフィールド、RtcOutフィールドを取得する
+     * @param obj 取得対象インスタンス。
+     * @return 全フィールド情報。
+     */
+    protected Map<Class<?>, List<PortBase>> getFields(Object obj) {
+
+        Map<Class<?>, List<PortBase>> map = new LinkedHashMap<>();
+        map.put(RtcInPort.class, new ArrayList<PortBase>());
+        map.put(RtcOutPort.class, new ArrayList<PortBase>());
+
+        try {
+            Class<?> clazz = obj.getClass();
+            while (null != clazz) {
+
+                // フィールド情報をマップに格納する
+                Field[] fields = clazz.getDeclaredFields();
+                for (Field field : fields) {
+
+                    // フィールドの値を取得
+                    field.setAccessible(true);
+                    Object fValue = field.get(obj);
+                    if (null == fValue) {
+                        continue;
+                    }
+
+                    // クラスをキーとしたマップに格納
+                    Class<?> fClass = fValue.getClass();
+                    if (fClass == RtcInPort.class || fClass == RtcOutPort.class) {
+                        map.get(fClass).add((PortBase)fValue);
+                    }
+                }
+
+                // 継承元クラスからも取得する
+                clazz = clazz.getSuperclass();
+            }
+        } catch (IllegalAccessException ex) {
+            throw new RuntimeException(obj.getClass().getCanonicalName() + "のフィールド情報取得に失敗しました。", ex);
+        }
+        return map;
     }
 
 }

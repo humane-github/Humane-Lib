@@ -19,6 +19,9 @@ public class RtcOutPort<DataType> extends OutPort<DataType> {
     /** 送信データ格納情報 */
     private DataRef<DataType> dataRef = null;
 
+    /** ポート名 */
+    private String portName = null;
+
     /**
      * DataRefインスタンスを一時的に格納する。
      *
@@ -45,6 +48,10 @@ public class RtcOutPort<DataType> extends OutPort<DataType> {
 
         // 使用したDataRefをフィールドに配置
         this.dataRef = temporaryDataRef.get();
+
+        // InPortと合わせるためポート名を格納
+        this.portName = name;
+
         temporaryDataRef.set(null);
     }
 
@@ -63,6 +70,10 @@ public class RtcOutPort<DataType> extends OutPort<DataType> {
 
         // 使用したDataRefをフィールドに配置
         this.dataRef = temporaryDataRef.get();
+
+        // InPortと合わせるためポート名を格納
+        this.portName = name;
+
         temporaryDataRef.set(null);
     }
 
@@ -82,6 +93,10 @@ public class RtcOutPort<DataType> extends OutPort<DataType> {
 
         // 使用したDataRefをフィールドに配置
         this.dataRef = temporaryDataRef.get();
+
+        // InPortと合わせるためポート名を格納
+        this.portName = name;
+
         temporaryDataRef.set(null);
     }
 
@@ -91,6 +106,14 @@ public class RtcOutPort<DataType> extends OutPort<DataType> {
      */
     public DataType geData() {
         return this.dataRef.v;
+    }
+
+    /**
+     * InPortに合わせるため、ポート名取得のメソッドを追加。
+     * @return ポート名。
+     */
+    public String name() {
+        return this.portName;
     }
 
 }
