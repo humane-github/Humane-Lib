@@ -78,7 +78,11 @@ public abstract class DataFlowComponent<T extends ConfigBase> extends DataFlowCo
             addRtcPorts();
 
             // 初期化処理を継承クラスに委譲
-            return onRtcInitialize();
+            ReturnCode_t ret = onRtcInitialize();
+
+            // ログを出力して結果を返す
+            outputResultLog(ret, "初期化処理");
+            return ret;
 
         } catch (Throwable th) {
             logger.error("初期化処理に失敗しました。", th);
@@ -113,7 +117,11 @@ public abstract class DataFlowComponent<T extends ConfigBase> extends DataFlowCo
             }
 
             // アクティブ化処理を継承クラスに委譲
-            return onRtcActivated(ec_id);
+            ReturnCode_t ret = onRtcActivated(ec_id);
+
+            // ログを出力して結果を返す
+            outputResultLog(ret, "アクティブ化処理");
+            return ret;
 
         } catch (Throwable th) {
             logger.error("アクティブ化処理に失敗しました。", th);
@@ -138,7 +146,11 @@ public abstract class DataFlowComponent<T extends ConfigBase> extends DataFlowCo
 
         try {
             // 非アクティブ化処理を継承クラスに委譲
-            return onRtcDeactivated(ec_id);
+            ReturnCode_t ret = onRtcDeactivated(ec_id);
+
+            // ログを出力して結果を返す
+            outputResultLog(ret, "非アクティブ化処理");
+            return ret;
 
         } catch (Throwable th) {
             logger.error("非アクティブ化処理に失敗しました。", th);
@@ -201,7 +213,11 @@ public abstract class DataFlowComponent<T extends ConfigBase> extends DataFlowCo
 
         try {
             // リセット時処理を継承クラスに委譲
-            return onRtcReset(ec_id);
+            ReturnCode_t ret = onRtcReset(ec_id);
+
+            // ログを出力して結果を返す
+            outputResultLog(ret, "リセット時処理");
+            return ret;
 
         } catch (Throwable th) {
             logger.error("リセット時処理に失敗しました。", th);
@@ -278,6 +294,22 @@ public abstract class DataFlowComponent<T extends ConfigBase> extends DataFlowCo
             throw new RuntimeException(obj.getClass().getCanonicalName() + "のフィールド情報取得に失敗しました。", ex);
         }
         return map;
+    }
+
+    /**
+     * 処理結果のログを出力する。
+     * @param returnCode 処理結果コード。
+     * @param proc       処理の内容。
+     */
+    private void outputResultLog(ReturnCode_t returnCode, String proc) {
+
+        String message = null;
+        if (ReturnCode_t.RTC_OK == returnCode) {
+            message = proc + "が正常終了しました。";
+        } else {
+            message = proc + "に失敗しました。";
+        }
+        logger.info(message);
     }
 
 }

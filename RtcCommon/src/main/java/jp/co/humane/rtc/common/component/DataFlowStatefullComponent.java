@@ -36,6 +36,18 @@ public abstract class DataFlowStatefullComponent<T extends ConfigBase> extends D
     }
 
     /**
+     * 初期化処理。
+     * @return リターンコード。
+     */
+    protected ReturnCode_t onRtcInitialize() {
+
+        // 登録されている処理クラスにロガーを設定する
+        for (StateProcessor p : stateProcMap.values()) {
+            p.setLogger(logger);
+        }
+        return ReturnCode_t.RTC_OK;
+    }
+    /**
      * アクティブ化処理。
      * @param ec_id ExecutionContext ID.
      * @return リターンコード。

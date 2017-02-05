@@ -1,11 +1,16 @@
 package jp.co.humane.rtc.common.component.state;
 
+import jp.co.humane.rtc.common.logger.RtcLogger;
+
 /**
  * 特定の状態に対する処理を定義するクラス。
  * @author terada.
  *
  */
 public abstract class StateProcessor {
+
+    /** ロガー */
+    protected RtcLogger logger = null;
 
     /**
      * アクティブ化時の処理を実行する。
@@ -50,6 +55,14 @@ public abstract class StateProcessor {
      */
     public void acceptPreResult(StateProcessResult result) {
         return;
+    }
+
+    /**
+     * loggerを設定する。
+     * @param logger logger.
+     */
+    public void setLogger(RtcLogger logger) {
+        this.logger = logger;
     }
 
 }
